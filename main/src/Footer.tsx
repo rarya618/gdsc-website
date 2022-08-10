@@ -53,17 +53,17 @@ const footerContent = [
     {
         title: "Quick links",
         content: [
-            {text: "Programs"},
-            {text: "Competitions"},
-            {text: "Events"},
+            {text: "AI/ML"},
+            {text: "Cybersecurity"},
+            {text: "Game Jam"},
+            {text: "Design Month"},
         ]
     },
     {
         title: "Resources",
         content: [
-            {text: "Study Groups"},
-            {text: "Internships"},
-            {text: "Hivemind"},
+            {text: "GDSC Page"},
+            {text: "Club Charter"},
         ]
     },
     {

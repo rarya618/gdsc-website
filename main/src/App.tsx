@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import logo from './resources/header-logo.png';
 import './App.css';
-import Home from './landing/Home';
-import Offerings from './landing/Offerings';
+import Landing from './landing/Landing';
 import { blueHex, whiteHex } from './colors';
-import JoinClub from './landing/JoinClub';
 import Footer from './Footer';
 
 // set page title
@@ -66,9 +64,7 @@ function App() {
 					<CallToAction className="btn-hoverable">Join us</CallToAction>
 				</Menu>
 			</Header>
-			<Home />
-			<Offerings />
-			<JoinClub />
+			<Landing />
 			<Footer />
 		</div>
 	);
