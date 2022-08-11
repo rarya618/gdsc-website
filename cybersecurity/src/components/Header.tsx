@@ -24,6 +24,7 @@ const Menu = styled.div`
 const MenuItem = styled.span`
     padding: 10px 12px;
     margin: 5px;
+    border-radius: 3px;
     font-size: 16px;
 `;
 
@@ -51,9 +52,9 @@ const Header = () => {
             <Logo src={logo} />
             <Menu>
                 {menuItems.map(menuItem => {
-                    return <MenuItem>{menuItem.text}</MenuItem>
+                    return <MenuItem className="hoverable">{menuItem.text}</MenuItem>
                 })}
-                <CallToAction>Join Us</CallToAction>
+                <CallToAction className="hoverable">Join Us</CallToAction>
             </Menu>
         </HeaderObject>
     )

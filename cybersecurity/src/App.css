@@ -22,3 +22,18 @@
 	font-size: calc(10px + 2vmin);
 	color: #000;
 }
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.hoverable:hover {
+	cursor: pointer;
+	background-color: #CDEAD6;
+	color: #34A853;
+}
+
+.spaced {
+    justify-content: space-between;
+}
