@@ -2,11 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { greenHex, whiteHex } from '../colors';
 
+import logo from '../resources/Logo.png';
+
 const HeaderObject = styled.div`
     background: ${greenHex};
     color: ${whiteHex};
     padding: 10px;
     display: flex;
+    justify-content: space-between;
+`;
+
+const Logo = styled.img`
+    height: 60px;
+    margin-left: 10px;
 `;
 
 const Menu = styled.div`
@@ -40,12 +48,11 @@ const menuItems = [
 const Header = () => {
     return (
         <HeaderObject>
+            <Logo src={logo} />
             <Menu>
-                {
-                    menuItems.map(menuItem => {
-                        return <MenuItem>{menuItem.text}</MenuItem>
-                    })
-                }
+                {menuItems.map(menuItem => {
+                    return <MenuItem>{menuItem.text}</MenuItem>
+                })}
                 <CallToAction>Join Us</CallToAction>
             </Menu>
         </HeaderObject>
