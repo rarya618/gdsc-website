@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { redHex, redBackground, whiteHex, blueHex, greenHex, yellowHex } from '../colors';
+import { redHex, redBackground, whiteHex, blueHex, greenHex, yellowHex } from '../../colors';
 
 import placeholder from '../resources/placeholder-400.png';
 import { Title } from './Home';

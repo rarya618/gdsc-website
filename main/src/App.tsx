@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+
 import logo from './resources/header-logo.png';
 import './App.css';
-import Landing from './landing/Landing';
-import { blueHex, whiteHex } from './colors';
+
+import Landing from './pages/landing/Landing';
+import StudyGroups from './pages/StudyGroups/Main';
 import Footer from './Footer';
+
+import { blueHex, whiteHex } from './colors';
+import { Link, Route, Routes } from 'react-router-dom';
 
 // set page title
 export function useTitle(title: string) {
@@ -39,13 +44,14 @@ const Menu = styled.div`
 	padding: 5px 10px;
 `;
 
-const MenuItem = styled.a`
-	padding: 10px 14px; 
-	margin: 5px; 
-	border-radius: 3px;
-  	color: ${blueHex};
-  	font-size: 16px;
-`;
+export const menuLinkStyle = {
+	padding: "10px 14px",
+	margin: "5px",
+	borderRadius: "3px",
+  	color: blueHex,
+	textDecoration: "none",
+  	fontSize: "16px"
+};
 
 export const CallToAction = styled.a`
   	background: ${blueHex};
@@ -63,8 +69,8 @@ const Logo = styled.img`
 `;
 
 const menuItems = [
-    {text: "Study Groups"},
-    {text: "Events"}
+    {text: "Study Groups", link: "/study-groups"},
+    // {text: "Events"}
 ]
 
 const subMenuItems = [
@@ -78,15 +84,23 @@ function App() {
 	return (
 		<div className="App">
 			<Header>
-				<Logo src={logo} />
+				<Link to="/"><Logo src={logo} /></Link>
 				<Menu>
 					{menuItems.map(menuItem => {
-						return <MenuItem className="hoverable">{menuItem.text}</MenuItem>
+						return <Link 
+							className="hoverable" 
+							to={menuItem.link ? menuItem.link : ""}
+							style={menuLinkStyle}>
+								{menuItem.text}
+							</Link>
 					})}
 					<CallToAction className="btn-hoverable" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join us</CallToAction>
 				</Menu>
 			</Header>
-			<Landing />
+			<Routes>
+		      <Route path="/" element={<Landing />} />
+		      <Route path="/study-groups" element={<StudyGroups />} />
+			</Routes>
 			<Footer />
 		</div>
 	);
