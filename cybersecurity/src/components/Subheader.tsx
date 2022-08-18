@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { greenHex, greenLightHex } from '../colors';
+import { mainHex, greenLightHex } from '../colors';
 import SafeArea from './SafeArea';
 
 const HeaderObject = styled.div`
     background: ${greenLightHex};
-    color: ${greenHex};
+    color: ${mainHex};
     padding: 12px 10px;
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@ const Subheader = () => {
         <HeaderObject>
             <SafeArea className="row spaced">
                 <Heading>Cybersecurity</Heading>
-                <MenuItem className="hoverable">Capture the Flag</MenuItem>
+                <MenuItem className="deep-hoverable">Capture the Flag</MenuItem>
             </SafeArea>
         </HeaderObject>
     )

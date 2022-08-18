@@ -1,4 +1,4 @@
-export const blueHex = 'rgba(66, 133, 244, 1)';
+export const blueHex = '#498AF1';
 export const redHex = 'rgba(234, 67, 53, 1)';
 export const greenHex = 'rgba(52, 168, 83, 1)';
 export const yellowHex = 'rgba(251, 188, 4, 1)';

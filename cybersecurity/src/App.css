@@ -30,6 +30,12 @@
 
 .hoverable:hover {
 	cursor: pointer;
+	background-color: #EBF6EE;
+	color: #34A853;
+}
+
+.deep-hoverable:hover {
+	cursor: pointer;
 	background-color: #CDEAD6;
 	color: #34A853;
 }

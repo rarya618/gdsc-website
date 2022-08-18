@@ -6,7 +6,7 @@ function Landing() {
 	return (
 		<>
 			<Home />
-			<Offerings />
+			{/* <Offerings /> */}
 			<JoinClub />
 		</>
 	);

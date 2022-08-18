@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import { blueHex } from '../colors';
 
 import placeholder from '../resources/placeholder-500.png';
+import grid from '../resources/grid.png';
 
 const margin = "margin: 10px 20px;";
 
 const Page = styled.div`
     color: ${blueHex};
-    padding: 50px 20px;
+    padding: 0 20px;
+    height: calc(100vh - 80px);
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: center;
+    background: url(${grid});
+    background-size: cover;
 `;
 
 const Content = styled.div`

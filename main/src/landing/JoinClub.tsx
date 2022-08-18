@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CallToAction } from '../App';
 import { blueBackground, blueHex } from '../colors';
 
 import placeholder from '../resources/placeholder-300.png';
@@ -36,12 +37,19 @@ const Image = styled.img`
     width: 400px;
 `;
 
+const CtAContainer = styled.div`
+    padding: 30px 8px;
+`;
+
 function JoinClub() {
     return (
         <Page>
             <Content>
                 <Title>Join the club today!</Title>
                 <Text>Join in for our social events, competitions, and community programs today!</Text>
+                <CtAContainer>
+                    <CallToAction className="btn-hoverable" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join us</CallToAction>
+                </CtAContainer>
             </Content>
             <Content>
                 <Image src={placeholder} />

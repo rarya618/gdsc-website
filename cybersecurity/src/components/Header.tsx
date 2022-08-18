@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { greenHex, whiteHex } from '../colors';
+import { mainHex, whiteHex } from '../colors';
 
 import logo from '../resources/Logo.png';
 
 const HeaderObject = styled.div`
-    background: ${greenHex};
+    background: ${mainHex};
     color: ${whiteHex};
     padding: 10px;
     display: flex;
@@ -30,7 +30,7 @@ const MenuItem = styled.span`
 
 const CallToAction = styled.button`
     background: ${whiteHex};
-    color: ${greenHex};
+    color: ${mainHex};
     padding: 10px 14px;
     margin: 6px 12px;
     border-radius: 3px;
@@ -54,7 +54,7 @@ const Header = () => {
                 {menuItems.map(menuItem => {
                     return <MenuItem className="hoverable">{menuItem.text}</MenuItem>
                 })}
-                <CallToAction className="hoverable">Join Us</CallToAction>
+                <CallToAction className="hoverable">Join us</CallToAction>
             </Menu>
         </HeaderObject>
     )

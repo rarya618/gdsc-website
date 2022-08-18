@@ -19,38 +19,60 @@ export function useTitle(title: string) {
 	})
 }
 
-export const standardSpacing = 'padding: 12px 16px; margin: 5px 6px; border-radius: 5px;'
+export const standardSpacing = 'padding: 10px 14px; margin: 6px 12px; border-radius: 3px;'
 
 const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  justify-content: space-between;
-  font-size: calc(12px + 1vmin);
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	justify-content: space-between;
+	font-size: calc(12px + 1vmin);
+	align-items: center;
+	position: sticky;
+	top: 0;
+	background: white;
 `;
 
 const Menu = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 0 20px;
+	display: flex;
+	flex-direction: row;
+	padding: 5px 10px;
 `;
 
 const MenuItem = styled.a`
-  ${standardSpacing}
-  color: ${blueHex};
+	padding: 10px 14px; 
+	margin: 5px; 
+	border-radius: 3px;
+  	color: ${blueHex};
+  	font-size: 16px;
 `;
 
-const CallToAction = styled.a`
-  background: ${blueHex};
-  color: ${whiteHex};
-  ${standardSpacing}
+export const CallToAction = styled.a`
+  	background: ${blueHex};
+  	color: ${whiteHex};
+  	padding: 10px 14px; 
+	margin: 6px 12px; 
+	border-radius: 3px;
+  	font-size: 16px;
+	text-decoration: none;
 `;
 
 const Logo = styled.img`
   height: 60px;
-  padding: 5px 10px;
+  margin-left: 10px;
 `;
+
+const menuItems = [
+    {text: "Study Groups"},
+    {text: "Events"}
+]
+
+const subMenuItems = [
+    {text: "AI/ML"},
+    {text: "Cybersecurity"},
+    {text: "Game Jam"},
+    {text: "Design Month"},
+]
 
 function App() {
 	return (
@@ -58,10 +80,10 @@ function App() {
 			<Header>
 				<Logo src={logo} />
 				<Menu>
-					<MenuItem className="hoverable">Who are we?</MenuItem>
-					<MenuItem className="hoverable">Events</MenuItem>
-					<MenuItem className="hoverable">Competitions</MenuItem>
-					<CallToAction className="btn-hoverable">Join us</CallToAction>
+					{menuItems.map(menuItem => {
+						return <MenuItem className="hoverable">{menuItem.text}</MenuItem>
+					})}
+					<CallToAction className="btn-hoverable" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join us</CallToAction>
 				</Menu>
 			</Header>
 			<Landing />

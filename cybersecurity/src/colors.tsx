@@ -1,4 +1,4 @@
-export const greenHex = '#34A853';
+export const mainHex = '#34A853';
 export const greenMedHex = '#CDEAD6';
 export const greenLightHex = '#EBF6EE';
 
