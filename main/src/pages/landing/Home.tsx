@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { blueHex } from '../../colors';
 
-import placeholder from '../../resources/placeholder-500.png';
+import placeholder from '../../resources/header-graphic.svg';
 import grid from '../../resources/blueGrid.png';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
@@ -28,7 +28,7 @@ const Content = styled.div`
 `;
 
 export const Title = styled.h1`
-    font-size: calc(40px + 1vmin);
+    font-size: calc(35px + 1vmin);
     ${margin}
 `;
 
@@ -38,7 +38,7 @@ export const Text = styled.p`
 `;
 
 const Image = styled.img`
-    width: 360px;
+    width: 450px;
 `;
 
 function Home() {
