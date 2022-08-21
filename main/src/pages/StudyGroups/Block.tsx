@@ -52,6 +52,7 @@ const Info = styled.div`
     border-radius: 3px;
     padding: 14px 12px;
     margin: 12px 0;
+    display: flex;
 `;
 
 const InfoText = styled.p`
@@ -71,6 +72,7 @@ const Block = (props: Props) => {
         {props.block.address ? <Info>
             <InfoText>{props.block.address}</InfoText>
         </Info> : null}
+
         <RowContainer>
             <BlueButton href={props.block.link} style={menuLinkStyle}>RSVP</BlueButton>
             <Button href={props.block.link} style={menuLinkStyle}>Learn more</Button>

@@ -11,8 +11,8 @@ const margin = "margin: 8px 12px;";
 const Page = styled.div`
     color: ${blueHex};
     background: ${blueBackground};
-    padding: 20px;
-    text-align: left;
+    padding: 50px 20px;
+    text-align: centre;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,6 +22,7 @@ const Content = styled.div`
     padding: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -54,9 +55,9 @@ function JoinClub() {
                             <CallToAction className="btn-hoverable" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join us</CallToAction>
                         </CtAContainer>
                     </Content>
-                    <Content>
+                    {/* <Content>
                         <Image src={placeholder} />
-                    </Content>
+                    </Content> */}
                 </RowContainer>
             </SafeArea>
         </Page>

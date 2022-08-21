@@ -6,10 +6,12 @@ import background from './resources/footer.png';
 import logo from './resources/footer-logo.png';
 
 // social symbols
-import gdscLogo from './resources/GDSC-logo.png';
-import facebookLogo from './resources/Facebook-logo.png';
-import instagramLogo from './resources/Instagram-logo.png';
-import linkedInLogo from './resources/LinkedIn-logo.png';
+import gdscLogo from './resources/GDSC-logo.svg';
+import facebookLogo from './resources/Facebook-logo.svg';
+import instagramLogo from './resources/Instagram-logo.svg';
+import linkedInLogo from './resources/Linkedin-logo.svg';
+import emailLogo from './resources/Email-logo.svg';
+import discordLogo from './resources/Discord-logo.svg';
 
 const margin = "margin: 10px 20px;";
 
@@ -38,6 +40,13 @@ const Content = styled.div`
     flex-direction: column;
 `;
 
+const Line = styled.div`
+    margin: 15px;
+    width: 99%;
+    height: 0.05em;
+    background-color: ${whiteHex}; 
+`;
+
 export const Title = styled.h2`
     font-size: calc(28px + 1vmin);
     ${margin}
@@ -50,14 +59,14 @@ export const Text = styled.p`
 
 const Image = styled.img`
     margin: 25px;
-    height: 40px;
+    height: 35px;
 `;
 
 const Spacer = styled.div`
     height: 120px;
 `;
 
-const socialWidth = 48;
+const socialWidth = 40;
 
 const Social = styled.img`
     height: ${socialWidth}px;
@@ -66,10 +75,12 @@ const Social = styled.img`
 `;
 
 const socialList = [
+    {name: "Email", icon: emailLogo, link: "mailto:gdsc.usyd@gmail.com"},
     {name: "GDSC Page", icon: gdscLogo, link: "https://gdsc.community.dev/the-university-of-sydney/"},
     {name: "Facebook Page", icon: facebookLogo, link: "https://fb.me/gdsc.usyd"},
     {name: "Instagram Page", icon: instagramLogo, link: "https://www.instagram.com/gdscusyd"},
     {name: "LinkedIn Page", icon: linkedInLogo, link: "https://linkedin.com/company/gdsc-usyd"},
+    {name: "Discord Page", icon: discordLogo, link: "https://discord.gg/3xswfeUb"},
 ];
 
 const footerContent = [
@@ -127,6 +138,7 @@ function Footer() {
                     })}
                 </Container>
             </Container>
+            <Line></Line>
         </Page>
     );
 }
