@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { blueHex } from '../colors';
 
 import grid from '../resources/blueGrid.png';
+import { useTitle } from './BrowserTitle';
 import SafeArea from './SafeArea';
 
 type Props = {
-    content: JSX.Element
+    content: JSX.Element,
+    title: string
 }
 
 const Content = styled.div`
@@ -21,6 +23,8 @@ const Content = styled.div`
 `;
 
 const Terms = (props: Props) => {
+    useTitle(props.title);
+
     return <Content className="toc-display">
         <SafeArea>
             {props.content}

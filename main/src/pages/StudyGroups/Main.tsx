@@ -2,6 +2,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { blueBackground, blueHex } from '../../colors';
+import { useTitle } from '../../components/BrowserTitle';
 import SafeArea, { ColContainer } from '../../components/SafeArea';
 import { ClubEvent } from '../../dataTypes/ClubEvent';
 
@@ -28,6 +29,8 @@ const Content = styled.div`
 `;
 
 function Main() {
+    useTitle("Study Groups");
+
     const [blocks, setBlocks] = useState<ClubEvent[]>([]);
 
     async function getBlocks() {

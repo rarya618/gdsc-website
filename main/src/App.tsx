@@ -14,19 +14,6 @@ import Terms from './components/TermsView';
 import ToC from './resources/pages/ToC';
 import PrivacyPolicy from './resources/pages/PrivacyPolicy';
 
-// set page title
-export function useTitle(title: string) {
-	useEffect(() => {
-		const prevTitle = document.title;
-
-		document.title = title;
-		
-		return () => {
-			document.title = prevTitle
-		}
-	})
-}
-
 export const standardSpacing = 'padding: 10px 14px; margin: 6px 12px; border-radius: 3px;'
 
 const Header = styled.header`
@@ -103,8 +90,8 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Landing />} />
 				<Route path="/study-groups" element={<StudyGroups />} />
-				<Route path="/terms" element={<Terms content={ToC} />} />
-				<Route path="/privacy" element={<Terms content={PrivacyPolicy} />} />
+				<Route path="/terms" element={<Terms content={ToC} title={"Terms"} />} />
+				<Route path="/privacy" element={<Terms content={PrivacyPolicy} title={"Privacy Policy"}  />} />
 			</Routes>
 			<Footer />
 		</div>

@@ -156,7 +156,7 @@ function Footer() {
             </Container>
             <Divider />
             <FinalFooter>
-                <Link style={whiteLink} to="/terms">Terms</Link>&ensp;|&ensp;<Link style={whiteLink} to="/privacy">Privacy</Link>
+                <Link style={whiteLink} to="/terms" target="_blank" rel="noopener noreferrer">Terms</Link>&ensp;|&ensp;<Link style={whiteLink} to="/privacy" target="_blank" rel="noopener noreferrer">Privacy</Link>
             </FinalFooter>
         </Page>
     );
