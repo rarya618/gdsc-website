@@ -26,13 +26,34 @@ const Page = styled.div`
     display: flex;
     flex-direction: column;
     align-items: top;
+
+    @media only screen and (max-width: 768px) { 
+        align-items: center;
+    } 
 `;
 
 const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) { 
+        flex-direction: column;
+        align-items: center;
+    } 
 `;
+
+const ContainerSocial = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 768px) { 
+        justify-content: center;
+    } 
+
+`;
+
 
 const Content = styled.div`
     padding: 10px;
@@ -46,6 +67,11 @@ const Divider = styled.div`
     width: calc(100% - 30px);
     height: 0.05em;
     background-color: ${whiteHex}; 
+
+    @media only screen and (max-width: 768px) { 
+        width: calc(20% - 30px);
+    } 
+
 `;
 
 export const Title = styled.h2`
@@ -65,6 +91,11 @@ const socialVMargin = 10;
 const Image = styled.img`
     margin: ${socialVMargin + 2.5}px 16px ${socialVMargin + 4.5}px 16px;
     height: ${socialWidth - 5}px;
+
+    @media only screen and (max-width: 425px) { 
+        width: 90%;
+        height: ${socialWidth - 15}px;
+    }
 `;
 
 const Spacer = styled.div`
@@ -76,6 +107,20 @@ const Social = styled.img`
     height: ${socialWidth}px;
     width: ${socialWidth}px;
     margin: ${socialVMargin}px 12px ${socialVMargin + 2}px 12px;
+
+    @media only screen and (max-width: 768px) { 
+        margin: ${socialVMargin}px 10px ${socialVMargin + 2}px 10px;
+        width: 30px;
+    }
+
+    @media only screen and (max-width: 425px) { 
+        margin: ${socialVMargin}px 8px ${socialVMargin + 2}px 8px;
+        width: 25px;
+    }
+
+    @media only screen and (max-width: 375px) { 
+        margin: ${socialVMargin}px 5px ${socialVMargin + 2}px 5px;
+    }
 `;
 
 const socialList = [
@@ -120,6 +165,10 @@ const footerContent = [
 const FinalFooter = styled.div`
     color: ${whiteHex};
     padding: 12px 15px;
+
+    @media only screen and (max-width: 768px) { 
+        text-align: center;
+    }
 `;
 
 const whiteLink = {
@@ -145,14 +194,14 @@ function Footer() {
             {/* <Spacer /> */}
             <Container>
                 <Image src={logo} />
-                <Container>
+                <ContainerSocial>
                     {socialList.map(social => {
                         if (social.link) {
                             return <a href={social.link}><Social className="btn-hoverable" src={social.icon} title={social.name} alt={social.name} /></a>
                         }
                         return <Social className="btn-hoverable" src={social.icon} title={social.name} alt={social.name} />
                     })}
-                </Container>
+                </ContainerSocial>
             </Container>
             <Divider />
             <FinalFooter>

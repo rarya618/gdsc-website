@@ -25,47 +25,19 @@ const Title = styled.h2`
     text-align: left;
     margin: 10px 0 12px 0;
 
-    @media only screen and (max-width: 1024px) {
-        font-size: calc(25px + 1vmin);
-    }    
-
-    @media only screen and (max-width: 768px) {
-        text-align: center;  
-        font-size: calc(30px + 1vmin);
-    } 
-
     @media only screen and (max-width: 425px) { 
-        font-size: calc(22px + 1vmin);
-    } 
-
-    @media only screen and (max-width: 375px) { 
         font-size: calc(18px + 1vmin);
     } 
 
+    @media only screen and (max-width: 375px) { 
+        font-size: calc(15px + 1vmin);
+    } 
 `;
 
 const Text = styled.p`
     margin: 0;
     text-align: left;
     line-height: 30px;
-
-    @media only screen and (max-width: 1024px) {
-        font-size: calc(15px + 1vmin);
-        line-height: 1.5em;
-    }   
-
-    @media only screen and (max-width: 768px) {
-        text-align: center; 
-        font-size: calc(18px + 1vmin);  
-    } 
-
-    @media only screen and (max-width: 425px) {
-        font-size: calc(15px + 1vmin);  
-    } 
-
-    @media only screen and (max-width: 375px) {
-        font-size: calc(12px + 1vmin);  
-    } 
 `;
 
 const buttonStyle = `

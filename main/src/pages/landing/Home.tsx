@@ -90,11 +90,15 @@ const Image = styled.img`
     }  
     
     @media only screen and (max-width: 425px) {
-        width: 350px;  
+        width: 320px;  
     }
 
     @media only screen and (max-width: 375px) {
-        width: 300px;  
+        width: 280px;  
+    }
+
+    @media only screen and (max-width: 325px) {
+        width: 270px;  
     }
 `;
 

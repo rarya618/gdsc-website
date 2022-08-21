@@ -16,7 +16,24 @@ const Hero = styled.div`
     color: ${blueHex};
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+    @media only screen and (max-width: 1024px) {
+        font-size: calc(25px + 1vmin);
+    }    
+
+    @media only screen and (max-width: 768px) {
+        text-align: center;  
+        font-size: calc(30px + 1vmin);
+    } 
+
+    @media only screen and (max-width: 425px) { 
+        font-size: calc(22px + 1vmin);
+    } 
+
+    @media only screen and (max-width: 375px) { 
+        font-size: calc(18px + 1vmin);
+    } 
+`;
 
 const SubTitle = styled.h2`
     font-weight: 400;
@@ -25,11 +42,42 @@ const SubTitle = styled.h2`
     @media only screen and (max-width: 768px) {
         text-align: center;  
     } 
+
+    @media only screen and (max-width: 1024px) {
+        font-size: calc(15px + 1vmin);
+        line-height: 1.5em;
+    }   
+
+    @media only screen and (max-width: 768px) {
+        text-align: center; 
+        font-size: calc(18px + 1vmin);  
+    } 
+
+    @media only screen and (max-width: 425px) {
+        font-size: calc(15px + 1vmin);  
+    } 
+
+    @media only screen and (max-width: 375px) {
+        font-size: calc(12px + 1vmin);  
+    } 
 `;
 
 const Content = styled.div`
     color: ${blueHex};
     margin: 10px 0 50px 0;
+`;
+
+const EventArea = styled.div`
+    max-width: 1100px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 425px) {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 function Main() {
@@ -65,11 +113,11 @@ function Main() {
             </SafeArea>
         </Hero>
         <Content>
-            <SafeArea>
+            <EventArea>
                 {blocks.map((block) => {
                     return <Block block={block} />
                 })}
-            </SafeArea>
+            </EventArea>
         </Content>
         </>
     )
