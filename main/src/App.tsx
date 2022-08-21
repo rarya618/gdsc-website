@@ -10,19 +10,9 @@ import Footer from './Footer';
 
 import { blueHex, whiteHex } from './colors';
 import { Link, Route, Routes } from 'react-router-dom';
-
-// set page title
-export function useTitle(title: string) {
-	useEffect(() => {
-		const prevTitle = document.title;
-
-		document.title = title;
-		
-		return () => {
-			document.title = prevTitle
-		}
-	})
-}
+import Terms from './components/TermsView';
+import ToC from './resources/pages/ToC';
+import PrivacyPolicy from './resources/pages/PrivacyPolicy';
 
 export const standardSpacing = 'padding: 10px 14px; margin: 6px 12px; border-radius: 3px;'
 
@@ -102,8 +92,10 @@ function App() {
 				</Menu>
 			</Header>
 			<Routes>
-		      <Route path="/" element={<Landing />} />
-		      <Route path="/study-groups" element={<StudyGroups />} />
+				<Route path="/" element={<Landing />} />
+				<Route path="/study-groups" element={<StudyGroups />} />
+				<Route path="/terms" element={<Terms content={ToC} title={"Terms"} />} />
+				<Route path="/privacy" element={<Terms content={PrivacyPolicy} title={"Privacy Policy"}  />} />
 			</Routes>
 			<Footer />
 		</div>
