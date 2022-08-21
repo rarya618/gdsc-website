@@ -12,6 +12,7 @@ import instagramLogo from './resources/Instagram-logo.svg';
 import linkedInLogo from './resources/Linkedin-logo.svg';
 import emailLogo from './resources/Email-logo.svg';
 import discordLogo from './resources/Discord-logo.svg';
+import { Link } from 'react-router-dom';
 
 const margin = "margin: 10px 20px;";
 
@@ -20,7 +21,7 @@ const Page = styled.div`
     // background: url(${background});
     background: ${blueHex};
     background-size: cover;
-    padding: 50px 20px;
+    padding: 50px 30px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -40,9 +41,9 @@ const Content = styled.div`
     flex-direction: column;
 `;
 
-const Line = styled.div`
+const Divider = styled.div`
     margin: 15px;
-    width: 99%;
+    width: calc(100% - 30px);
     height: 0.05em;
     background-color: ${whiteHex}; 
 `;
@@ -57,21 +58,24 @@ export const Text = styled.p`
     font-size: calc(18px + 1vmin);
 `;
 
+const socialWidth = 40;
+
+const socialVMargin = 10;
+
 const Image = styled.img`
-    margin: 25px;
-    height: 35px;
+    margin: ${socialVMargin + 2.5}px 16px ${socialVMargin + 4.5}px 16px;
+    height: ${socialWidth - 5}px;
 `;
 
 const Spacer = styled.div`
     height: 120px;
 `;
 
-const socialWidth = 40;
 
 const Social = styled.img`
     height: ${socialWidth}px;
     width: ${socialWidth}px;
-    margin: 18px 16px;
+    margin: ${socialVMargin}px 12px ${socialVMargin + 2}px 12px;
 `;
 
 const socialList = [
@@ -82,6 +86,7 @@ const socialList = [
     {name: "LinkedIn Page", icon: linkedInLogo, link: "https://linkedin.com/company/gdsc-usyd"},
     {name: "Discord Page", icon: discordLogo, link: "https://discord.gg/3xswfeUb"},
 ];
+
 
 const footerContent = [
     {
@@ -111,6 +116,17 @@ const footerContent = [
     },
 ]
 
+// Last Footer
+const FinalFooter = styled.div`
+    color: ${whiteHex};
+    padding: 12px 15px;
+`;
+
+const whiteLink = {
+    color: whiteHex,
+    textDecoration: 'none'
+}
+
 function Footer() {
     return (
         <Page>
@@ -138,7 +154,10 @@ function Footer() {
                     })}
                 </Container>
             </Container>
-            <Line></Line>
+            <Divider />
+            <FinalFooter>
+                <Link style={whiteLink} to="/terms">Terms</Link>&ensp;|&ensp;<Link style={whiteLink} to="/privacy">Privacy</Link>
+            </FinalFooter>
         </Page>
     );
 }

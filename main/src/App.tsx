@@ -10,6 +10,9 @@ import Footer from './Footer';
 
 import { blueHex, whiteHex } from './colors';
 import { Link, Route, Routes } from 'react-router-dom';
+import Terms from './components/TermsView';
+import ToC from './resources/pages/ToC';
+import PrivacyPolicy from './resources/pages/PrivacyPolicy';
 
 // set page title
 export function useTitle(title: string) {
@@ -98,8 +101,10 @@ function App() {
 				</Menu>
 			</Header>
 			<Routes>
-		      <Route path="/" element={<Landing />} />
-		      <Route path="/study-groups" element={<StudyGroups />} />
+				<Route path="/" element={<Landing />} />
+				<Route path="/study-groups" element={<StudyGroups />} />
+				<Route path="/terms" element={<Terms content={ToC} />} />
+				<Route path="/privacy" element={<Terms content={PrivacyPolicy} />} />
 			</Routes>
 			<Footer />
 		</div>

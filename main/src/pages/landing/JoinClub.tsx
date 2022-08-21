@@ -4,8 +4,6 @@ import { CallToAction } from '../../App';
 import { blueBackground, blueHex } from '../../colors';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
-import placeholder from '../../resources/placeholder-300.png';
-
 const margin = "margin: 8px 12px;";
 
 const Page = styled.div`
@@ -50,7 +48,7 @@ function JoinClub() {
                 <RowContainer>
                     <Content>
                         <Title>Join the club today!</Title>
-                        <Text>Join in for our social events, competitions, and community programs today!</Text>
+                        <Text>For access to our current and upcoming events, and programs!</Text>
                         <CtAContainer>
                             <CallToAction className="btn-hoverable" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join us</CallToAction>
                         </CtAContainer>
