@@ -2,12 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { menuLinkStyle } from '../../App';
 import { blueHex, whiteHex } from '../../colors';
-import { RowContainer } from '../../components/SafeArea';
+// import { RowContainer } from '../../components/SafeArea';
 import { ClubEvent } from '../../dataTypes/ClubEvent';
 
 type Props = {
     block: ClubEvent
 }
+
+const RowContainerButton = styled.div`
+    display: flex;
+    flex-direction: row;`
 
 const BlockObject = styled.div`
     background: white;
@@ -20,6 +24,7 @@ const BlockObject = styled.div`
 const Title = styled.h2`
     text-align: left;
     margin: 10px 0 12px 0;
+
 `;
 
 const Text = styled.p`
@@ -73,10 +78,10 @@ const Block = (props: Props) => {
             <InfoText>{props.block.address}</InfoText>
         </Info> : null}
 
-        <RowContainer>
+        <RowContainerButton>
             <BlueButton href={props.block.link} style={menuLinkStyle}>RSVP</BlueButton>
             <Button href={props.block.link} style={menuLinkStyle}>Learn more</Button>
-        </RowContainer>
+        </RowContainerButton>
         
     </BlockObject>)
 }

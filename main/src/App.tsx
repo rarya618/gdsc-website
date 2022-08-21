@@ -61,6 +61,10 @@ export const CallToAction = styled.a`
 	border-radius: 3px;
   	font-size: 16px;
 	text-decoration: none;
+
+	@media only screen and (max-width: 425px) { 
+        font-size: 14px;
+    } 
 `;
 
 const Logo = styled.img`

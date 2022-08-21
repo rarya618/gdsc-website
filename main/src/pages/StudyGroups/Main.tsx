@@ -20,6 +20,10 @@ const Title = styled.h1``;
 const SubTitle = styled.h2`
     font-weight: 400;
     text-align: left;
+
+    @media only screen and (max-width: 768px) {
+        text-align: center;  
+    } 
 `;
 
 const Content = styled.div`
