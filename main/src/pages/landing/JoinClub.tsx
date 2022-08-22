@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CallToAction } from '../../App';
+import { CallToAction } from '../../components/menu/Menu';
 import { blueBackground, blueHex } from '../../colors';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 // in-app assets
-import { menuLinkStyle } from '../../App';
+import { menuLinkStyle } from '../../components/menu/Menu';
 import { blueHex, whiteHex } from '../../colors';
 import { ClubEvent } from '../../dataTypes/ClubEvent';
 
