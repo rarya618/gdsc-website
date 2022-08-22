@@ -91,6 +91,15 @@ const socialVMargin = 10;
 const Image = styled.img`
     margin: ${socialVMargin + 2.5}px 16px ${socialVMargin + 4.5}px 16px;
     height: ${socialWidth - 5}px;
+    
+    @media only screen and (max-width: 925px) {
+        margin: ${socialVMargin + 4}px 16px ${socialVMargin + 6}px 16px;
+        height: ${socialWidth - 8}px;
+    }
+
+    @media only screen and (max-width: 825px) { 
+        height: ${socialWidth - 10}px;
+    }
 
     @media only screen and (max-width: 425px) { 
         width: 90%;
@@ -108,14 +117,18 @@ const Social = styled.img`
     width: ${socialWidth}px;
     margin: ${socialVMargin}px 12px ${socialVMargin + 2}px 12px;
 
-    @media only screen and (max-width: 768px) { 
+    @media only screen and (max-width: 825px) { 
         margin: ${socialVMargin}px 10px ${socialVMargin + 2}px 10px;
-        width: 30px;
+        width: ${socialWidth - 5}px;
+    }
+
+    @media only screen and (max-width: 768px) { 
+        width: ${socialWidth - 10}px;
     }
 
     @media only screen and (max-width: 425px) { 
         margin: ${socialVMargin}px 8px ${socialVMargin + 2}px 8px;
-        width: 25px;
+        width: ${socialWidth - 15}px;
     }
 
     @media only screen and (max-width: 375px) { 

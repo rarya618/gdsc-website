@@ -84,21 +84,18 @@ export const Text = styled.p`
 
 const Image = styled.img`
     width: 450px;
+    margin: 0;
 
     @media only screen and (max-width: 1024px) {
         width: 400px;  
-    }  
+    }
+
+    @media only screen and (max-width: 525px) {
+        width: 360px;  
+    }
     
-    @media only screen and (max-width: 425px) {
-        width: 320px;  
-    }
-
-    @media only screen and (max-width: 375px) {
-        width: 280px;  
-    }
-
-    @media only screen and (max-width: 325px) {
-        width: 270px;  
+    @media only screen and (max-width: 435px) {
+        width: 100%;
     }
 `;
 

@@ -20,6 +20,15 @@ const Content = styled.div`
     background-repeat: repeat;
     background-size: contain;
     color: ${blueHex};
+
+    @media only screen and (max-width: 768px) {
+        padding: 0 10px 30px 10px;
+        font-size: 16px;  
+    } 
+
+    @media only screen and (max-width: 425px) {
+        padding: 0 5px 30px 5px;
+    } 
 `;
 
 const Terms = (props: Props) => {

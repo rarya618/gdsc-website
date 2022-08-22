@@ -49,25 +49,18 @@ const Hamburger = styled.div`
 	z-index: 10;
 
 	@media only screen and (max-width: 1920px) { 
-        display:  none;
+        display: none;
     } 
 
 	@media only screen and (max-width: 768px) { 
-        display:  flex;
+        display: flex;
 		margin-right: 10px;
     }
 
 	@media only screen and (max-width: 425px) { 
         height: 1.5rem;
-		width: 1.5rem
+		width: 1.5rem;
     } 
-
-	@media only screen and (max-width: 325px) { 
-        height: 1.5rem;
-		width: 1.5rem
-    } 
-
-	
 `;
 
 const Burger = styled.div`
@@ -79,10 +72,7 @@ const Burger = styled.div`
 	transition: all 0.3s linear;
 
 	@media only screen and (max-width: 425px) { 
-        height: 0.2rem;
-    } 
-
-	@media only screen and (max-width: 375px) { 
+		width: 1.5rem;
         height: 0.2rem;
     }
 
@@ -117,24 +107,30 @@ export const CallToAction = styled.a`
 `;
 
 const Logo = styled.img`
-  height: 60px;
-  margin-left: 10px;
+	height: 60px;
+	margin-left: 10px;
 
-  @media only screen and (max-width: 425px) { 
-	height: 45px;
-	margin-left: 5px;
-} 
+	@media only screen and (max-width: 525px) { 
+		height: 50px;
+	} 
 
-@media only screen and (max-width: 375px) { 
-	height: 40px;
-	margin-left: 5px;
-} 
+	@media only screen and (max-width: 425px) { 
+		height: 45px;
+		margin-left: 5px;
+	} 
 
-@media only screen and (max-width: 325px) { 
-	height: 35px;
-	margin-left: 5px;
-} 
+	@media only screen and (max-width: 375px) { 
+		height: 40px;
+	} 
 
+	@media only screen and (max-width: 325px) { 
+		height: 35px;
+	}
+
+	@media only screen and (max-width: 265px) { 
+		height: 25px;
+		margin-left: 2.5px;
+	}
 `;
 
 const menuItems = [
