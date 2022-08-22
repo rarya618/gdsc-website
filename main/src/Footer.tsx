@@ -29,6 +29,11 @@ const Page = styled.div`
 
     @media only screen and (max-width: 768px) { 
         align-items: center;
+        padding: 40px 20px;
+    } 
+
+    @media only screen and (max-width: 525px) { 
+        padding: 30px 20px;
     } 
 `;
 

@@ -33,6 +33,14 @@ const Content = styled.div`
     padding: 10px;
     display: flex;
     flex-direction: column;
+
+    @media only screen and (max-width: 768px) {
+        padding: 5px;
+    } 
+
+    @media only screen and (max-width: 525px) {
+        padding: 1px;
+    } 
 `;
 
 export const Title = styled.h1`
@@ -40,7 +48,7 @@ export const Title = styled.h1`
     ${margin}
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(25px + 1vmin);
+        font-size: calc(32px + 1vmin);
     }    
 
     @media only screen and (max-width: 768px) {
@@ -48,14 +56,9 @@ export const Title = styled.h1`
         font-size: calc(30px + 1vmin);
     } 
 
-    @media only screen and (max-width: 425px) { 
-        font-size: calc(22px + 1vmin);
-    } 
-
-    @media only screen and (max-width: 375px) { 
-        font-size: calc(18px + 1vmin);
-    } 
- 
+    @media only screen and (max-width: 268px) {
+        font-size: calc(26px + 1vmin);
+    }
 `;
 
 export const Text = styled.p`
@@ -69,16 +72,11 @@ export const Text = styled.p`
 
     @media only screen and (max-width: 768px) {
         text-align: center; 
-        font-size: calc(18px + 1vmin);  
-    } 
+    }
 
-    @media only screen and (max-width: 425px) {
-        font-size: calc(15px + 1vmin);  
-    } 
-
-    @media only screen and (max-width: 375px) {
-        font-size: calc(12px + 1vmin);  
-    } 
+    @media only screen and (max-width: 268px) {
+        font-size: calc(14px + 1vmin);
+    }
 `;
 
 

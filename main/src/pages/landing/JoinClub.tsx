@@ -14,6 +14,14 @@ const Page = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        padding: 40px 5px 30px 5px;
+    } 
+
+    @media only screen and (max-width: 525px) {
+        padding: 30px 2.5px 25px 2.5px;
+    } 
 `;
 
 const Content = styled.div`
@@ -21,6 +29,11 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        padding: 5px;
+    } 
+
 `;
 
 export const Title = styled.h1`
@@ -38,10 +51,6 @@ export const Title = styled.h1`
 
     @media only screen and (max-width: 425px) { 
         font-size: calc(22px + 1vmin);
-    } 
-
-    @media only screen and (max-width: 375px) { 
-        font-size: calc(18px + 1vmin);
     } 
 `;
 
@@ -61,10 +70,6 @@ export const Text = styled.p`
     @media only screen and (max-width: 425px) {
         font-size: calc(14px + 1vmin);  
     } 
-
-    @media only screen and (max-width: 375px) {
-        font-size: calc(12px + 1vmin);  
-    } 
 `;
 
 const Image = styled.img`
@@ -82,7 +87,7 @@ function JoinClub() {
                 <RowContainer>
                     <Content>
                         <Title>Join the club today!</Title>
-                        <Text>For access to our current and upcoming events, and programs!</Text>
+                        <Text>For exclusive access to our amazing events and programs</Text>
                         <CtAContainer>
                             <CallToAction className="btn-hoverable" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join us</CallToAction>
                         </CtAContainer>
