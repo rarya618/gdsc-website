@@ -56,10 +56,6 @@ const SubTitle = styled.h2`
     @media only screen and (max-width: 425px) {
         font-size: calc(15px + 1vmin);  
     } 
-
-    @media only screen and (max-width: 375px) {
-        font-size: calc(12px + 1vmin);  
-    } 
 `;
 
 const Content = styled.div`
@@ -72,7 +68,7 @@ const EventArea = styled.div`
     padding: 0 20px;
     margin: 0 auto;
 
-    @media only screen and (max-width: 425px) {
+    @media only screen and (max-width: 725px) {
         padding: 0;
         display: flex;
         flex-direction: column;

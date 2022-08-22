@@ -18,7 +18,12 @@ const BlockObject = styled.div`
     border-radius: 5px;
     padding: 20px;
     max-width: 300px;
+    margin: 0 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+    @media only screen and (max-width: 425px) { 
+        max-width: 280px;
+    } 
 `;
 
 const Title = styled.h2`
@@ -30,7 +35,7 @@ const Title = styled.h2`
     } 
 
     @media only screen and (max-width: 375px) { 
-        font-size: calc(15px + 1vmin);
+        font-size: calc(16px + 1vmin);
     } 
 `;
 
