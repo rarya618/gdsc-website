@@ -1,10 +1,10 @@
-// Import the functions you need from the SDKs you need
+// Import functions from SDKs
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
 
 import { getAnalytics } from "firebase/analytics";
 
-// Your web app's Firebase configuration
+// Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCdgEs7mefO_Woe3UJA7lgdlrtiqjpmfCI",

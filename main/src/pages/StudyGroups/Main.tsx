@@ -38,9 +38,11 @@ const Title = styled.h1`
 const SubTitle = styled.h2`
     font-weight: 400;
     text-align: left;
+    margin-left: 15px;
 
     @media only screen and (max-width: 768px) {
-        text-align: center;  
+        text-align: center;
+        margin-left: 0;
     } 
 
     @media only screen and (max-width: 1024px) {
