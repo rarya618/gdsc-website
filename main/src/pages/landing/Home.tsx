@@ -10,15 +10,15 @@ const margin = "margin: 10px 20px;";
 
 const Page = styled.div`
     color: ${blueHex};
-    padding: 0 20px;
-    height: calc(100vh - 80px);
+    padding: 20px;
+    min-height: calc(100vh - 84px);
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: center;
     background: url(${grid});
     background-repeat: repeat;
-    background-size: contain;
+    background-size: cover;
 
     @media only screen and (max-width: 768px) {
         height: calc(100vh - 80px);

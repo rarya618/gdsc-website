@@ -29,10 +29,6 @@ const Title = styled.h1`
     @media only screen and (max-width: 425px) { 
         font-size: calc(22px + 1vmin);
     } 
-
-    @media only screen and (max-width: 375px) { 
-        font-size: calc(18px + 1vmin);
-    } 
 `;
 
 const SubTitle = styled.h2`
