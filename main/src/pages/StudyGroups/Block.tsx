@@ -26,8 +26,9 @@ const BlockObject = styled.div`
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     overflow: hidden;
 
-    @media only screen and (max-width: 425px) { 
-        max-width: 280px;
+    @media only screen and (max-width: 385px) { 
+        max-width: 100%;
+        margin: 0 20px;
     } 
 `;
 
