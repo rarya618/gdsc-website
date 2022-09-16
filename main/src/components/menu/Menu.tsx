@@ -12,18 +12,18 @@ export const menuLinkStyle = {
 	padding: "10px 14px",
 	margin: "5px",
 	borderRadius: "3px",
-  	color: blueHex,
+  color: blueHex,
 	textDecoration: "none",
-  	fontSize: "16px"
+  fontSize: "16px"
 };
 
 export const CallToAction = styled.a`
-  	background: ${blueHex};
-  	color: ${whiteHex};
-  	padding: 10px 14px; 
+  background: ${blueHex};
+  color: ${whiteHex};
+  padding: 10px 14px; 
 	margin: 6px 12px; 
 	border-radius: 3px;
-  	font-size: 16px;
+  font-size: 16px;
 	text-decoration: none;
 
 	@media only screen and (max-width: 425px) { 
@@ -39,7 +39,7 @@ const menuItems = [
 const Menu: React.FC<Props> = ({ open }) => {
   return (
     <StyledMenu open={open}>
-     {menuItems.map(menuItem => {
+     {menuItems.map(menuItem => { 
         return <Link 
             className="hoverable" 
             to={menuItem.link ? menuItem.link : ""}

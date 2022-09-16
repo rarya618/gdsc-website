@@ -30,7 +30,7 @@
 
 .hoverable:hover {
 	cursor: pointer;
-	background-color: #EBF6EE;
+	background-color: #CDEAD6;
 	color: #34A853;
 }
 
@@ -42,4 +42,12 @@
 
 .spaced {
     justify-content: space-between;
+}
+
+.vertical-timeline-element-date{
+	display: none !important;
+}
+
+.vertical-timeline-element--work{
+	margin-bottom: 50px !important;
 }

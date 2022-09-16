@@ -1,0 +1,163 @@
+import React from 'react';
+import styled from 'styled-components';
+import { mainHex } from '../../colors';
+
+import placeholder from '../../resources/placeholder.png';
+import SafeArea, { RowContainer } from '../../components/SafeArea';
+
+const margin = "margin: 10px 20px;";
+
+
+const Page = styled.div`
+    color: ${mainHex};
+    padding: 70px 0;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        height: calc(100vh - 80px);
+    } 
+
+    @media only screen and (max-width: 425px) {
+        padding: 5px;
+    } 
+`;
+
+const Container = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const Content = styled.div`
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 25px 0;
+
+    @media only screen and (max-width: 768px) {
+        padding: 5px;
+    } 
+
+    @media only screen and (max-width: 525px) {
+        padding: 1px;
+    } 
+`;
+
+
+const ButtonGroup = styled.div`
+    display: flex;
+`;
+
+const ButtonMain = styled.div`
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: ${mainHex};
+    color: #ffffff;
+    border: 1px solid ${mainHex};
+    margin: 10px 5px 10px 20px;
+    border-radius: 3px;
+`;
+
+const ButtonAlt = styled.div`
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: ${mainHex};
+    border: 1px solid ${mainHex};
+    margin: 10px 5px 10px 20px;
+    border-radius: 3px;
+`;
+
+export const Title = styled.h1`
+    font-size: calc(35px + 1vmin);
+    color: ${mainHex};
+    ${margin}
+
+    @media only screen and (max-width: 1024px) {
+        font-size: calc(32px + 1vmin);
+    }    
+
+    @media only screen and (max-width: 768px) {
+        text-align: center;  
+        font-size: calc(30px + 1vmin);
+    } 
+
+    @media only screen and (max-width: 268px) {
+        font-size: calc(26px + 1vmin);
+    }
+`;
+
+export const Text = styled.p`
+    ${margin}
+    color: #3a3a3a;
+    font-size: calc(12px + 1vmin);
+    line-height: 1.5em;
+
+    @media only screen and (max-width: 1024px) {
+        font-size: calc(15px + 1vmin);
+        line-height: 1.5em;
+    }   
+
+    @media only screen and (max-width: 768px) {
+        text-align: center; 
+    }
+
+    @media only screen and (max-width: 268px) {
+        font-size: calc(14px + 1vmin);
+    }
+`;
+
+
+const Image = styled.img`
+    margin: 0 30px;
+
+    @media only screen and (max-width: 1024px) {
+        width: 400px;  
+    }
+
+    @media only screen and (max-width: 525px) {
+        width: 360px;  
+    }
+    
+    @media only screen and (max-width: 435px) {
+        width: 100%;
+    }
+`;
+
+function Home() {
+    return (
+        <Page id="about">
+            <SafeArea>
+                <Container>
+                    <Content>
+                        <Title>Introduction</Title>
+                        <Text>Welcome to The Google Student Developer Game Jam event. Learning programming at university at times can be quite bleak. Most assignments aren’t creative and definitely aren’t something you can show off as a project of your own. You have the basics of python and OOP down, but where do you start in learning how to make an actual application? </Text>
+                    </Content>
+                    <Content>
+                        <Image src={placeholder} />
+                    </Content>
+                </Container>
+                <Container>
+                    <Content>
+                        <Image src={placeholder} />
+                    </Content>
+                    <Content>
+                        <Text>Over the course of the mid sem break, we will be taking you through how to build a game from scratch using python. We’ll have three workshops, AT GOOGLE HEADQUATERS, to teach you the basics that will recap or help you learn python, teach you game design, and help you understand how we will be programming a game using pygame.</Text>
+                        <ButtonGroup>
+                            <ButtonMain>Register now</ButtonMain>
+                            <ButtonAlt>Timeline</ButtonAlt>
+                        </ButtonGroup>
+                    </Content>
+                </Container>
+            </SafeArea>
+        </Page>
+    );
+}
+
+export default Home;

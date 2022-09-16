@@ -1,16 +1,25 @@
 import React from 'react';
 import './App.css';
+
 import Header from './components/Header';
 import Subheader from './components/Subheader';
+import Landing from './pages/landing/Landing';
+import Event from './pages/event/Event';
+import Footer from './Footer';
+
+import { Link, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Subheader />
-      <header className="App-header">
-        <p>Cybersecurity</p>
-      </header>
+      <Routes>
+				<Route path="/" element={<Landing />} />
+        <Route path="/event" element={<Event />} />
+			</Routes>
+      <Footer />
     </div>
   );
 }

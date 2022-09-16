@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mainHex, greenLightHex } from '../colors';
+import { mainHex, greenLightHex, whiteHex} from '../colors';
+import { Link, Route, Routes } from 'react-router-dom';
 import SafeArea from './SafeArea';
+
+interface Props {
+    open: boolean,
+  }
 
 const HeaderObject = styled.div`
     background: ${greenLightHex};
@@ -18,18 +23,57 @@ const Heading = styled.h3`
     margin: 0;    
 `;
 
+const CallToAction = styled.button`
+    background: ${mainHex};
+    color: ${whiteHex};
+    padding: 7px 9px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    margin: 0px 12px;
+`;
+
 const MenuItem = styled.span`
     padding: 7px 9px;
     border-radius: 25px;
     margin: 0;
 `;
 
+export const menuLinkStyle = {
+	padding: "10px 14px",
+	margin: "5px",
+	borderRadius: "3px",
+    color: mainHex,
+	textDecoration: "none",
+    fontSize: "16px"
+};
+
+export const mainLinkStyle = {
+    color: mainHex,
+	textDecoration: "none",
+};
+
+const menuItems = [
+    {text: "Capture the flag", link: "/event"},
+    {text: "Rules"},
+]
+
 const Subheader = () => {
     return (
         <HeaderObject>
             <SafeArea className="row spaced">
-                <Heading>Cybersecurity</Heading>
-                <MenuItem className="deep-hoverable">Capture the Flag</MenuItem>
+            <Link to="/" style={mainLinkStyle}><Heading>Cybersecurity</Heading></Link>
+                <MenuItem>
+                {menuItems.map(menuItem => { 
+                    return <Link 
+                        className="hoverable" 
+                        to={menuItem.link ? menuItem.link : ""}
+                        style={menuLinkStyle}>
+                            {menuItem.text}
+                        </Link>
+                })}
+                <CallToAction className="deep-hoverable">Login</CallToAction>
+                </MenuItem>
             </SafeArea>
         </HeaderObject>
     )
