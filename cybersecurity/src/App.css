@@ -30,8 +30,7 @@
 
 .hoverable:hover {
 	cursor: pointer;
-	background-color: #CDEAD6;
-	color: #34A853;
+	border: solid 1px;
 }
 
 .deep-hoverable:hover {

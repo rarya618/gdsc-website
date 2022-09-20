@@ -27,6 +27,7 @@ const MenuItem = styled.span`
     margin: 5px;
     border-radius: 3px;
     font-size: 16px;
+	border: solid 1px transparent;
 `;
 
 const CallToAction = styled.button`
@@ -37,6 +38,7 @@ const CallToAction = styled.button`
     border-radius: 3px;
     border: none;
     font-size: 16px;
+	border: solid 1px;
 `;
 
 // thinking of adding these items to a remote source, where they can automatically be updated for each sub-website

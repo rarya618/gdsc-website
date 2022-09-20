@@ -19,14 +19,14 @@ const HeaderObject = styled.div`
 `;
 
 const Heading = styled.h3`
-    padding: 5px;
+    padding: 6px 5px;
     margin: 0;    
 `;
 
 const CallToAction = styled.button`
     background: ${mainHex};
     color: ${whiteHex};
-    padding: 7px 9px;
+    padding: 7px 12px;
     border-radius: 25px;
     border: none;
     font-size: 16px;
@@ -34,15 +34,13 @@ const CallToAction = styled.button`
 `;
 
 const MenuItem = styled.span`
-    padding: 7px 9px;
-    border-radius: 25px;
-    margin: 0;
+    padding: 7px 12px;
+    border-radius: 5px;
+	border: solid 1px transparent;
+    margin: 0 10px;
 `;
 
 export const menuLinkStyle = {
-	padding: "10px 14px",
-	margin: "5px",
-	borderRadius: "3px",
     color: mainHex,
 	textDecoration: "none",
     fontSize: "16px"
@@ -54,7 +52,7 @@ export const mainLinkStyle = {
 };
 
 const menuItems = [
-    {text: "Capture the flag", link: "/event"},
+    {text: "Capture the Flag", link: "/event"},
     {text: "Rules"},
 ]
 
@@ -63,17 +61,20 @@ const Subheader = () => {
         <HeaderObject>
             <SafeArea className="row spaced">
             <Link to="/" style={mainLinkStyle}><Heading>Cybersecurity</Heading></Link>
-                <MenuItem>
+            <div>
                 {menuItems.map(menuItem => { 
-                    return <Link 
+                    return <MenuItem 
                         className="hoverable" 
+                        >
+                        <Link 
                         to={menuItem.link ? menuItem.link : ""}
                         style={menuLinkStyle}>
                             {menuItem.text}
                         </Link>
+                    </MenuItem>
                 })}
-                <CallToAction className="deep-hoverable">Login</CallToAction>
-                </MenuItem>
+                <CallToAction className="deep-hoverable">Log in</CallToAction>
+            </div>
             </SafeArea>
         </HeaderObject>
     )

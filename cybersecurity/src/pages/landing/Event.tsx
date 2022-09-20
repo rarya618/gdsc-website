@@ -53,8 +53,8 @@ const ButtonMain = styled.div`
     flex-direction: column;
     background-color: ${mainHex};
     color: #ffffff;
-    border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 20px;
+    border: 1px solid #ffffff;
+    margin: 10px -5px 10px 20px;
     border-radius: 3px;
 `;
 
@@ -64,8 +64,8 @@ const ButtonAlt = styled.div`
     flex-direction: column;
     background-color: #ffffff;
     color: ${mainHex};
-    border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 20px;
+    border: 1px solid #ffffff;
+    margin: 10px -5px 10px 20px;
     border-radius: 3px;
 `;
 
@@ -139,7 +139,7 @@ function Home() {
                         <Text>Capture The Flag is a cyber security exercise consisting of multiple puzzles/challenges. Each puzzle has a flag hidden somewhere and the challenge is to find the flag.</Text>
                         <ButtonGroup>
                             <ButtonAlt>Register now</ButtonAlt>
-                            <ButtonAlt>Learn more</ButtonAlt>
+                            <ButtonMain>Learn more</ButtonMain>
                         </ButtonGroup>
                     </Content>
                 </RowContainer>
