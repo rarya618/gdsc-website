@@ -5,12 +5,11 @@ import { mainHex } from '../../colors';
 import placeholder from '../../resources/ctf.png';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
-const margin = "margin: 10px 20px;";
+const margin = "margin: 8px 10px;";
 
-const Page = styled.div`
+const Section = styled.div`
     color: #ffffff;
-    padding: 0 20px;
-    height: calc(100vh - 80px);
+    padding: 120px 20px;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -47,26 +46,25 @@ const ButtonGroup = styled.div`
     display: flex;
 `;
 
-const ButtonMain = styled.div`
+const buttonStyle = `
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
-    background-color: ${mainHex};
-    color: #ffffff;
     border: 1px solid #ffffff;
-    margin: 10px -5px 10px 20px;
+    margin: 10px 5px 10px 10px;
     border-radius: 3px;
 `;
 
+const ButtonMain = styled.div`
+    ${buttonStyle}
+    background-color: ${mainHex};
+    color: #ffffff;
+`;
+
 const ButtonAlt = styled.div`
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: column;
+    ${buttonStyle}
     background-color: #ffffff;
     color: ${mainHex};
-    border: 1px solid #ffffff;
-    margin: 10px -5px 10px 20px;
-    border-radius: 3px;
 `;
 
 export const Title = styled.h1`
@@ -90,8 +88,9 @@ export const Title = styled.h1`
 
 export const Text = styled.p`
     ${margin}
-    font-size: calc(12px + 1vmin);
-    line-height: 1.5em;
+    margin-bottom: 15px;
+    font-size: calc(10px + 1vmin);
+    line-height: 2em;
 
 
     @media only screen and (max-width: 1024px) {
@@ -126,9 +125,9 @@ const Image = styled.img`
     }
 `;
 
-function Home() {
+function EventContainer() {
     return (
-        <Page>
+        <Section>
             <SafeArea>
                 <RowContainer>
                     <Content>
@@ -144,8 +143,8 @@ function Home() {
                     </Content>
                 </RowContainer>
             </SafeArea>
-        </Page>
+        </Section>
     );
 }
 
-export default Home;
+export default EventContainer;

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import About from './About';
-import Event from './Event';
+import EventContainer from './Event';
 import Members from './Members';
 
 
@@ -10,7 +10,7 @@ function Landing() {
 	return (
 		<>
 			<About />
-			<Event />
+			<EventContainer />
 			<Members />
 		</>
 	);

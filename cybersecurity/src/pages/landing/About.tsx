@@ -8,10 +8,10 @@ import SafeArea, { RowContainer } from '../../components/SafeArea';
 
 const margin = "margin: 10px 20px;";
 
-const Page = styled.div`
+const Section = styled.div`
     color: ${mainHex};
     padding: 0 20px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 145px);
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -72,7 +72,7 @@ const ButtonAlt = styled.div`
 
 export const Title = styled.h1`
     font-size: calc(35px + 1vmin);
-    color: #000000;
+    color: ${mainHex};
     ${margin}
 
     @media only screen and (max-width: 1024px) {
@@ -127,9 +127,9 @@ const Image = styled.img`
     }
 `;
 
-function Home() {
+function About() {
     return (
-        <Page>
+        <Section>
             <SafeArea>
                 <RowContainer>
                     <Content>
@@ -145,8 +145,8 @@ function Home() {
                     </Content>
                 </RowContainer>
             </SafeArea>
-        </Page>
+        </Section>
     );
 }
 
-export default Home;
+export default About;

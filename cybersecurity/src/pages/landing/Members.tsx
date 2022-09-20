@@ -9,10 +9,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 const margin = "margin: 10px 20px;";
 
-const Page = styled.div`
+const Section = styled.div`
     color: ${mainHex};
-    padding: 0 20px;
-    height: calc(100vh - 80px);
+    padding: 80px 20px;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -151,7 +150,7 @@ const memberItems = [
 
 function Home() {
     return (
-        <Page>
+        <Section>
             <SafeArea>
                 <Content>
                         <Title>Cybersecurity Team</Title>
@@ -176,7 +175,7 @@ function Home() {
                 </Container>
                 
             </SafeArea>
-        </Page>
+        </Section>
     );
 }
 

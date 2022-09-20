@@ -11,14 +11,14 @@ interface Props {
   }
 
 const HeaderObject = styled.div`
-background: #ffffff;
-color: ${mainHex};
-padding: 12px 10px;
-display: flex;
-justify-content: space-between;
-position: sticky;
-top: 0;
-z-index: 10;
+    background: #ffffff;
+    color: ${mainHex};
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 58px;
+    z-index: 10;
 `;
 
 const MenuItem = styled.span`
