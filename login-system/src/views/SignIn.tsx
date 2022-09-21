@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer } from '../App';
 
 const fields = [
-	{id: 'email', label: 'Email*'},
-	{id: 'password', label: 'Password*', desc: "Password must be at least 8 characters"},
+	{id: 'email', type: 'email', label: 'Email*', placeholder: 'john.doe@example.com'},
+	{id: 'password', type: 'password', label: 'Password*', placeholder: 'Your password', desc: "Password must be at least 8 characters"},
 ]
 
 const SignIn = () => {
@@ -13,7 +13,7 @@ const SignIn = () => {
 			{fields.map(field => {
 				return (<Field>
 					<Label>{field.label}</Label>
-					<TextBox id={field.id} />
+					<TextBox id={field.id} type={field.type} placeholder={field.placeholder} />
 					{field.desc ? <Description>{field.desc}</Description> : null}
 				</Field>)
 			})}

@@ -30,25 +30,39 @@ const Body = styled.div`
   background-repeat: repeat;
   background-size: cover;
   width: 100%;
-  height: 100vh;
-  overflow: hidden !important;
+  height: calc(100vh - 200px);
+  padding: 100px 0;
+  position: fixed;
+  overflow-y: scroll;
 `;
 
 const Logo = styled.img`
   max-width: 400px;
   width: 75%;
-  position: absolute;
+  position: fixed;
   left: 20px;
   top: 10px;
+`;
+
+const Scrollable = styled.div`
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  position: absolute;
 `;
 
 // box structure
 export const Box = styled.div`
   max-width: 350px;
-  position: absolute;
+  width: 100%;
   left: 0;
   right: 0;
-  margin: 120px auto;
+  margin: auto;
 
   background: #FFFFFF;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
@@ -59,7 +73,7 @@ export const Box = styled.div`
 export const Field = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 22px;
+  margin: 18px 22px;
 `;
 
 export const Label = styled.span`
@@ -97,7 +111,7 @@ export const Submit = styled.button`
   color: #fff;
   border-radius: 5px;
   font-size: 16px;
-  padding: 10px 12px;
+  padding: 10px 14px;
 `;
 
 // link styles
@@ -114,10 +128,12 @@ function App() {
   return (
     <Body className="App">
       <Logo src={logo} />
-      <Routes>
-        <Route path="/" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
-			</Routes>
+      <Scrollable>
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+      </Scrollable>
     </Body>
   );
 }
