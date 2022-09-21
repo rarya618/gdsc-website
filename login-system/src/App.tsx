@@ -35,7 +35,8 @@ const Body = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 400px;
+  max-width: 400px;
+  width: 75%;
   position: absolute;
   left: 20px;
   top: 10px;
@@ -43,7 +44,7 @@ const Logo = styled.img`
 
 // box structure
 export const Box = styled.div`
-  width: 350px;
+  max-width: 350px;
   position: absolute;
   left: 0;
   right: 0;
