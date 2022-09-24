@@ -16,10 +16,11 @@ const HeaderObject = styled.div`
     justify-content: space-between;
     position: sticky;
     top: 0;
+    z-index: 10;
 `;
 
 const Heading = styled.h3`
-    padding: 12px;
+    padding: 6px 5px;
     margin: 0; 
 `;
 
@@ -27,7 +28,7 @@ const Heading = styled.h3`
 const CallToAction = styled.button`
     background: ${mainHex};
     color: ${whiteHex};
-    padding: 7px 9px;
+    padding: 7px 12px;
     border-radius: 25px;
     border: none;
     font-size: 16px;
@@ -35,16 +36,14 @@ const CallToAction = styled.button`
 `;
 
 const MenuItem = styled.span`
-    padding: 7px 9px;
-    border-radius: 25px;
-    margin: 0;
+    padding: 7px 12px;
+    border-radius: 5px;
+	border: solid 1px transparent;
+    margin: 0 10px;
 `;
 
 export const menuLinkStyle = {
-	padding: "10px 14px",
-	margin: "5px",
-	borderRadius: "3px",
-    color: mainHex,
+	color: mainHex,
 	textDecoration: "none",
     fontSize: "16px"
 };
@@ -66,17 +65,22 @@ const Subheader = () => {
         <HeaderObject>
             <SafeArea className="row spaced">
             <Link to="/" style={mainLinkStyle}><Heading>Game Jam</Heading></Link>
-                <MenuItem>
+                <div>
                 {menuItems.map(menuItem => { 
-                    return <Link 
+                    return <MenuItem 
+                    className="hoverable" 
+                    >
+                        <Link 
                         className="hoverable" 
                         to={menuItem.link ? menuItem.link : ""}
                         style={menuLinkStyle}>
                             {menuItem.text}
                         </Link>
+                    </MenuItem>
+
                 })}
                 <CallToAction className="deep-hoverable">Login</CallToAction>
-                </MenuItem>
+                </div>
             </SafeArea>
         </HeaderObject>
     )
