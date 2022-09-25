@@ -8,7 +8,6 @@ import eventPython from '../../resources/eventPython.png';
 import eventPygame from '../../resources/eventPygame.png';
 import icon from '../../resources/icon.svg';
 
-
 import grid from '../../resources/redGrid.png';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
@@ -161,9 +160,14 @@ const Icon = styled.img`
     margin: 10%;
 `;
 
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
 function Home() {
     return (
-        <Page>
+        <Page id="timeline">
             <SafeArea>
                 <Title>Game Jam Timeline</Title>
                 <VerticalTimeline layout="1-column-left" lineColor='#EA4335'>
@@ -178,10 +182,10 @@ function Home() {
                                 <ContentTitle>Python Workshop</ContentTitle>
                                 <ContentSubtitle className="vertical-timeline-element-subtitle">26th September 2022 @ Zoom </ContentSubtitle>
                                 <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                The first workshop will be focused on the fundamentals of python for game development, a refresher on what you may have learnt in INFO1110. This workshop will be held online Monday, 26th September at 2 - 3:30pm.
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain>RSVP now</ButtonMain>
+                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-game-development-workshops/">RSVP now</a></ButtonMain>
                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={eventPython} />
@@ -200,10 +204,10 @@ function Home() {
                                 <ContentTitle>PyGame Workshop</ContentTitle>
                                 <ContentSubtitle className="vertical-timeline-element-subtitle">28th September 5:30 PM - 7:00 PM @ Google HQ </ContentSubtitle>
                                 <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                This workshop will deeper into game development using pyGame, teaching the syntax and the structure. Then we'll focus on the principles of game design that have lead to succesful titles. We'll take a break at the end and have dinner 🍕 and drinks, with time to chat to other students. 
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain>RSVP now</ButtonMain>
+                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-game-development-workshops/">RSVP now</a></ButtonMain>
                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={eventPygame} />
@@ -221,10 +225,10 @@ function Home() {
                                 <ContentTitle>Game Design Workshop</ContentTitle>
                                 <ContentSubtitle className="vertical-timeline-element-subtitle">28th September 8:00 PM - 9:00 PM  @ Google HQ </ContentSubtitle>
                                 <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                This workshop will deeper into game development using pyGame, teaching the syntax and the structure. Then we'll focus on the principles of game design that have lead to succesful titles. We'll take a break at the end and have dinner 🍕 and drinks, with time to chat to other students. 
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain>RSVP now</ButtonMain>
+                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-game-development-workshops/">RSVP now</a></ButtonMain>
                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={eventDesign} />
@@ -243,10 +247,10 @@ function Home() {
                                 <ContentTitle>GAME JAM</ContentTitle>
                                 <ContentSubtitle className="vertical-timeline-element-subtitle">30th September 10 AM - 2 October 5 PM</ContentSubtitle>
                                 <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                A chance for students to display their coding and creative skills developing a game of their choice. The events runs for 55hrs and can be completed in teams of up to 4. The best games progress to the showcase event where they be put to the test by other students and final winners will be decided for the cash prizes.
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain>RSVP now</ButtonMain>
+                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-game-jam/">RSVP now</a></ButtonMain>
                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={eventMain} />

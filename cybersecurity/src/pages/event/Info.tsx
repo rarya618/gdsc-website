@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
-import placeholder from '../../resources/placeholder.png';
+import placeholder from '../../resources/cta-one.gif';
+import cta from '../../resources/cta-two.png';
+
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
 const margin = "margin: 10px 20px;";
@@ -148,7 +150,7 @@ function Home() {
                 </Container>
                 <Container>
                     <Content>
-                        <Image src={placeholder} />
+                        <Image src={cta} />
                     </Content>
                     <Content>
                         <Text>Each puzzle has a flag hidden somewhere and the challenge is to find the flag. The flag usually is a sequence of alphanumeric characters. Once you find a flag you get some points. The objective is the find as many flags as possible and collects points in the shortest time possible.</Text>

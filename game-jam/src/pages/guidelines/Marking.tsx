@@ -122,7 +122,7 @@ export const CategoryImage = styled.img`
 
 function Home() {
     return (
-        <Page>
+        <Page id="rubric">
             <SafeArea>
                 <Container>
                     <Content>

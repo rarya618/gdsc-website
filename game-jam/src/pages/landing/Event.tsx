@@ -5,12 +5,13 @@ import { mainHex } from '../../colors';
 import placeholder from '../../resources/gameJam.png';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
+import { Link, Route, Routes } from 'react-router-dom';
+
 const margin = "margin: 10px 20px;";
 
-const Page = styled.div`
+const Section = styled.div`
     color: #ffffff;
-    padding: 0 20px;
-    height: calc(100vh - 80px);
+    padding: 120px 20px;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -45,28 +46,33 @@ const Content = styled.div`
 
 const ButtonGroup = styled.div`
     display: flex;
+    margin:  0 10px;
 `;
 
-const ButtonMain = styled.div`
+const buttonStyle = `
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
+    border: 1px solid #ffffff;
+    margin: 10px 5px 10px 10px;
+    border-radius: 3px;
+`;
+
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#EA4335",
+};
+
+const ButtonMain = styled.div`
+    ${buttonStyle}
     background-color: ${mainHex};
     color: #ffffff;
-    border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 20px;
-    border-radius: 3px;
 `;
 
 const ButtonAlt = styled.div`
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: column;
+    ${buttonStyle}
     background-color: #ffffff;
     color: ${mainHex};
-    border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 20px;
-    border-radius: 3px;
 `;
 
 export const Title = styled.h1`
@@ -90,8 +96,9 @@ export const Title = styled.h1`
 
 export const Text = styled.p`
     ${margin}
-    font-size: calc(12px + 1vmin);
-    line-height: 1.5em;
+    margin-bottom: 15px;
+    font-size: calc(10px + 1vmin);
+    line-height: 2em;
 
 
     @media only screen and (max-width: 1024px) {
@@ -128,7 +135,7 @@ const Image = styled.img`
 
 function Home() {
     return (
-        <Page>
+        <Section>
             <SafeArea>
                 <RowContainer>
                     <Content>
@@ -136,15 +143,15 @@ function Home() {
                     </Content>
                     <Content>
                         <Title>Game Jam Week</Title>
-                        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus.</Text>
+                        <Text>GDSC's Game Jam is a chance for students to display their coding and creative skills developing a game of their choice. The events runs for 55hrs and can be completed in teams of up to 4. The best games progress to the showcase event where they be put to the test by other students and final winners will be decided for the cash prizes.</Text>
                         <ButtonGroup>
-                            <ButtonAlt>Learn more</ButtonAlt>
-                            <ButtonAlt>Register now</ButtonAlt>
+                            <ButtonAlt><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonAlt>
+                            <ButtonMain>Register now</ButtonMain>
                         </ButtonGroup>
                     </Content>
                 </RowContainer>
             </SafeArea>
-        </Page>
+        </Section>
     );
 }
 

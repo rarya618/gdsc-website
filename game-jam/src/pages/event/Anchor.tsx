@@ -6,6 +6,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 import arrow from '../../resources/arrow.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
+import { HashLink } from 'react-router-hash-link';
+import * as Scroll from 'react-scroll';
+
 interface Props {
     open: boolean,
   }
@@ -13,11 +16,11 @@ interface Props {
 const HeaderObject = styled.div`
 background: #ffffff;
 color: ${mainHex};
-padding: 12px 10px;
+padding: 6px;
 display: flex;
 justify-content: space-between;
 position: sticky;
-top: 0;
+top: 58px;
 z-index: 10;
 `;
 
@@ -45,15 +48,22 @@ const Image = styled.img`
 `;
 
 const menuItems = [
-    {text: "What is Game Jam?", link: "/event"},
-    {text: "Register for Game Jam", link: "/event"},
-    {text: "Timeline", link: "/event"},
-    {text: "Overview Videos", link: "/event"},
+    {text: "What is Game Jam?", link: "/event/#about"},
+    {text: "Register for Game Jam", link: "/event/#register"},
+    {text: "Timeline", link: "/event/#timeline"},
+    // {text: "Overview Videos", link: "/event"},
 ]
+
+const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -58; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
 
 const RowMenu = styled.div`
     display: flex;
 `;
+
 
 const Anchor = () => {
     return (
@@ -63,12 +73,13 @@ const Anchor = () => {
                 {menuItems.map(menuItem => { 
                     return (
                         <RowMenu>
-                            <Link 
+                            <HashLink 
+                                scroll={el => scrollWithOffset(el)} 
                                 to={menuItem.link ? menuItem.link : ""}
                                 style={menuLinkStyle}>
                                     {menuItem.text}
                                     <Image src={arrow} /> 
-                            </Link>
+                            </HashLink>
                         </RowMenu>)
                 })}
                 </MenuItem>

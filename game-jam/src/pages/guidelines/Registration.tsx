@@ -106,20 +106,20 @@ const ButtonMain = styled.div`
 
 function Home() {
     return (
-        <Page>
+        <Page id="register">
             <SafeArea>
                 <Container>
                     <Content>
                         <Title>Registration</Title>
                         <Text>You’ll be working in teams of 1 - 4 for the Game Jam. Each member of your group will have to signup using the individual registration portal on the GDSC USYD Community Website. Following the individual registration of all members, one member of the team will be tasked with registering the team (and its members) on this website. Please note that this user will be linked to the team registration. If you need to add or remove team members you can do so by following the team registration. However, please contact us should you wish to do so. </Text>
                         <ButtonGroup>
-                            <ButtonMain>
+                            <ButtonMain id="setup">
                                 Register now
                             </ButtonMain>
                         </ButtonGroup>
-                    </Content>
+                    </Content >
                     <Space/>
-                    <Content>
+                    <Content >
                         <Title>Setup</Title>
                         <Text>After registering for the event your team will be allocated a page on the website which you can customise and populate with information regarding the game your team will be presenting. Now that your team has completed registration you are all set for the Game Jam. The last thing would be to join our GDSC Discord Page and add yourself to the Game Jam Role. </Text>
                         <ButtonGroup>

@@ -6,12 +6,14 @@ import placeholder from '../../resources/header-graphic.svg';
 import grid from '../../resources/redGrid.png';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
+import { Link, Route, Routes } from 'react-router-dom';
+
 const margin = "margin: 10px 20px;";
 
 const Page = styled.div`
     color: ${mainHex};
     padding: 0 20px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 145px);
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -47,6 +49,11 @@ const Content = styled.div`
 const ButtonGroup = styled.div`
     display: flex;
 `;
+
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
 
 const ButtonMain = styled.div`
     padding: 10px 15px;
@@ -110,6 +117,8 @@ export const Text = styled.p`
 `;
 
 
+
+
 const Image = styled.img`
     // width: 450px;
     margin: 0;
@@ -133,11 +142,11 @@ function Home() {
             <SafeArea>
                 <RowContainer>
                     <Content>
-                        <Title>The main title of this section</Title>
-                        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus.</Text>
+                        <Title>GAME JAM @ Google Developers Student Club | USYD</Title>
+                        <Text>A game jam is an event where participants try to make a video game from scratch. Join us this year at Game Jam Week 2022.</Text>
                         <ButtonGroup>
-                            <ButtonMain>Button</ButtonMain>
-                            <ButtonAlt>Button</ButtonAlt>
+                            <ButtonMain><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonMain>
+                            <ButtonAlt>Register</ButtonAlt>
                         </ButtonGroup>
                     </Content>
                     <Content>

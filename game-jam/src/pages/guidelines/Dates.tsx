@@ -4,6 +4,8 @@ import { mainHex, redLightHex } from '../../colors';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 import grid from '../../resources/redGrid.png';
 
+import { Link, Route, Routes } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const margin = "margin: 10px 20px;";
 
@@ -108,9 +110,16 @@ const ButtonMain = styled.div`
 `;
 
 
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
+
+
 function Home() {
     return (
-        <Page>
+        <Page  id="dates">
             <SafeArea>
                 <Container>
                     <Content>
@@ -118,7 +127,7 @@ function Home() {
                         <Text>The Game Jam Event (competition) will run from Friday, 30th September 10 AM until 5 PM Sunday. You will have 55h to code. You may prepare for the event beforehand, brainstorming basic ideas and researching different options for games (PVP, platformers, paddle games, etc). However, you are not allowed to start coding until 10 AM Friday. The Game Jam competition will have a theme that will be given to you on Friday to mark the start of the Competition. </Text>
                         <ButtonGroup>
                             <ButtonMain>
-                                View Timeline
+                                <HashLink to="/event/#timeline" style={bttnLinkStyle}>Learn More</HashLink>
                             </ButtonMain>
                         </ButtonGroup>
                     </Content>

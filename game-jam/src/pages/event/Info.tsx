@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
 import placeholder from '../../resources/placeholder.png';
+import edge from '../../resources/game-one.gif';
+import pacman from '../../resources/game-two.gif';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
 const margin = "margin: 10px 20px;";
@@ -140,12 +142,12 @@ function Home() {
                         <Text>Welcome to The Google Student Developer Game Jam event. Learning programming at university at times can be quite bleak. Most assignments aren’t creative and definitely aren’t something you can show off as a project of your own. You have the basics of python and OOP down, but where do you start in learning how to make an actual application? </Text>
                     </Content>
                     <Content>
-                        <Image src={placeholder} />
+                        <Image src={edge} />
                     </Content>
                 </Container>
                 <Container>
                     <Content>
-                        <Image src={placeholder} />
+                        <Image src={pacman} />
                     </Content>
                     <Content>
                         <Text>Over the course of the mid sem break, we will be taking you through how to build a game from scratch using python. We’ll have three workshops, AT GOOGLE HEADQUATERS, to teach you the basics that will recap or help you learn python, teach you game design, and help you understand how we will be programming a game using pygame.</Text>

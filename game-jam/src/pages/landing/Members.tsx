@@ -3,16 +3,23 @@ import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
 import placeholder from '../../resources/profilePlaceholder.svg';
+
+import riley from '../../resources/riley.png';
+import udit from '../../resources/profilePlaceholder.svg';
+import ivan from '../../resources/ivan.png';
+import justin from '../../resources/justin.png';
+
+
+
 import email from '../../resources/gameJamEmail.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 import { Link, Route, Routes } from 'react-router-dom';
 
 const margin = "margin: 10px 20px;";
 
-const Page = styled.div`
+const Section = styled.div`
     color: ${mainHex};
-    padding: 0 20px;
-    height: calc(100vh - 80px);
+    padding: 80px 20px;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -50,8 +57,6 @@ const Content = styled.div`
         padding: 1px;
     } 
 `;
-
-
 
 export const Title = styled.h1`
     font-size: calc(35px + 1vmin);
@@ -138,45 +143,66 @@ const ImageEmail = styled.img`
     }
 `;
 
+
 const memberItems = [
-    {text: "Riley Jones", link: "mailto:shrawani.dev@gmail.com"},
-    {text: "Udit Samant", link: "mailto:shrawani.dev@gmail.com"},
-    {text: "Ivan Yeh", link: "mailto:shrawani.dev@gmail.com"},
-    {text: "Justin Kwon", link: "mailto:shrawani.dev@gmail.com"},
+    {text: "Riley Jones"},
+    {text: "Udit Samant"},
+    {text: "Ivan Yeh"},
+    {text: "Justin Kwon"},
 ]
-
-
-
-
 
 function Home() {
     return (
-        <Page>
+        <Section>
             <SafeArea>
                 <Content>
                         <Title>Game Jam Team</Title>
                 </Content>
                 <Container>
-                    {memberItems.map(menuItem => { 
+                    {/* {memberItems.map(menuItem => { 
                         return (
                             <Content>
                                 <Image src={placeholder}/>  
-                                <Link 
-                                    to={menuItem.link ? menuItem.link : ""}
-                                    style={imageLinkStyle}>
+                                <Link to={menuItem.link ? menuItem.link : ""} style={imageLinkStyle}>
                                     <ImageEmail src={email} />    
                                 </Link>
-                                <Link 
-                                    to={menuItem.link ? menuItem.link : ""}
-                                    style={menuLinkStyle}>
+                                <Link to={menuItem.link ? menuItem.link : ""} style={menuLinkStyle}>
                                         {menuItem.text}     
                                 </Link>
                             </Content>)
-                    })}
-                </Container>
-                
+                    })} */}
+
+                    <Content>
+                        <Image src={riley}/>
+                        <a style={imageLinkStyle} href="mailto:rjon6734@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Riley Jones</p>
+                    </Content>
+                    <Content>
+                        <Image src={udit}/>
+                        <a style={imageLinkStyle} href="mailto:usam6049@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Udit Samant</p>
+                    </Content>
+                    <Content>
+                        <Image src={ivan}/>
+                        <a style={imageLinkStyle} href="mailto:yyeh7345@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Ivan Yeh</p>
+                    </Content>
+                    <Content>
+                        <Image src={justin}/>
+                        <a style={imageLinkStyle} href="mailto:jkwo3287@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Justin Oliver Kwon</p>
+                    </Content>
+                </Container>    
             </SafeArea>
-        </Page>
+        </Section>
     );
 }
 

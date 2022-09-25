@@ -6,6 +6,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 import arrow from '../../resources/arrow.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
+import { HashLink } from 'react-router-hash-link';
+import * as Scroll from 'react-scroll';
+
 interface Props {
     open: boolean,
   }
@@ -13,11 +16,11 @@ interface Props {
 const HeaderObject = styled.div`
 background: #ffffff;
 color: ${mainHex};
-padding: 12px 10px;
+padding: 6px;
 display: flex;
 justify-content: space-between;
 position: sticky;
-top: 0;
+top: 58px;
 z-index: 10;
 `;
 
@@ -45,16 +48,22 @@ const Image = styled.img`
 `;
 
 const menuItems = [
-    {text: "Registration", link: "/event"},
-    {text: "Setup", link: "/event"},
-    {text: "Prizes", link: "/event"},
-    {text: "Marking Rubric", link: "/event"},
-    {text: "Dates & Duration", link: "/event"},
+    {text: "Registration", link: "/guidelines/#register"},
+    {text: "Setup", link: "/guidelines/#setup"},
+    {text: "Prizes", link: "/guidelines/#prizes"},
+    {text: "Marking Rubric", link: "/guidelines/#rubric"},
+    {text: "Dates & Duration", link: "/guidelines/#dates"},
 ]
 
 const RowMenu = styled.div`
     display: flex;
 `;
+
+const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -58; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
 
 const Anchor = () => {
     return (
@@ -64,12 +73,13 @@ const Anchor = () => {
                 {menuItems.map(menuItem => { 
                     return (
                         <RowMenu>
-                            <Link 
+                           <HashLink 
+                                scroll={el => scrollWithOffset(el)} 
                                 to={menuItem.link ? menuItem.link : ""}
                                 style={menuLinkStyle}>
                                     {menuItem.text}
                                     <Image src={arrow} /> 
-                            </Link>
+                            </HashLink>
                         </RowMenu>)
                 })}
                 </MenuItem>

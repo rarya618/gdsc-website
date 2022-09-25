@@ -70,8 +70,7 @@ const Subheader = () => {
                     return <MenuItem 
                     className="hoverable" 
                     >
-                        <Link 
-                        className="hoverable" 
+                        <Link  
                         to={menuItem.link ? menuItem.link : ""}
                         style={menuLinkStyle}>
                             {menuItem.text}

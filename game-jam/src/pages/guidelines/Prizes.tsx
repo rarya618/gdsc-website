@@ -149,7 +149,7 @@ export const CategoryText = styled.p`
 
 function Home() {
     return (
-        <Page id="about">
+        <Page id="prizes">
             <SafeArea>
                 <Content>
                     <Title>Prizes</Title>

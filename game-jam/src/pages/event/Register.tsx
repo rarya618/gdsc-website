@@ -101,25 +101,10 @@ export const Text = styled.p`
 `;
 
 
-const Image = styled.img`
-    margin: 0 30px;
-
-    @media only screen and (max-width: 1024px) {
-        width: 400px;  
-    }
-
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
-    }
-    
-    @media only screen and (max-width: 435px) {
-        width: 100%;
-    }
-`;
 
 function Home() {
     return (
-        <Page id="about">
+        <Page id="register">
             <SafeArea>
                 <Content>
                     <Title>Interested? Register Now!</Title>
