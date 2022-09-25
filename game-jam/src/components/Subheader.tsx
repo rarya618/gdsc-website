@@ -57,7 +57,7 @@ export const mainLinkStyle = {
 const menuItems = [
     {text: "Game Jam Week", link: "/event"},
     {text: "Guidelines", link: "/guidelines"},
-    {text: "Gallery"},
+    // {text: "Gallery"},
 ]
 
 const Subheader = () => {

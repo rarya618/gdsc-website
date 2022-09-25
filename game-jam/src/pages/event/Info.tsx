@@ -7,7 +7,11 @@ import edge from '../../resources/game-one.gif';
 import pacman from '../../resources/game-two.gif';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
+import { HashLink } from 'react-router-hash-link';
+
+
 const margin = "margin: 10px 20px;";
+
 
 
 const Page = styled.div`
@@ -132,6 +136,11 @@ const Image = styled.img`
     }
 `;
 
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#EA4335",
+};
+
 function Home() {
     return (
         <Page id="about">
@@ -153,7 +162,7 @@ function Home() {
                         <Text>Over the course of the mid sem break, we will be taking you through how to build a game from scratch using python. We’ll have three workshops, AT GOOGLE HEADQUATERS, to teach you the basics that will recap or help you learn python, teach you game design, and help you understand how we will be programming a game using pygame.</Text>
                         <ButtonGroup>
                             <ButtonMain>Register now</ButtonMain>
-                            <ButtonAlt>Timeline</ButtonAlt>
+                            <ButtonAlt><HashLink to="/event/#timeline" style={bttnLinkStyle}>Timeline</HashLink></ButtonAlt>
                         </ButtonGroup>
                     </Content>
                 </Container>
