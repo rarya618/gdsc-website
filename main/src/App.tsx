@@ -11,6 +11,8 @@ import Footer from './Footer';
 import { blueHex, whiteHex } from './colors';
 import { Link, Route, Routes } from 'react-router-dom';
 
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
 // set page title
 export function useTitle(title: string) {
 	useEffect(() => {
@@ -81,6 +83,27 @@ const subMenuItems = [
 ]
 
 function App() {
+	const auth = getAuth();
+
+    const signInWithGoogle = async () => {
+        signInWithPopup(auth, new GoogleAuthProvider())
+        .then(response => {
+            console.log(response.user.uid);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    const logOut = async () => {
+        getAuth().signOut()
+        .then(() => {
+            console.log("Logged out");
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
 	return (
 		<div className="App">
 			<Header>
@@ -95,6 +118,8 @@ function App() {
 							</Link>
 					})}
 					<CallToAction className="btn-hoverable" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join us</CallToAction>
+					<CallToAction className="btn-hoverable" onClick={() => signInWithGoogle()}>Sign In</CallToAction>
+					<CallToAction className="btn-hoverable" onClick={() => logOut()}>Sign Out</CallToAction>
 				</Menu>
 			</Header>
 			<Routes>
