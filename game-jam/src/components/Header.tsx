@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mainHex, whiteHex } from '../colors';
+// import { slide as Menu } from 'react-burger-menu'
 
 import { Link, Route, Routes } from 'react-router-dom';
 import logo from '../resources/Logo.png';
