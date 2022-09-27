@@ -17,6 +17,7 @@ const HeaderObject = styled.div`
     @media only screen and (max-width: 768px) {
         display: flex;
         position: sticky;
+        align-items: center;
         top: 0;
     }
 `;
@@ -24,6 +25,23 @@ const HeaderObject = styled.div`
 const Logo = styled.img`
     height: 60px;
     margin-left: 10px;
+
+    @media only screen and (max-width: 525px) { 
+		height: 50px;
+	} 
+
+	@media only screen and (max-width: 425px) { 
+		height: 45px;
+		margin-left: 5px;
+	} 
+
+	@media only screen and (max-width: 375px) { 
+		height: 40px;
+	} 
+
+	@media only screen and (max-width: 325px) { 
+		height: 35px;
+	}
 `;
 
 // const Menu = styled.div`

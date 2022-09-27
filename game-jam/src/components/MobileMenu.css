@@ -3,10 +3,26 @@
     position: fixed;
     width: 26px;
     height: 20px;
-    right: 5%;
-    top: 5%;
+    right: 2.5em;
+    top: 1.8em;
+
   }
-  
+
+  @media only screen and (max-width: 425px) {
+    .bm-burger-button {
+      right: 1.5em;
+      top: 1.5em;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .bm-burger-button {
+      width: 20px;
+      height: 16px;
+      top: 1.2em;
+    }
+  }
+
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
     background: #fff;
