@@ -67,13 +67,15 @@ export const Box = styled.div`
   background: #FFFFFF;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
+
+  padding: 15px 0;
 `;
 
 // field elements
 export const Field = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 18px 22px;
+  margin: 16px 22px;
 `;
 
 export const Label = styled.span`
@@ -85,6 +87,7 @@ export const TextBox = styled.input`
   padding: 10px;
   border: solid 1px #D2E2FB;
   border-radius: 3px;
+  font-size: 14px;
 `;
 
 export const Description = styled.span`
