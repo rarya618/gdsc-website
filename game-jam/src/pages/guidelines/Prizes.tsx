@@ -17,11 +17,13 @@ const Page = styled.div`
     align-items: center;
 
     @media only screen and (max-width: 768px) {
-        height: calc(100vh - 80px);
+        height: auto;
+        padding: 75px 0;
     } 
 
     @media only screen and (max-width: 425px) {
-        padding: 5px;
+        height: auto;
+        padding: 50px 0;
     } 
 `;
 
@@ -49,17 +51,17 @@ export const Title = styled.h1`
     ${margin}
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(32px + 1vmin);
+        font-size: calc(25px + 1vmin);
     }    
 
     @media only screen and (max-width: 768px) {
         text-align: center;  
-        font-size: calc(30px + 1vmin);
+        font-size: calc(25px + 1vmin);
     } 
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(26px + 1vmin);
-    }
+    @media only screen and (max-width: 425px) {
+        font-size: calc(20px + 1vmin);
+    } 
 `;
 
 export const Text = styled.p`
@@ -70,7 +72,7 @@ export const Text = styled.p`
     text-align: center;
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(15px + 1vmin);
+        font-size: calc(12px + 1vmin);
         line-height: 1.5em;
     }   
 
@@ -78,8 +80,9 @@ export const Text = styled.p`
         text-align: center; 
     }
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(14px + 1vmin);
+    @media only screen and (max-width: 425px) {
+        margin: 0 0 15px 0;
+        font-size: calc(10px + 1vmin);
     }
 `;
 
@@ -106,6 +109,11 @@ const ContainerVertical = styled.div`
     align-items: stretch;
     margin: 25px 0;
     width: 100%;
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const Category = styled.div`
@@ -115,6 +123,17 @@ export const Category = styled.div`
     // margin: 0 25px;
     border-radius: 2%;
     width: 25%;
+
+    @media only screen and (max-width: 1024px) {
+        padding: 15px;
+        width: 25%;  
+    }
+
+    @media only screen and (max-width: 768px) {
+        padding: 15px;
+        width: 75%;  
+        margin: 15px 0;
+    }
 `;
 
 export const CategoryLine = styled.hr`
@@ -128,6 +147,10 @@ export const CategoryTextMain = styled.p`
     font-weight: 700;
     margin:0;
     padding:0;
+
+    @media only screen and (max-width: 425px) {
+        font-size: calc(35px + 1vmin);
+    }
 `;
 
 export const CategoryTextMinor = styled.p`
@@ -143,6 +166,10 @@ export const CategoryText = styled.p`
     font-weight: 700;
     margin:0 0 25px 0;
     padding:0;
+
+    @media only screen and (max-width: 425px) {
+        font-size: calc(12px + 1vmin);
+    }
 `;
 
 

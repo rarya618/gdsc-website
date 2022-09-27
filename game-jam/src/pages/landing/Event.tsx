@@ -148,7 +148,7 @@ export const Text = styled.p`
     @media only screen and (max-width: 425px) {
         margin: 0 0 15px 0;
         font-size: calc(10px + 1vmin);
-    } 
+    }
 `;
 
 

@@ -25,11 +25,13 @@ const Page = styled.div`
     background-color: #ffffff;
 
     @media only screen and (max-width: 768px) {
-        height: calc(100vh - 80px);
-    } 
+        height: auto;
+        padding: 75px 0;
+    }  
 
     @media only screen and (max-width: 425px) {
-        padding: 5px;
+        height: auto;
+        padding: 50px 0;
     } 
 `;
 
@@ -43,6 +45,21 @@ const ContainerVertical = styled.div`
     justify-content: space-between;
     align-items: stretch;
     margin: 25px 0;
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
+`;
+
+const MobContainerVertical = styled.div`
+    display: none;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 25px 0;
+
+    @media only screen and (max-width: 768px) {
+        display: flex;
+    } 
 `;
 
 const Space = styled.div`
@@ -71,17 +88,17 @@ export const Title = styled.h1`
     ${margin}
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(32px + 1vmin);
+        font-size: calc(25px + 1vmin);
     }    
 
     @media only screen and (max-width: 768px) {
         text-align: center;  
-        font-size: calc(30px + 1vmin);
+        font-size: calc(25px + 1vmin);
     } 
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(26px + 1vmin);
-    }
+    @media only screen and (max-width: 425px) {
+        font-size: calc(20px + 1vmin);
+    } 
 `;
 
 export const Text = styled.p`
@@ -91,7 +108,7 @@ export const Text = styled.p`
     line-height: 1.8em;
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(15px + 1vmin);
+        font-size: calc(12px + 1vmin);
         line-height: 1.5em;
     }   
 
@@ -99,14 +116,19 @@ export const Text = styled.p`
         text-align: center; 
     }
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(14px + 1vmin);
+    @media only screen and (max-width: 425px) {
+        margin: 0 0 15px 0;
+        font-size: calc(10px + 1vmin);
     }
 `;
 
 export const Category = styled.div`
     box-shadow: 1px 3.97px 3.97px 0 rgb(84,84,84,0.15);
     width: 13%;
+
+    @media only screen and (max-width: 768px) {
+        width: 25%;
+    }
 `;
 
 export const CategoryText = styled.p`
@@ -131,44 +153,85 @@ function Home() {
                         <Text>These, while not specifying exact requirements for each, will be judged on:</Text>
                     </Content>
                     <Space/>
-                    <ContainerVertical>
-                        <Category>
-                            <CategoryImage src={uiux}/>
-                            <CategoryText>
-                                UI/UX
-                            </CategoryText>
-                        </Category>
-                        <Category>
-                            <CategoryImage src={gameDesign}/>
-                            <CategoryText>
-                                Game Design
-                            </CategoryText>
-                        </Category>
-                        <Category>
-                            <CategoryImage src={graphicSmoothness}/>
-                            <CategoryText>
-                                Game Juice
-                            </CategoryText>
-                        </Category>
-                        <Category>
-                            <CategoryImage src={codeDesign}/>
-                            <CategoryText>
-                                Code Design
-                            </CategoryText>
-                        </Category>
-                        <Category>
-                            <CategoryImage src={gameCreativity}/>
-                            <CategoryText>
-                                Game Creativity
-                            </CategoryText>
-                        </Category>
-                        <Category>
-                            <CategoryImage src={themeSuitability}/>
-                            <CategoryText>
-                                Theme Suitability
-                            </CategoryText>
-                        </Category>
-                    </ContainerVertical>
+                        <ContainerVertical>
+                            <Category>
+                                <CategoryImage src={uiux}/>
+                                <CategoryText>
+                                    UI/UX
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={gameDesign}/>
+                                <CategoryText>
+                                    Game Design
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={graphicSmoothness}/>
+                                <CategoryText>
+                                    Game Juice
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={codeDesign}/>
+                                <CategoryText>
+                                    Code Design
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={gameCreativity}/>
+                                <CategoryText>
+                                    Game Creativity
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={themeSuitability}/>
+                                <CategoryText>
+                                    Theme Suitability
+                                </CategoryText>
+                            </Category>
+                        </ContainerVertical>
+
+                        <MobContainerVertical>
+                            <Category>
+                                <CategoryImage src={uiux}/>
+                                <CategoryText>
+                                    UI/UX
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={gameDesign}/>
+                                <CategoryText>
+                                    Game Design
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={graphicSmoothness}/>
+                                <CategoryText>
+                                    Game Juice
+                                </CategoryText>
+                            </Category>
+                        </MobContainerVertical>
+                        <MobContainerVertical>
+                            <Category>
+                                <CategoryImage src={codeDesign}/>
+                                <CategoryText>
+                                    Code Design
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={gameCreativity}/>
+                                <CategoryText>
+                                    Game Creativity
+                                </CategoryText>
+                            </Category>
+                            <Category>
+                                <CategoryImage src={themeSuitability}/>
+                                <CategoryText>
+                                    Theme Suitability
+                                </CategoryText>
+                            </Category>
+                        </MobContainerVertical>
                 </Container>
             </SafeArea>
         </Page>
