@@ -10,11 +10,11 @@ const margin = "margin: 10px 20px;";
 const Page = styled.div`
     color: ${mainHex};
     padding: 0;
-    // height: calc(100vh - 160px);
+    height:auto;
     background-size: cover;
 
-    @media only screen and (max-width: 768px) {
-        height: calc(100vh - 80px);
+    @media only screen and (max-width: 1024px) {
+        height:auto;
     } 
 
     @media only screen and (max-width: 425px) {
@@ -28,15 +28,15 @@ const Image = styled.img`
     width: 100%;
 
     @media only screen and (max-width: 1024px) {
-        width: 400px;  
+         
     }
 
     @media only screen and (max-width: 525px) {
-        width: 360px;  
+          
     }
     
     @media only screen and (max-width: 435px) {
-        width: 100%;
+        
     }
 `;
 

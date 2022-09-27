@@ -147,7 +147,7 @@ function Home() {
                         <Category>
                             <CategoryImage src={graphicSmoothness}/>
                             <CategoryText>
-                                Graphic Smoothness
+                                Game Juice
                             </CategoryText>
                         </Category>
                         <Category>

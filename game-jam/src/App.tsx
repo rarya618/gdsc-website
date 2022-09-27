@@ -8,7 +8,9 @@ import Event from './pages/event/Event';
 import Guidelines from './pages/guidelines/Guidelines';
 import Footer from './Footer';
 
-import { Link, Route, Routes } from 'react-router-dom';
+import {Link, Route, Routes } from 'react-router-dom';
+
+import { ScrollToTop } from 'react-router-scroll-to-top';
 
 
 function App() {
@@ -16,11 +18,12 @@ function App() {
     <div className="App">
       <Header />
       <Subheader />
-      <Routes>
-				<Route path="/" element={<Landing />} />
-				<Route path="/event" element={<Event />} />
-				<Route path="/guidelines" element={<Guidelines />} />
-			</Routes>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/guidelines" element={<Guidelines />} />
+        </Routes>
       <Footer />
     </div>
   );

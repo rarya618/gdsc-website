@@ -2,14 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
-import placeholder from '../../resources/profilePlaceholder.svg';
-
 import riley from '../../resources/riley.png';
-import udit from '../../resources/profilePlaceholder.svg';
+import udit from '../../resources/udit.png';
 import ivan from '../../resources/ivan.png';
 import justin from '../../resources/justin.png';
-
-
 
 import email from '../../resources/gameJamEmail.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
@@ -29,17 +25,24 @@ const Section = styled.div`
     background-size: contain;
 
     @media only screen and (max-width: 768px) {
-        height: calc(100vh - 80px);
+        height: auto;
+        padding: 75px 0;
     } 
 
     @media only screen and (max-width: 425px) {
-        padding: 5px;
+        height: auto;
+        padding: 50px 0;
     } 
 `;
 
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 425px) {
+        flex-direction: column;
+    } 
+ 
 `;
 
 const Content = styled.div`
@@ -47,14 +50,14 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    // width: 50%;
 
     @media only screen and (max-width: 768px) {
         padding: 5px;
+        justify-content: flex-start;
     } 
 
-    @media only screen and (max-width: 525px) {
-        padding: 1px;
+    @media only screen and (max-width: 425px) {
+        margin: 10px 0;
     } 
 `;
 
@@ -64,12 +67,12 @@ export const Title = styled.h1`
     ${margin}
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(32px + 1vmin);
+        font-size: calc(25px + 1vmin);
     }    
 
     @media only screen and (max-width: 768px) {
         text-align: center;  
-        font-size: calc(30px + 1vmin);
+        font-size: calc(25px + 1vmin);
     } 
 
     @media only screen and (max-width: 268px) {
@@ -79,7 +82,7 @@ export const Title = styled.h1`
 
 export const Text = styled.p`
     ${margin}
-    font-size: calc(15px + 1vmin);
+    font-size: calc(12px + 1vmin);
     font-weight: 500;
     color: #3a3a3a;
 
@@ -102,44 +105,54 @@ export const menuLinkStyle = {
 	margin: "5px",
 	borderRadius: "3px",
 	textDecoration: "none",
-    fontSize: "calc(12px + 1vmin)",
+    fontSize: "calc(10px + 1vmin)",
     fontWeight: "500",
     color: "#3a3a3a",
 };
 
 export const imageLinkStyle = {
-	marginTop: "-15%",
+	// marginTop: "-15%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
 };
 
 const Image = styled.img`
     margin: 0;
 
     @media only screen and (max-width: 1024px) {
-        width: 400px;  
+        width: 80%;  
     }
 
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
+    @media only screen and (max-width: 768px) {
+        width: 75%;  
     }
     
-    @media only screen and (max-width: 435px) {
-        width: 100%;
+    @media only screen and (max-width: 425px) {
+        width: 50%;
     }
 `;
 
 const ImageEmail = styled.img`
     margin: 0;
+    margin-top:-65%;
 
     @media only screen and (max-width: 1024px) {
-        width: 400px;  
+        width: 80%;  
+        margin-top:-55%;
     }
 
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 55%;  
+        margin-top:-35%;
     }
-    
-    @media only screen and (max-width: 435px) {
-        width: 100%;
+
+    @media only screen and (max-width: 425px) {
+        width: 90%;
+        margin-top:-45%;
     }
 `;
 
@@ -198,7 +211,7 @@ function Home() {
                         <a style={imageLinkStyle} href="mailto:jkwo3287@uni.sydney.edu.au">
                             <ImageEmail src={email} />
                         </a>
-                        <p style={menuLinkStyle}>Justin Oliver Kwon</p>
+                        <p style={menuLinkStyle}>Justin Kwon</p>
                     </Content>
                 </Container>    
             </SafeArea>
