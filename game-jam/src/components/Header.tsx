@@ -12,6 +12,10 @@ const HeaderObject = styled.div`
     padding: 10px;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const Logo = styled.img`
@@ -44,8 +48,8 @@ const CallToAction = styled.button`
 
 // thinking of adding these items to a remote source, where they can automatically be updated for each sub-website
 const menuItems = [
-    {text: "AI/ML"},
-    {text: "Cybersecurity"},
+    // {text: "AI/ML"},
+    // {text: "Cybersecurity"},
     {text: "Game Jam"},
 ]
 

@@ -23,7 +23,7 @@ position: sticky;
 top: 58px;
 z-index: 10;
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 768px) {
     display: none;
 }
 `;
