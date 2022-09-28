@@ -50,6 +50,7 @@
   */
   .bm-menu-wrap {
     position: fixed;
+    top: 0;
     height: 100%;
   }
   
@@ -58,6 +59,7 @@
     background: #EA4335;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
+    height: 100%;
   }
   
   /* Morph shape necessary with bubble or elastic
