@@ -96,7 +96,7 @@ const ButtonAlt = styled.div`
     background-color: #ffffff;
     color: ${mainHex};
     border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 20px;
+    margin: 10px 5px 10px 10px;
     border-radius: 3px;
 `;
 
@@ -180,7 +180,7 @@ function Home() {
                         <Image src={pacman} />
                     </Content>
                     <Content>
-                        <Text>Over the course of the mid sem break, we will be taking you through how to build a game from scratch using python. We’ll have three workshops, AT GOOGLE HEADQUATERS, to teach you the basics that will recap or help you learn python, teach you game design, and help you understand how we will be programming a game using pygame.</Text>
+                        <Text>Over the course of the mid sem break, we will be taking you through how to build a game from scratch using python. We’ll have three workshops <strong>at Google headquarters</strong> to teach you the basics that will recap or help you learn python, teach you game design, and help you understand how we will be programming a game using pygame.</Text>
                         <ButtonGroup>
                             <ButtonMain>Register now</ButtonMain>
                             <ButtonAlt><HashLink to="/event/#timeline" style={bttnLinkStyle}>Timeline</HashLink></ButtonAlt>

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
-import placeholder from '../../resources/header-graphic.svg';
 import grid from '../../resources/redGrid.png';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
@@ -11,7 +10,7 @@ const margin = "margin: 10px 20px;";
 const Page = styled.div`
     color: ${mainHex};
     padding: 0 20px;
-    height: calc(60vh - 80px);
+    height: 280px;
     text-align: left;
     display: flex;
     flex-direction: row;
