@@ -69,13 +69,25 @@ export const Box = styled.div`
   border-radius: 5px;
 
   padding: 15px 0;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 // field elements
-export const Field = styled.div`
+const fieldStyle = `
   display: flex;
   flex-direction: column;
-  margin: 16px 22px;
+  margin: 10px 22px;
+`;
+
+export const Field = styled.div`
+  ${fieldStyle}
+`;
+
+export const HalfField = styled.div`
+  ${fieldStyle}
+  width: 40%;
 `;
 
 export const Label = styled.span`
@@ -83,11 +95,15 @@ export const Label = styled.span`
   margin: 6px 0;
 `;
 
-export const TextBox = styled.input`
+const textBoxStyle = `
   padding: 10px;
   border: solid 1px #D2E2FB;
   border-radius: 3px;
   font-size: 14px;
+`;
+
+export const TextBox = styled.input`
+  ${textBoxStyle}
 `;
 
 export const Description = styled.span`
