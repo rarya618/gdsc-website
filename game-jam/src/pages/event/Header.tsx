@@ -18,7 +18,7 @@ const Page = styled.div`
     } 
 
     @media only screen and (max-width: 425px) {
-        padding: 5px;
+        height:auto;
     } 
 `;
 

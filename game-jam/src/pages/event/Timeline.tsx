@@ -29,11 +29,13 @@ const Page = styled.div`
     background-size: contain;
 
     @media only screen and (max-width: 768px) {
-        height: calc(100vh - 80px);
+        height: auto;
+        padding: 75px 0 0 0;
+        // display: none;
     } 
 
     @media only screen and (max-width: 425px) {
-        padding: 5px;
+        padding: 50px 0 0 0;
     } 
 `;
 
@@ -42,7 +44,9 @@ const Content = styled.div`
     display: flex;
 
     @media only screen and (max-width: 768px) {
-        padding: 5px;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
     } 
 
     @media only screen and (max-width: 525px) {
@@ -104,17 +108,17 @@ export const Title = styled.h1`
     ${margin}
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(32px + 1vmin);
+        font-size: calc(25px + 1vmin);
     }    
 
     @media only screen and (max-width: 768px) {
         text-align: center;  
-        font-size: calc(30px + 1vmin);
+        font-size: calc(25px + 1vmin);
     } 
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(26px + 1vmin);
-    }
+    @media only screen and (max-width: 425px) {
+        font-size: calc(20px + 1vmin);
+    } 
 `;
 
 export const Text = styled.p`
@@ -124,7 +128,7 @@ export const Text = styled.p`
     line-height: 1.5em;
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(15px + 1vmin);
+        font-size: calc(12px + 1vmin);
         line-height: 1.5em;
     }   
 
@@ -132,9 +136,10 @@ export const Text = styled.p`
         text-align: center; 
     }
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(14px + 1vmin);
-    }
+    @media only screen and (max-width: 425px) {
+        margin: 0 0 15px 0;
+        font-size: calc(10px + 1vmin);
+    } 
 `;
 
 
@@ -146,8 +151,9 @@ const Image = styled.img`
         width: 400px;  
     }
 
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
+    @media only screen and (max-width: 768px) {
+        margin-top: 10px;
+        width: 100%;  
     }
     
     @media only screen and (max-width: 435px) {

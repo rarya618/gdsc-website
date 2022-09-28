@@ -173,7 +173,6 @@ export const CategoryText = styled.p`
 `;
 
 
-
 function Home() {
     return (
         <Page id="prizes">

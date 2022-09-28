@@ -24,16 +24,17 @@ const Page = styled.div`
 
     @media only screen and (max-width: 1024px) {
         height: auto;
-        padding: 75px 0;
+        padding: 100px 0;
     } 
 
     @media only screen and (max-width: 768px) {
         height: auto;
+        padding: 50px 0;
     } 
 
     @media only screen and (max-width: 425px) {
         height: auto;
-        padding: 50px 0;
+        padding: 25px 0;
     } 
 `;
 
@@ -41,6 +42,14 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    } 
 `;
 
 const Content = styled.div`
@@ -52,6 +61,11 @@ const Content = styled.div`
 
     @media only screen and (max-width: 768px) {
         padding: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-start;
     } 
 
     @media only screen and (max-width: 525px) {
@@ -135,7 +149,7 @@ const Image = styled.img`
     }
 
     @media only screen and (max-width: 525px) {
-        width: 360px;  
+        width: 100%;  
     }
     
     @media only screen and (max-width: 435px) {

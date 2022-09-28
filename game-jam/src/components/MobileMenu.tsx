@@ -13,6 +13,7 @@ const HeaderObject = styled.div`
     padding: 10px;
     display: none;
     justify-content: space-between;
+    z-index: 100;
 
     @media only screen and (max-width: 768px) {
         display: flex;
