@@ -11,6 +11,7 @@ import SignUp from './views/SignUp';
 import SignIn from './views/SignIn';
 import { blueHex } from './colors';
 import Dashboard from './views/Dashboard';
+import { buttonStyle } from './objectStyles';
 
 // set page title
 export function useTitle(title: string) {
@@ -23,6 +24,10 @@ export function useTitle(title: string) {
 			document.title = prevTitle
 		}
 	})
+}
+
+export const addToList = (list: string[], item: string) => {
+  return [...list, item];
 }
 
 // background set up
@@ -126,13 +131,10 @@ export const Bottom = styled.div`
 `;
 
 export const Submit = styled.button`
+  ${buttonStyle}
   background: ${blueHex};
-  border: none;
   color: #fff;
-  border-radius: 5px;
-  font-size: 16px;
-  padding: 10px 14px;
-  cursor: pointer;
+  margin-right: 0;
 `;
 
 // link styles

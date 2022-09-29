@@ -11,12 +11,15 @@ import {
 } from "firebase/auth";
 
 import {
-  getDoc
+  collection,
+  getDoc, getDocs, query, where
 } from "firebase/firestore";
 
 import { getAnalytics } from "firebase/analytics";
+import UserDetails from "../dataTypes/UserDetails";
+import Task from "../dataTypes/Task";
 
-let isTesting = false;
+let isTesting = true;
 
 // Your web app's Firebase configuration
 const testConfig = {
@@ -91,6 +94,7 @@ const firebaseSignUp = async (firstName: string, lastName: string, email: string
       firstName: firstName,
       lastName: lastName,
       email: email,
+      tasks: []
     });
 
     status = true;
@@ -127,11 +131,45 @@ const logout = () => {
 const getUser = async (uid: string) => {
   let docRef = db.collection('users').doc(uid);
 
-  return (await getDoc(docRef)).data();
+  // @ts-ignore
+  let tempDoc: UserDetails = (await getDoc(docRef)).data();
+
+  return tempDoc;
+}
+
+const updateTasksInUser = async (uid: string, tasks: string[]) => {
+  await db.collection('users').doc(uid).update({tasks: tasks});
+}
+
+const getTasks = async () => {
+  const filesRef = collection(db, 'tasks');
+  const q = query(filesRef, where("available", "==", true));
+
+  const tempDoc = (await getDocs(q)).docs.map((doc) => {
+    // @ts-ignore
+    const file: Task = {id: doc.id, ...doc.data()};
+
+    return file;
+  })
+
+  return tempDoc;
+}
+
+const getTask = async (taskId: string) => {
+  let docRef = db.collection('tasks').doc(taskId);
+
+  // @ts-ignore
+  let tempDoc: Task = (await getDoc(docRef)).data();
+
+  return tempDoc;
+}
+
+const updateUsersInTask = async (taskId: string, users: string[]) => {
+  await db.collection('tasks').doc(taskId).update({users: users});
 }
 
 export {
   app, db, analytics, 
   firebaseSignIn, firebaseSignUp, resetPassword, logout,
-  getUser,
+  getUser, updateTasksInUser, getTasks, getTask, updateUsersInTask
 };
