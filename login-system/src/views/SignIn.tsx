@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer } from '../App';
+import { firebaseSignIn } from '../firebase/config';
 
 const fields = [
 	{id: 'email', type: 'email', label: 'Email*', placeholder: 'john.doe@example.com'},
@@ -8,8 +9,40 @@ const fields = [
 ]
 
 const SignIn = () => {
+	const signIn = async (event: FormEvent) => {
+		event.preventDefault();
+
+		// @ts-ignore
+		const elementsArray = [...event.target.elements];
+
+		const data = elementsArray.reduce((acc, element) => {
+			if (element.id) {
+				acc[element.id] = element.value;
+			}
+
+			return acc;
+		}, {});
+
+		try {
+			if (data.email === '') throw("Please enter an email")
+			if (data.password === '') throw("Please enter a password")
+			if (data.password.length < 8) throw("Your password should be at least 8 characters long")
+				
+			if (await firebaseSignIn(data.email, data.password)) {
+				console.log("Sign in successful.");
+				window.location.href = "/dashboard";	
+			} else {
+				console.log("Sign in failed...");
+			}
+		}
+
+		catch (error) {
+			// @ts-ignore
+			alert(error);
+		}
+	}
 	return (
-		<Box>
+		<Box onSubmit={signIn}>
 			{fields.map(field => {
 				return (<Field>
 					<Label>{field.label}</Label>

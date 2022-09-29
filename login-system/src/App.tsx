@@ -57,7 +57,7 @@ const Scrollable = styled.div`
 `;
 
 // box structure
-export const Box = styled.div`
+export const Box = styled.form`
   max-width: 350px;
   width: 100%;
   left: 0;
