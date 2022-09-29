@@ -7,6 +7,7 @@ import MobileMenu from './components/MobileMenu';
 import Landing from './pages/landing/Landing';
 import Event from './pages/event/Event';
 import Guidelines from './pages/guidelines/Guidelines';
+import Gallery from './pages/gallery/Gallery';
 import Footer from './Footer';
 
 import {Link, Route, Routes } from 'react-router-dom';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/event" element={<Event />} />
           <Route path="/guidelines" element={<Guidelines />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       <Footer />
     </div>

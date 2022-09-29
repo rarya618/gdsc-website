@@ -139,7 +139,7 @@ function Home() {
                         <Text>The Game Jam Event (competition) will run from Friday, 30th September 10 AM until 5 PM Sunday. You will have 55h to code. You may prepare for the event beforehand, brainstorming basic ideas and researching different options for games (PVP, platformers, paddle games, etc). However, you are not allowed to start coding until 10 AM Friday. The Game Jam competition will have a theme that will be given to you on Friday to mark the start of the Competition. </Text>
                         <ButtonGroup>
                             <ButtonMain>
-                                <HashLink to="/event/#timeline" style={bttnLinkStyle}>Learn More</HashLink>
+                                <Link to="/event" style={bttnLinkStyle}>Learn More</Link>
                             </ButtonMain>
                         </ButtonGroup>
                     </Content>

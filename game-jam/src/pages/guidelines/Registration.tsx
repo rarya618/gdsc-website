@@ -115,6 +115,11 @@ const ButtonMain = styled.div`
     }
 `;
 
+export const linkStyle = {
+    color: "#ffffff",
+	textDecoration: "none",
+};
+
 
 function Home() {
     return (
@@ -136,7 +141,9 @@ function Home() {
                         <Text>After registering for the event your team will be allocated a page on the website which you can customise and populate with information regarding the game your team will be presenting. Now that your team has completed registration you are all set for the Game Jam. The last thing would be to join our GDSC Discord Page and add yourself to the Game Jam Role. </Text>
                         <ButtonGroup>
                             <ButtonMain>
-                                Join Discord
+                                <a href="https://discord.gg/H566km5k" style={linkStyle}>
+                                    Join Discord
+                                </a>
                             </ButtonMain>
                         </ButtonGroup>
                     </Content>
