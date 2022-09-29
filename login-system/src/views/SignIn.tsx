@@ -32,7 +32,7 @@ const SignIn = () => {
 				
 			if (await firebaseSignIn(data.email, data.password)) {
 				console.log("Sign in successful.");
-				window.location.href = "/dashboard";
+				window.location.href = "/";
 			} else {
 				alert("Sign in failed...");
 			}

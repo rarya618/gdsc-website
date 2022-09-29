@@ -91,7 +91,7 @@ const Dashboard = () => {
 	}, [uid])
 
 	if (!authToken) {
-		return (<Navigate to="/" />)
+		return (<Navigate to="/sign-in" />)
 	}
 	
 	if (user)
