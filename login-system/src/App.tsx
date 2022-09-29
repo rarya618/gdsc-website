@@ -10,13 +10,14 @@ import './App.css';
 import SignUp from './views/SignUp';
 import SignIn from './views/SignIn';
 import { blueHex } from './colors';
+import Dashboard from './views/Dashboard';
 
 // set page title
 export function useTitle(title: string) {
 	useEffect(() => {
 		const prevTitle = document.title;
 
-		document.title = title;
+		document.title = title + " - GDSC @ the University of Sydney";
 		
 		return () => {
 			document.title = prevTitle
@@ -131,6 +132,7 @@ export const Submit = styled.button`
   border-radius: 5px;
   font-size: 16px;
   padding: 10px 14px;
+  cursor: pointer;
 `;
 
 // link styles
@@ -151,6 +153,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Scrollable>
     </Body>

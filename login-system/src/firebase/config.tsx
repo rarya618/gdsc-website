@@ -10,6 +10,10 @@ import {
   signOut 
 } from "firebase/auth";
 
+import {
+  getDoc
+} from "firebase/firestore";
+
 import { getAnalytics } from "firebase/analytics";
 
 let testing = true;
@@ -57,7 +61,7 @@ const firebaseSignIn = async (email: string, password: string, route?: string) =
     sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken);
     sessionStorage.setItem('userId', response.user.uid);
 
-    return true;
+    status = true;
   })
   .catch ((error) => {
     if (error.message === "Firebase: Error (auth/wrong-password).") {
@@ -117,7 +121,17 @@ const resetPassword = async (email: string) => {
 const logout = () => {
   signOut(auth);
   sessionStorage.clear();
+  window.location.href = "/";
 };
 
+const getUser = async (uid: string) => {
+  let docRef = db.collection('users').doc(uid);
 
-export {app, db, analytics, firebaseSignIn, firebaseSignUp, resetPassword, logout};
+  return (await getDoc(docRef)).data();
+}
+
+export {
+  app, db, analytics, 
+  firebaseSignIn, firebaseSignUp, resetPassword, logout,
+  getUser,
+};

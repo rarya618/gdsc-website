@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { Bottom, Box, Description, Field, HalfField, Label, linkStyle, Submit, TextBox } from '../App';
+import { Bottom, Box, Description, Field, HalfField, Label, linkStyle, Submit, TextBox, useTitle } from '../App';
 import { firebaseSignUp } from '../firebase/config';
 
 const fields = [
@@ -12,6 +12,8 @@ const fields = [
 ]
 
 const SignUp = () => {
+	useTitle("Sign up");
+
 	const signUp = async (event: FormEvent) => {
 		event.preventDefault();
 

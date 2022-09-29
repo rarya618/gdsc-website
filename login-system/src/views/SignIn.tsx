@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer } from '../App';
+import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer, useTitle } from '../App';
 import { firebaseSignIn } from '../firebase/config';
 
 const fields = [
@@ -9,6 +9,8 @@ const fields = [
 ]
 
 const SignIn = () => {
+	useTitle("Sign in");
+
 	const signIn = async (event: FormEvent) => {
 		event.preventDefault();
 
@@ -30,14 +32,13 @@ const SignIn = () => {
 				
 			if (await firebaseSignIn(data.email, data.password)) {
 				console.log("Sign in successful.");
-				window.location.href = "/dashboard";	
+				window.location.href = "/dashboard";
 			} else {
-				console.log("Sign in failed...");
+				alert("Sign in failed...");
 			}
 		}
 
 		catch (error) {
-			// @ts-ignore
 			alert(error);
 		}
 	}
