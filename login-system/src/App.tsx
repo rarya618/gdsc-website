@@ -10,13 +10,14 @@ import './App.css';
 import SignUp from './views/SignUp';
 import SignIn from './views/SignIn';
 import { blueHex } from './colors';
+import Dashboard from './views/Dashboard';
 
 // set page title
 export function useTitle(title: string) {
 	useEffect(() => {
 		const prevTitle = document.title;
 
-		document.title = title;
+		document.title = title + " - GDSC @ the University of Sydney";
 		
 		return () => {
 			document.title = prevTitle
@@ -57,7 +58,7 @@ const Scrollable = styled.div`
 `;
 
 // box structure
-export const Box = styled.div`
+export const Box = styled.form`
   max-width: 350px;
   width: 100%;
   left: 0;
@@ -67,13 +68,27 @@ export const Box = styled.div`
   background: #FFFFFF;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
+
+  padding: 15px 0;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 // field elements
-export const Field = styled.div`
+const fieldStyle = `
   display: flex;
   flex-direction: column;
-  margin: 18px 22px;
+  margin: 10px 22px;
+`;
+
+export const Field = styled.div`
+  ${fieldStyle}
+`;
+
+export const HalfField = styled.div`
+  ${fieldStyle}
+  width: 40%;
 `;
 
 export const Label = styled.span`
@@ -81,10 +96,15 @@ export const Label = styled.span`
   margin: 6px 0;
 `;
 
-export const TextBox = styled.input`
+const textBoxStyle = `
   padding: 10px;
   border: solid 1px #D2E2FB;
   border-radius: 3px;
+  font-size: 14px;
+`;
+
+export const TextBox = styled.input`
+  ${textBoxStyle}
 `;
 
 export const Description = styled.span`
@@ -112,6 +132,7 @@ export const Submit = styled.button`
   border-radius: 5px;
   font-size: 16px;
   padding: 10px 14px;
+  cursor: pointer;
 `;
 
 // link styles
@@ -130,7 +151,8 @@ function App() {
       <Logo src={logo} />
       <Scrollable>
         <Routes>
-          <Route path="/" element={<SignIn />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </Scrollable>
