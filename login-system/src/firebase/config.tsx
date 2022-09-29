@@ -16,7 +16,7 @@ import {
 
 import { getAnalytics } from "firebase/analytics";
 
-let testing = true;
+let isTesting = false;
 
 // Your web app's Firebase configuration
 const testConfig = {
@@ -35,11 +35,11 @@ const prodConfig = {
   projectId: "gdsc-usyd",
   storageBucket: "gdsc-usyd.appspot.com",
   messagingSenderId: "971303209941",
-  appId: "1:971303209941:web:a6d9fa662f48a20916cb5c",
-  measurementId: "G-HB1NEN3G3J"
+  appId: "1:971303209941:web:1866f25a953d3e1016cb5c",
+  measurementId: "G-S1VSX495L5"
 };
 
-let appConfig = testing ? testConfig : prodConfig;
+let appConfig = isTesting ? testConfig : prodConfig;
 
 // Initialize Firebase
 const app = firebase.initializeApp(appConfig);
