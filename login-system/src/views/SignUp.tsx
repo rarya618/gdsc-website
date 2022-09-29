@@ -1,11 +1,11 @@
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { Bottom, Box, Description, Field, HalfField, Label, linkStyle, Submit, TextBox, useTitle } from '../App';
+import { Bottom, Box, Description, Field, Label, linkStyle, Submit, TextBox, useTitle } from '../App';
 import { firebaseSignUp } from '../firebase/config';
 
 const fields = [
-	{id: 'firstName', type: 'text', label: 'First Name', placeholder: 'John', half: true},
-	{id: 'lastName', type: 'text', label: 'Last Name', placeholder: 'Doe', half: true},
+	{id: 'firstName', type: 'text', label: 'First Name', placeholder: 'John'},
+	{id: 'lastName', type: 'text', label: 'Last Name', placeholder: 'Doe'},
 	{id: 'email', type: 'email', label: 'Email*', placeholder: 'john.doe@example.com', desc: "Email will be the main mode of communication"},
 	{id: 'password', type: 'password', placeholder: 'Your password', label: 'Password*', desc: "Password must be at least 8 characters"},
 	{id: 'passwordConf', type: 'password', placeholder: 'Re-enter password', label: 'Confirm Password*', desc: "Re-enter the password"},

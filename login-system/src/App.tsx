@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import logo from './resources/header-logo.png';
 import grid from './resources/blueGrid.png';
@@ -12,6 +12,9 @@ import SignIn from './views/SignIn';
 import { blueHex } from './colors';
 import Dashboard from './views/Dashboard';
 import { buttonStyle } from './objectStyles';
+import TeamPublic from './views/Teams/TeamPublic';
+import TeamPrivate from './views/Teams/TeamPrivate';
+import GetTeam from './views/Teams/GetTeam';
 
 // set page title
 export function useTitle(title: string) {
@@ -26,8 +29,20 @@ export function useTitle(title: string) {
 	})
 }
 
-export const addToList = (list: string[], item: string) => {
+export const addToList = (list: any[], item: any) => {
   return [...list, item];
+}
+
+// generate random string of specified length
+export function randomString(length: number) {
+  var result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+
+  return result;
 }
 
 // background set up
@@ -48,6 +63,7 @@ const Logo = styled.img`
   position: fixed;
   left: 20px;
   top: 10px;
+  z-index: 1000;
 `;
 
 const Scrollable = styled.div`
@@ -89,11 +105,6 @@ const fieldStyle = `
 
 export const Field = styled.div`
   ${fieldStyle}
-`;
-
-export const HalfField = styled.div`
-  ${fieldStyle}
-  width: 40%;
 `;
 
 export const Label = styled.span`
@@ -150,12 +161,15 @@ export const linkStyle = {
 function App() {
   return (
     <Body className="App">
-      <Logo src={logo} />
+      <Link to="/"><Logo src={logo}/></Link>
       <Scrollable>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/team/:eventCode/get" element={<GetTeam />} />
+          <Route path="/team/:teamId/public" element={<TeamPublic />} />
+          <Route path="/team/:teamId/private" element={<TeamPrivate />} />
         </Routes>
       </Scrollable>
     </Body>

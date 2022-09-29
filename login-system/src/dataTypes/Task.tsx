@@ -4,7 +4,7 @@ type Task = {
     description: string;
     available: boolean;
     callToAction: string;
-    type: string;
+    postEnrolment?: {display: string, disabled?: boolean, link?: string};
     endsAt?: any;
     color?: string;
     users: string[]
