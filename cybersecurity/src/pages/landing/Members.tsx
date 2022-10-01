@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
-import placeholder from '../../resources/profilePlaceholder.svg';
+import victor from '../../resources/victor.png';
+import rushil from '../../resources/rushil.png';
+import syed from '../../resources/syed.png';
+import darsh from '../../resources/darsh.png';
+
 import email from '../../resources/ctfemail.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 import { Link, Route, Routes } from 'react-router-dom';
@@ -156,22 +160,34 @@ function Home() {
                         <Title>Cybersecurity Team</Title>
                 </Content>
                 <Container>
-                    {memberItems.map(menuItem => { 
-                        return (
-                            <Content>
-                                <Image src={placeholder}/>  
-                                <Link 
-                                    to={menuItem.link ? menuItem.link : ""}
-                                    style={imageLinkStyle}>
-                                    <ImageEmail src={email} />    
-                                </Link>
-                                <Link 
-                                    to={menuItem.link ? menuItem.link : ""}
-                                    style={menuLinkStyle}>
-                                        {menuItem.text}     
-                                </Link>
-                            </Content>)
-                    })}
+                <Content>
+                        <Image src={victor}/>
+                        <a style={imageLinkStyle} href="mailto:vili8422@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Victor Li</p>
+                    </Content>
+                    <Content>
+                        <Image src={rushil}/>
+                        <a style={imageLinkStyle} href="mailto:rpet2272@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Rushil Petrus</p>
+                    </Content>
+                    <Content>
+                        <Image src={syed}/>
+                        <a style={imageLinkStyle} href="mailto:ssab4400@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Syed Ahmad Sabaat</p>
+                    </Content>
+                    <Content>
+                        <Image src={darsh}/>
+                        <a style={imageLinkStyle} href="mailto:dcha5612@uni.sydney.edu.au">
+                            <ImageEmail src={email} />
+                        </a>
+                        <p style={menuLinkStyle}>Darsh Chaudhari</p>
+                    </Content>
                 </Container>
                 
             </SafeArea>
