@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
-import placeholder from '../../resources/ctf.png';
+import social from '../../resources/ctaSocial.png';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
+
+import { Link, Route, Routes } from 'react-router-dom';
 
 const margin = "margin: 8px 10px;";
 
@@ -125,20 +127,30 @@ const Image = styled.img`
     }
 `;
 
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#34A853",
+};
+
 function EventContainer() {
     return (
         <Section>
             <SafeArea>
                 <RowContainer>
                     <Content>
-                        <Image src={placeholder} />
+                        <Image src={social} />
                     </Content>
                     <Content>
                         <Title>Capture the Flag!</Title>
                         <Text>Capture The Flag is a cyber security exercise consisting of multiple puzzles/challenges. Each puzzle has a flag hidden somewhere and the challenge is to find the flag.</Text>
                         <ButtonGroup>
-                            <ButtonAlt>Register now</ButtonAlt>
-                            <ButtonMain>Learn more</ButtonMain>
+                            <ButtonMain><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonMain>
+                            <ButtonAlt><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonAlt>
                         </ButtonGroup>
                     </Content>
                 </RowContainer>

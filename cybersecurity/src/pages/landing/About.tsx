@@ -6,6 +6,9 @@ import placeholder from '../../resources/header-graphic.svg';
 import grid from '../../resources/greenGrid.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
+
+import { Link, Route, Routes } from 'react-router-dom';
+
 const margin = "margin: 10px 20px;";
 
 const Section = styled.div`
@@ -127,17 +130,27 @@ const Image = styled.img`
     }
 `;
 
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#34A853",
+};
+
 function About() {
     return (
         <Section>
             <SafeArea>
                 <RowContainer>
                     <Content>
-                        <Title>The main title of this section</Title>
+                        <Title>Cybersecurity @ GDSC USYD</Title>
                         <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus.</Text>
                         <ButtonGroup>
-                            <ButtonMain>Button</ButtonMain>
-                            <ButtonAlt>Button</ButtonAlt>
+                            <ButtonMain><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonMain>
+                            <ButtonAlt><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonAlt>
                         </ButtonGroup>
                     </Content>
                     <Content>
