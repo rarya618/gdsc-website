@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
-import placeholder from '../../resources/placeholder.png';
+import placeholder from '../../resources/ctaSocial.png';
 import icon from '../../resources/icon.svg';
 
 
@@ -158,9 +158,14 @@ const Icon = styled.img`
     margin: 10%;
 `;
 
+export const bttnLinkStyle = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
 function Home() {
     return (
-        <Page>
+        <Page id="timeline">
             <SafeArea>
                 <Title>Capture the Flag Timeline</Title>
                 <VerticalTimeline layout="1-column-left" lineColor='#34A853'>
@@ -178,7 +183,7 @@ function Home() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain>RSVP now</ButtonMain>
+                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/">RSVP now</a></ButtonMain>
                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={placeholder} />
@@ -200,34 +205,13 @@ function Home() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain>RSVP now</ButtonMain>
+                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/">RSVP now</a></ButtonMain>
                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={placeholder} />
                         </Content>
                     </VerticalTimelineElement>
 
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        position='right'
-                        iconStyle={{ background: '#34A853', color: '#fff' }}
-                        icon={ <Icon src={icon}/> }
-                    >
-                        <Content>
-                            <ContentInfo>
-                                <ContentTitle>Workshop III</ContentTitle>
-                                <ContentSubtitle className="vertical-timeline-element-subtitle">Date | Location</ContentSubtitle>
-                                <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                </ContentText>
-                                <ButtonGroup>
-                                    <ButtonMain>RSVP now</ButtonMain>
-                                </ButtonGroup>
-                            </ContentInfo>
-                            <Image src={placeholder} />
-                        </Content>
-                        
-                    </VerticalTimelineElement>
 
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -238,12 +222,12 @@ function Home() {
                         <Content>
                             <ContentInfo>
                                 <ContentTitle>Capture the Flag</ContentTitle>
-                                <ContentSubtitle className="vertical-timeline-element-subtitle">30th Sep 10 AM  Friday to 2 October 5 PM Sunday</ContentSubtitle>
+                                <ContentSubtitle className="vertical-timeline-element-subtitle">03rd October 9 AM  Monday to 9th October 9 AM Sunday</ContentSubtitle>
                                 <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Capture the Flag is a cyber security exercise consisting of multiple puzzles/challenges. For those that have never heard of it, read more here. Detailed rules and info will be on the Rules page. 
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain>Register now</ButtonMain>
+                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/">RSVP now</a></ButtonMain>
                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={placeholder} />

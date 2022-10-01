@@ -145,16 +145,16 @@ function Home() {
                         </ButtonGroup>
                     </Content>
                     <Content>
-                        <Image src={placeholder} />
+                        <Image src={placeholder}/>
                     </Content>
                 </Container>
-                <Container>
+                <Container id="example">
                     <Content>
                         <Image src={cta} />
                     </Content>
                     <Content>
                         <Text>Each puzzle has a flag hidden somewhere and the challenge is to find the flag. The flag usually is a sequence of alphanumeric characters. Once you find a flag you get some points. The objective is the find as many flags as possible and collects points in the shortest time possible.</Text>
-                        <Text>The following will be an example problem demonstrating how to solve and submit a problem:</Text>
+                        <Text id="example">The following will be an example problem demonstrating how to solve and submit a problem:</Text>
                         <ButtonGroup>
                             <ButtonMain>Download</ButtonMain>
                         </ButtonGroup>

@@ -117,15 +117,20 @@ const Image = styled.img`
     }
 `;
 
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#34A853",
+};
+
 function Home() {
     return (
-        <Page id="about">
+        <Page id="register">
             <SafeArea>
                 <Content>
                     <Title>Interested? Register Now!</Title>
                     <Text>A CTF (Capture The Flag) is a cyber security exercise consisting of multiple puzzles/challenges. Each puzzle has a flag hidden somewhere and the challenge is to find the flag. The flag usually is a sequence of alphanumeric characters. Once you find a flag you get some points. The objective is the find as many flags as possible and collects points in the shortest time possible.</Text>
                     <ButtonGroup>
-                        <ButtonAlt>Register now</ButtonAlt>
+                    <ButtonAlt><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register Now</a></ButtonAlt>
                     </ButtonGroup>
                 </Content>
             </SafeArea>

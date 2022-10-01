@@ -6,6 +6,8 @@ import { Link, Route, Routes } from 'react-router-dom';
 import arrow from '../../resources/arrow.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
+import { HashLink } from 'react-router-hash-link';
+
 interface Props {
     open: boolean,
   }
@@ -45,11 +47,18 @@ const Image = styled.img`
 `;
 
 const menuItems = [
-    {text: "What is Capture The Flag?", link: "/event"},
-    {text: "Example", link: "/event"},
-    {text: "How to Register?", link: "/event"},
-    {text: "Timeline", link: "/event"},
+    {text: "What is Capture The Flag?", link: "/event/#about"},
+    {text: "Example", link: "/event/#example"},
+    {text: "How to Register?", link: "/event/#register"},
+    {text: "Timeline", link: "/event/#timeline"},
 ]
+
+const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -58; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
+
 
 const RowMenu = styled.div`
     display: flex;
@@ -63,12 +72,13 @@ const Anchor = () => {
                 {menuItems.map(menuItem => { 
                     return (
                         <RowMenu>
-                            <Link 
+                            <HashLink 
+                                scroll={el => scrollWithOffset(el)} 
                                 to={menuItem.link ? menuItem.link : ""}
                                 style={menuLinkStyle}>
                                     {menuItem.text}
                                     <Image src={arrow} /> 
-                            </Link>
+                            </HashLink>
                         </RowMenu>)
                 })}
                 </MenuItem>

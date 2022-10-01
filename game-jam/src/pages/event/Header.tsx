@@ -26,18 +26,6 @@ const Page = styled.div`
 const Image = styled.img`
     margin: 0;
     width: 100%;
-
-    @media only screen and (max-width: 1024px) {
-         
-    }
-
-    @media only screen and (max-width: 525px) {
-          
-    }
-    
-    @media only screen and (max-width: 435px) {
-        
-    }
 `;
 
 function Home() {
