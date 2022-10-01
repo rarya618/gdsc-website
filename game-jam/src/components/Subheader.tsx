@@ -64,6 +64,11 @@ const menuItems = [
     {text: "Gallery", link: "/gallery"},
 ]
 
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
 const Subheader = () => {
     return (
         <HeaderObject>
@@ -82,7 +87,9 @@ const Subheader = () => {
                     </MenuItem>
 
                 })}
-                <CallToAction className="deep-hoverable">Login</CallToAction>
+                <CallToAction className="deep-hoverable">
+                    <a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Login</a>
+                </CallToAction>
                 </div>
             </SafeArea>
         </HeaderObject>

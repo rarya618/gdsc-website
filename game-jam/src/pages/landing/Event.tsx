@@ -173,6 +173,11 @@ const Image = styled.img`
     }
 `;
 
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
 function Home() {
     return (
         <Section>
@@ -186,7 +191,7 @@ function Home() {
                         <Text>GDSC's Game Jam is a chance for students to display their coding and creative skills developing a game of their choice. The events runs for 55hrs and can be completed in teams of up to 4. The best games progress to the showcase event where they be put to the test by other students and final winners will be decided for the cash prizes.</Text>
                         <ButtonGroup>
                             <ButtonAlt><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonAlt>
-                            <ButtonMain>Register now</ButtonMain>
+                            <ButtonMain><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonMain>
                         </ButtonGroup>
                     </Content>
                 </RowContainer>

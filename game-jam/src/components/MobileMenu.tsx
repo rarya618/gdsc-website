@@ -92,7 +92,7 @@ const MobileMenu = () => {
                 <a id="home" className="menu-item" href="/">Home</a>
                 <a className="menu-item" href="/event">Game Jam Week</a>
                 <a className="menu-item" href="/guidelines">Guidelines</a>
-                <a className="menu-item" href="/event">Register for Game Jam</a>
+                <a className="menu-item" href="https://profile.gdscusyd.org/sign-in">Login for Game Jam</a>
                 <a className="menu-item" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join GDSC</a>
             </Menu>
         </HeaderObject>

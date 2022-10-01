@@ -119,7 +119,7 @@ export const GameTitle = styled.p`
 `;
 
 export const GameLine = styled.hr`
-    border-top: 1px solid ${mainHex};
+    border-top: 0.5px solid ${mainHex};
     width: 100%;
     border-color: ${mainHex};
 `;

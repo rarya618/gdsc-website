@@ -65,6 +65,11 @@ export const bttnLinkStyle = {
     color: "#ffffff",
 };
 
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#EA4335",
+};
+
 const ButtonMain = styled.div`
     padding: 10px 15px;
     display: flex;
@@ -188,7 +193,7 @@ function Home() {
                         <Text>A game jam is an event where participants try to make a video game from scratch. Join us this year at Game Jam Week 2022.</Text>
                         <ButtonGroup>
                             <ButtonMain><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonMain>
-                            <ButtonAlt>Register</ButtonAlt>
+                            <ButtonAlt><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonAlt>
                         </ButtonGroup>
                     </Content>
                     <Content>

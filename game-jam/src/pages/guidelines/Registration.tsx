@@ -120,6 +120,11 @@ export const linkStyle = {
 	textDecoration: "none",
 };
 
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
 
 function Home() {
     return (
@@ -131,7 +136,7 @@ function Home() {
                         <Text>You’ll be working in teams of 1 - 4 for the Game Jam. Each member of your group will have to signup using the individual registration portal on the GDSC USYD Community Website. Following the individual registration of all members, one member of the team will be tasked with registering the team (and its members) on this website. Please note that this user will be linked to the team registration. If you need to add or remove team members you can do so by following the team registration. However, please contact us should you wish to do so. </Text>
                         <ButtonGroup>
                             <ButtonMain id="setup">
-                                Register now
+                                <a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a>
                             </ButtonMain>
                         </ButtonGroup>
                     </Content >

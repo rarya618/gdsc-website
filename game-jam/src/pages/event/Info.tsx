@@ -162,6 +162,11 @@ export const bttnLinkStyle = {
     color: "#EA4335",
 };
 
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
+
 function Home() {
     return (
         <Page id="about">
@@ -182,7 +187,7 @@ function Home() {
                     <Content>
                         <Text>Over the course of the mid sem break, we will be taking you through how to build a game from scratch using python. We’ll have three workshops <strong>at Google headquarters</strong> to teach you the basics that will recap or help you learn python, teach you game design, and help you understand how we will be programming a game using pygame.</Text>
                         <ButtonGroup>
-                            <ButtonMain>Register now</ButtonMain>
+                            <ButtonMain><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonMain>
                             <ButtonAlt><HashLink to="/event/#timeline" style={bttnLinkStyle}>Timeline</HashLink></ButtonAlt>
                         </ButtonGroup>
                     </Content>

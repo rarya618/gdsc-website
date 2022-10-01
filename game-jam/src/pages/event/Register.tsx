@@ -103,7 +103,10 @@ export const Text = styled.p`
     } 
 `;
 
-
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#EA4335",
+};
 
 function Home() {
     return (
@@ -113,7 +116,7 @@ function Home() {
                     <Title>Interested? Register Now!</Title>
                     <Text>Whether it be alone or with a team of up to 4 sign up below in teams of 1 - 4. Game Jam runs for 55h from 10 AM  Friday to 5 PM Sunday.</Text>
                     <ButtonGroup>
-                        <ButtonAlt>Register now</ButtonAlt>
+                        <ButtonAlt><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register Now</a></ButtonAlt>
                     </ButtonGroup>
                 </Content>
             </SafeArea>
