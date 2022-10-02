@@ -17,6 +17,8 @@ import {
 
 import {getDatabase, get, set, child, ref} from "firebase/database";
 
+import { getStorage, ref as storageRef, getDownloadURL } from "firebase/storage";
+
 import { getAnalytics } from "firebase/analytics";
 import UserDetails from "../dataTypes/UserDetails";
 import Task from "../dataTypes/Task";
@@ -58,6 +60,9 @@ const db = app.firestore();
 
 // get Realtime Database
 const realtimeDb = getDatabase(app);
+
+// get storage
+const storage = getStorage();
 
 // Initialize analytics
 const analytics = getAnalytics(app);
@@ -341,6 +346,15 @@ const submitCTFResponse = async (userId: string, questionId: number, response: {
   return await writeToRealtimeDb(`eventData/ctf/userData/${userId}/responses/${questionId}`, response);  
 }
 
+const getQuestionURLfromStorage = async (fileName: string) => {
+  // securely gets download URL from Firebase storage
+  console.log(`getQuestionURLfromStorage`);
+  return await getDownloadURL(storageRef(storage, 'eventData/ctf/' + fileName ))
+  .catch((error) => {
+    console.error(error);
+  });
+}
+
 export {
   app, db, analytics, 
   firebaseSignIn, firebaseSignUp, resetPassword, logout,
@@ -348,5 +362,6 @@ export {
   getTasks, getTask, updateUsersInTask, 
   getEventData,
   joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,
-  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse
+  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse,
+  storage, storageRef, getDownloadURL, getQuestionURLfromStorage
 };

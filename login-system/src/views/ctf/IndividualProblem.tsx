@@ -4,7 +4,7 @@ import { Navigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useTitle } from '../../App';
 import { greenHex } from '../../colors';
-import { getCTFQuestion, getCTFUserResponse, submitCTFResponse } from '../../firebase/config';
+import { getCTFQuestion, getCTFUserResponse, submitCTFResponse, getQuestionURLfromStorage } from '../../firebase/config';
 
 const Problem = styled.div`
     margin: auto;
@@ -104,16 +104,24 @@ const IndividualProblem = () => {
     const [problem, setProblem] = useState<any>();
     const [userResponse, setUserResponse] = useState<any>();
 
+    const [fileUrl, setFileUrl] = useState("");
 
     async function getProblem() {
         if (userId) {
             let tempDoc = await getCTFQuestion(problemId);
 
             if (tempDoc) {
-                setProblem(tempDoc);
+                setProblem(tempDoc);                await getUrl(tempDoc.fileName);
                 await getUserResponse();
             }
         } 
+    }
+
+    async function getUrl(fileName: string) {
+        await getQuestionURLfromStorage(fileName).then(response => {
+            if (response) setFileUrl(response)
+        });
+        
     }
 
     async function getUserResponse() {
@@ -129,7 +137,7 @@ const IndividualProblem = () => {
     // call function
 	useEffect(() => {
 		getProblem();
-	}, [])
+	}, [problemIdFromQuery])
 
     let time = 0;
 
@@ -196,7 +204,7 @@ const IndividualProblem = () => {
         {problem ? <Problem>
             <QuestionArea>
                 <Title>Problem {problemId}</Title>
-                <Button style={{background: "#fff", color: greenHex, position: "absolute", right: 24, top: 26}}>Download</Button>
+                <a href={fileUrl} target="_blank"><Button style={{background: "#fff", color: greenHex, position: "absolute", right: 24, top: 26}}>Download</Button></a>
                 <Text>{problem.question}</Text>
                 <Text>{problem.note ? "Note: " + problem.note : ""}</Text>
             </QuestionArea>
