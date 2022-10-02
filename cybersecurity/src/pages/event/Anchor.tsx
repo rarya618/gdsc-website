@@ -48,9 +48,10 @@ const Image = styled.img`
 
 const menuItems = [
     {text: "What is Capture The Flag?", link: "/event/#about"},
-    {text: "Example", link: "/event/#example"},
-    {text: "How to Register?", link: "/event/#register"},
     {text: "Timeline", link: "/event/#timeline"},
+    {text: "How to Register?", link: "/event/#register"},
+    {text: "Team", link: "/event/#team"},
+
 ]
 
 const scrollWithOffset = (el) => {

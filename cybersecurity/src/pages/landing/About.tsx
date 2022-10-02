@@ -69,7 +69,7 @@ const ButtonAlt = styled.div`
     background-color: #ffffff;
     color: ${mainHex};
     border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 20px;
+    margin: 10px 5px 10px 10px;
     border-radius: 3px;
 `;
 
@@ -150,7 +150,7 @@ function About() {
                         <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus.</Text>
                         <ButtonGroup>
                             <ButtonMain><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonMain>
-                            <ButtonAlt><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonAlt>
+                            <ButtonAlt><a href="https://profile.gdscusyd.org" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonAlt>
                         </ButtonGroup>
                     </Content>
                     <Content>

@@ -10,7 +10,7 @@ const margin = "margin: 10px 20px;";
 const Page = styled.div`
     background-color: ${mainHex};
     color:: #000000;
-    padding: 70px 0;
+    padding: 40px 0;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -128,9 +128,9 @@ function Home() {
             <SafeArea>
                 <Content>
                     <Title>Interested? Register Now!</Title>
-                    <Text>A CTF (Capture The Flag) is a cyber security exercise consisting of multiple puzzles/challenges. Each puzzle has a flag hidden somewhere and the challenge is to find the flag. The flag usually is a sequence of alphanumeric characters. Once you find a flag you get some points. The objective is the find as many flags as possible and collects points in the shortest time possible.</Text>
+                    <Text>Capture the Flag starts on 3rd October at 9am.</Text>
                     <ButtonGroup>
-                    <ButtonAlt><a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register Now</a></ButtonAlt>
+                    <ButtonAlt><a href="https://profile.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Register Now</a></ButtonAlt>
                     </ButtonGroup>
                 </Content>
             </SafeArea>

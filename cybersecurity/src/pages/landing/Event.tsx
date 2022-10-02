@@ -111,7 +111,7 @@ export const Text = styled.p`
 
 
 const Image = styled.img`
-    // width: 450px;
+    width: 95%;
     margin-right: 5%;
 
     @media only screen and (max-width: 1024px) {

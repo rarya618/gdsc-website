@@ -70,9 +70,6 @@ const MenuItem = styled.span`
 
 // thinking of adding these items to a remote source, where they can automatically be updated for each sub-website
 const menuItems = [
-    // {text: "AI/ML"},
-    // {text: "Cybersecurity"},
-    // {text: "Game Jam"},
     {text: "Home", link: "/"},
     {text: "Game Jam Week", link: "/event"},
     {text: "Guidelines", link: "/guidelines"},
@@ -92,7 +89,7 @@ const MobileMenu = () => {
                 <a id="home" className="menu-item" href="/">Home</a>
                 <a className="menu-item" href="/event">Game Jam Week</a>
                 <a className="menu-item" href="/guidelines">Guidelines</a>
-                <a className="menu-item" href="https://profile.gdscusyd.org/sign-in">Login for Game Jam</a>
+                <a className="menu-item" href="https://profile.gdscusyd.org/">Login for Game Jam</a>
                 <a className="menu-item" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join GDSC</a>
             </Menu>
         </HeaderObject>

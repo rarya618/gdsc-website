@@ -6,6 +6,7 @@ import Anchor from './Anchor';
 import Info from './Info';
 import Register from './Register';
 import Timeline from './Timeline';
+import Members from '../landing/Members';
 
 
 
@@ -15,8 +16,9 @@ function Event() {
 			<Header />
             <Anchor />
             <Info />
-            <Register />
             <Timeline />
+            <Register />
+            <Members />
 		</>
 	);
 }

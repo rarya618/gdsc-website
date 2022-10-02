@@ -98,7 +98,7 @@ const ButtonMain = styled.div`
 export const Title = styled.h1`
     font-size: calc(35px + 1vmin);
     color: ${mainHex};
-    text-align: left;
+    text-align: center;
     ${margin}
 
     @media only screen and (max-width: 1024px) {
@@ -137,7 +137,7 @@ export const Text = styled.p`
 
 
 const Image = styled.img`
-    width: 40%;
+    width: 50%;
     margin: 0;
 
     @media only screen and (max-width: 1024px) {
@@ -167,7 +167,7 @@ function Home() {
     return (
         <Page id="timeline">
             <SafeArea>
-                <Title>Capture the Flag Timeline</Title>
+                <Title>Timeline</Title>
                 <VerticalTimeline layout="1-column-left" lineColor='#34A853'>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -222,7 +222,7 @@ function Home() {
                         <Content>
                             <ContentInfo>
                                 <ContentTitle>Capture the Flag</ContentTitle>
-                                <ContentSubtitle className="vertical-timeline-element-subtitle">03rd October 9 AM  Monday to 9th October 9 AM Sunday</ContentSubtitle>
+                                <ContentSubtitle className="vertical-timeline-element-subtitle">3rd Oct 9 am to 9th October 9 am</ContentSubtitle>
                                 <ContentText>
                                 Capture the Flag is a cyber security exercise consisting of multiple puzzles/challenges. For those that have never heard of it, read more here. Detailed rules and info will be on the Rules page. 
                                 </ContentText>

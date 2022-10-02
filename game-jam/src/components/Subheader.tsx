@@ -61,7 +61,7 @@ export const mainLinkStyle = {
 const menuItems = [
     {text: "Game Jam Week", link: "/event"},
     {text: "Guidelines", link: "/guidelines"},
-    {text: "Gallery", link: "/gallery"},
+    // {text: "Gallery", link: "/gallery"},
 ]
 
 export const bttnLinkStyleAlt = {
@@ -88,7 +88,7 @@ const Subheader = () => {
 
                 })}
                 <CallToAction className="deep-hoverable">
-                    <a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Login</a>
+                    <a href="https://profile.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Log in</a>
                 </CallToAction>
                 </div>
             </SafeArea>

@@ -35,8 +35,7 @@
 
 .deep-hoverable:hover {
 	cursor: pointer;
-	background-color: #CDEAD6;
-	color: #34A853;
+	opacity: 0.6;
 }
 
 .spaced {

@@ -15,7 +15,7 @@ const margin = "margin: 10px 20px;";
 
 const Section = styled.div`
     color: ${mainHex};
-    padding: 80px 20px;
+    padding: 40px 20px 80px 20px;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -154,10 +154,10 @@ const memberItems = [
 
 function Home() {
     return (
-        <Section>
+        <Section id="team">
             <SafeArea>
                 <Content>
-                        <Title>Cybersecurity Team</Title>
+                        <Title>The Team</Title>
                 </Content>
                 <Container>
                 <Content>

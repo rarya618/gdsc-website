@@ -118,6 +118,7 @@ export const Text = styled.p`
 
 const Image = styled.img`
     margin: 0 30px;
+    width: calc(100% - 50px);
 
     @media only screen and (max-width: 1024px) {
         width: 400px;  
@@ -140,23 +141,20 @@ function Home() {
                     <Content>
                         <Title>Introduction</Title>
                         <Text>Capture the Flag is a cyber security exercise consisting of multiple puzzles/challenges. For those that have never heard of it, read more here. Detailed rules and info will be on the Rules page.</Text>
-                        <ButtonGroup>
-                            <ButtonMain>Register now</ButtonMain>
-                        </ButtonGroup>
+                       
                     </Content>
                     <Content>
                         <Image src={placeholder}/>
                     </Content>
                 </Container>
-                <Container id="example">
+                <Container>
                     <Content>
                         <Image src={cta} />
                     </Content>
                     <Content>
                         <Text>Each puzzle has a flag hidden somewhere and the challenge is to find the flag. The flag usually is a sequence of alphanumeric characters. Once you find a flag you get some points. The objective is the find as many flags as possible and collects points in the shortest time possible.</Text>
-                        <Text id="example">The following will be an example problem demonstrating how to solve and submit a problem:</Text>
                         <ButtonGroup>
-                            <ButtonMain>Download</ButtonMain>
+                            <ButtonMain>Register now</ButtonMain>
                         </ButtonGroup>
                     </Content>
                 </Container>

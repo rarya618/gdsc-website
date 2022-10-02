@@ -17,8 +17,7 @@ function App() {
       <Header />
       <Subheader />
       <Routes>
-				<Route path="/" element={<Landing />} />
-        <Route path="/event" element={<Event />} />
+				<Route path="/" element={<Event />} />
         <Route path="/rules" element={<Rules />} />
 			</Routes>
       <Footer />

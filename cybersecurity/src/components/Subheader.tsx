@@ -53,15 +53,19 @@ export const mainLinkStyle = {
 };
 
 const menuItems = [
-    {text: "Capture the Flag", link: "/event"},
     {text: "Rules", link: "/rules"},
 ]
+
+export const bttnLinkStyleAlt = {
+	textDecoration: "none",
+    color: "#ffffff",
+};
 
 const Subheader = () => {
     return (
         <HeaderObject>
             <SafeArea className="row spaced">
-            <Link to="/" style={mainLinkStyle}><Heading>Cybersecurity</Heading></Link>
+            <Link to="/" style={mainLinkStyle}><Heading>Capture the Flag</Heading></Link>
             <div>
                 {menuItems.map(menuItem => { 
                     return <MenuItem 
@@ -74,7 +78,7 @@ const Subheader = () => {
                         </Link>
                     </MenuItem>
                 })}
-                <CallToAction className="deep-hoverable">Log in</CallToAction>
+                <CallToAction className="deep-hoverable"><a href="https://profile.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Log in</a></CallToAction>
             </div>
             </SafeArea>
         </HeaderObject>

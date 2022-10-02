@@ -43,9 +43,9 @@ const CallToAction = styled.button`
 
 // thinking of adding these items to a remote source, where they can automatically be updated for each sub-website
 const menuItems = [
-    {text: "AI/ML"},
-    {text: "Cybersecurity"},
-    {text: "Game Jam"},
+    {text: "Tech Impact Project"},
+    {text: "Capture the Flag", current: true},
+    {text: "Game Jam", link: "https://game-jam.gdscusyd.org"},
 ]
 
 const Header = () => {
@@ -54,6 +54,9 @@ const Header = () => {
             <Link to="/"><Logo src={logo} /></Link>		
             <Menu>
                 {menuItems.map(menuItem => {
+                    if (menuItem.current)
+                        return <MenuItem style={{fontWeight: '700'}} className="hoverable">{menuItem.text}</MenuItem>
+
                     return <MenuItem className="hoverable">{menuItem.text}</MenuItem>
                 })}
                 <CallToAction className="hoverable">Join us</CallToAction>
