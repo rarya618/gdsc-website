@@ -2,3 +2,5 @@
 .DS_Store
 /login-system/build
 /login-system/node_modules
+/game-jam
+/ai-ml

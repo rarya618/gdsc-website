@@ -5,7 +5,9 @@ import styled from "styled-components";
 
 const Text = styled.p``;
 
-const Problem = styled.div``;
+const Problem = styled.div`
+    
+`;
 
 const IndividualProblem = () => {
     let params = useParams();
