@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
     "react-router-hash-link": "^2.4.3",
+    "react-router-scroll-to-top": "^1.2.0",
     "react-scripts": "^2.1.8",
     "react-vertical-timeline-component": "^3.5.2",
     "start": "^5.1.0",

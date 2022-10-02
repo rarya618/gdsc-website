@@ -11,12 +11,15 @@ import Footer from './Footer';
 
 import { Link, Route, Routes } from 'react-router-dom';
 
+import { ScrollToTop } from 'react-router-scroll-to-top';
+
 function App() {
   return (
     <div className="App">
       <MobileMenu/>
       <Header />
       <Subheader />
+      <ScrollToTop />
       <Routes>
 				<Route path="/" element={<Event />} />
         <Route path="/rules" element={<Rules />} />
