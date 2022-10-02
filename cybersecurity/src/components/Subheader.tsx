@@ -17,6 +17,10 @@ const HeaderObject = styled.div`
     position: sticky;
     top: 0;
     z-index: 10;
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const Heading = styled.h3`

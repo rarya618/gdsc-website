@@ -11,6 +11,10 @@ const HeaderObject = styled.div`
     padding: 10px;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const Logo = styled.img`
