@@ -18,12 +18,19 @@ const Page = styled.div`
     flex-direction: row;
     align-items: center;
 
+    @media only screen and (max-width: 1024px) {
+        height: auto;
+        padding: 100px 0;
+    } 
+
     @media only screen and (max-width: 768px) {
-        height: calc(100vh - 80px);
+        height: auto;
+        padding: 50px 0;
     } 
 
     @media only screen and (max-width: 425px) {
-        padding: 5px;
+        height: auto;
+        padding: 25px 0;
     } 
 `;
 
@@ -31,6 +38,14 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    } 
 `;
 
 const Content = styled.div`
@@ -42,6 +57,11 @@ const Content = styled.div`
 
     @media only screen and (max-width: 768px) {
         padding: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-start;
     } 
 
     @media only screen and (max-width: 525px) {
@@ -82,17 +102,17 @@ export const Title = styled.h1`
     ${margin}
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(32px + 1vmin);
+        font-size: calc(25px + 1vmin);
     }    
 
     @media only screen and (max-width: 768px) {
         text-align: center;  
-        font-size: calc(30px + 1vmin);
+        font-size: calc(25px + 1vmin);
     } 
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(26px + 1vmin);
-    }
+    @media only screen and (max-width: 425px) {
+        font-size: calc(20px + 1vmin);
+    } 
 `;
 
 export const Text = styled.p`
@@ -102,7 +122,7 @@ export const Text = styled.p`
     line-height: 1.5em;
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(15px + 1vmin);
+        font-size: calc(12px + 1vmin);
         line-height: 1.5em;
     }   
 
@@ -110,27 +130,27 @@ export const Text = styled.p`
         text-align: center; 
     }
 
-    @media only screen and (max-width: 268px) {
-        font-size: calc(14px + 1vmin);
-    }
+    @media only screen and (max-width: 425px) {
+        margin: 0 0 15px 0;
+        font-size: calc(10px + 1vmin);
+    } 
 `;
 
 
 const Image = styled.img`
-    margin: 0 30px;
-    width: calc(100% - 50px);
+margin: 0 30px;
 
-    @media only screen and (max-width: 1024px) {
-        width: 400px;  
-    }
+@media only screen and (max-width: 1024px) {
+    width: 400px;  
+}
 
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
-    }
-    
-    @media only screen and (max-width: 435px) {
-        width: 100%;
-    }
+@media only screen and (max-width: 525px) {
+    width: 100%;  
+}
+
+@media only screen and (max-width: 435px) {
+    width: 100%;
+}
 `;
 
 function Home() {

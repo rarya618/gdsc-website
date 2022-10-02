@@ -25,17 +25,23 @@ const Section = styled.div`
     background-size: contain;
 
     @media only screen and (max-width: 768px) {
-        height: calc(100vh - 80px);
+        height: auto;
+        padding: 75px 0;
     } 
 
     @media only screen and (max-width: 425px) {
-        padding: 5px;
+        height: auto;
+        padding: 50px 0;
     } 
 `;
 
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 425px) {
+        flex-direction: column;
+    } 
 `;
 
 const Content = styled.div`
@@ -47,10 +53,11 @@ const Content = styled.div`
 
     @media only screen and (max-width: 768px) {
         padding: 5px;
+        justify-content: flex-start;
     } 
 
-    @media only screen and (max-width: 525px) {
-        padding: 1px;
+    @media only screen and (max-width: 425px) {
+        margin: 10px 0;
     } 
 `;
 
@@ -62,12 +69,12 @@ export const Title = styled.h1`
     ${margin}
 
     @media only screen and (max-width: 1024px) {
-        font-size: calc(32px + 1vmin);
+        font-size: calc(25px + 1vmin);
     }    
 
     @media only screen and (max-width: 768px) {
         text-align: center;  
-        font-size: calc(30px + 1vmin);
+        font-size: calc(25px + 1vmin);
     } 
 
     @media only screen and (max-width: 268px) {
@@ -100,52 +107,61 @@ export const menuLinkStyle = {
 	margin: "5px",
 	borderRadius: "3px",
 	textDecoration: "none",
-    fontSize: "calc(12px + 1vmin)",
+    fontSize: "calc(10px + 1vmin)",
     fontWeight: "500",
     color: "#3a3a3a",
 };
 
 export const imageLinkStyle = {
-	marginTop: "-15%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
 };
 
 const Image = styled.img`
     margin: 0;
 
-    @media only screen and (max-width: 1024px) {
-        width: 400px;  
+    @ @media only screen and (max-width: 1024px) {
+        width: 80%;  
     }
 
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
+    @media only screen and (max-width: 768px) {
+        width: 75%;  
     }
     
-    @media only screen and (max-width: 435px) {
-        width: 100%;
+    @media only screen and (max-width: 425px) {
+        width: 50%;
     }
 `;
 
 const ImageEmail = styled.img`
     margin: 0;
+    margin-top:-65%;
 
     @media only screen and (max-width: 1024px) {
-        width: 400px;  
+        width: 80%;  
+        margin-top:-55%;
     }
 
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 55%;  
+        margin-top:-35%;
     }
-    
-    @media only screen and (max-width: 435px) {
-        width: 100%;
+
+    @media only screen and (max-width: 425px) {
+        width: 90%;
+        margin-top:-45%;
     }
 `;
 
 const memberItems = [
-    {text: "Victor Li", link: "mailto:shrawani.dev@gmail.com"},
-    {text: "Rushil Petrus", link: "mailto:shrawani.dev@gmail.com"},
-    {text: "Syed Ahmad Sabaat", link: "mailto:shrawani.dev@gmail.com"},
-    {text: "Darsh Chaudhari", link: "mailto:shrawani.dev@gmail.com"},
+    {text: "Victor Li"},
+    {text: "Rushil Petrus"},
+    {text: "Syed Ahmad Sabaat"},
+    {text: "Darsh Chaudhari"},
 ]
 
 

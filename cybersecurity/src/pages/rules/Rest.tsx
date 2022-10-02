@@ -43,8 +43,8 @@ const Content = styled.div`
         padding: 5px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
     } 
 
     @media only screen and (max-width: 525px) {
@@ -91,6 +91,7 @@ export const Text = styled.p`
 
     @media only screen and (max-width: 768px) {
         // text-align: center; 
+        width:70%;
     }
 
     @media only screen and (max-width: 425px) {
