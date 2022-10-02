@@ -127,8 +127,8 @@ const Dashboard = () => {
 	useTitle("Dashboard");
 
 	// check for valid log in
-	let authToken = sessionStorage.getItem('Auth Token');
-	let userId = sessionStorage.getItem('userId');
+	let authToken = localStorage.getItem('Auth Token');
+	let userId = localStorage.getItem('userId');
 
 	let uid = userId ? userId : "";
 

@@ -12,9 +12,15 @@ import SignIn from './views/SignIn';
 import { blueHex } from './colors';
 import Dashboard from './views/Dashboard';
 import { buttonStyle } from './objectStyles';
+
+// team imports
 import TeamPublic from './views/Teams/TeamPublic';
 import TeamPrivate from './views/Teams/TeamPrivate';
 import GetTeam from './views/Teams/GetTeam';
+
+// ctf imports
+import CTFIndividualProblem from './views/ctf/IndividualProblem';
+import CTFSummary from './views/ctf/Summary';
 
 // set page title
 export function useTitle(title: string) {
@@ -170,6 +176,8 @@ function App() {
           <Route path="/team/:eventCode/get" element={<GetTeam />} />
           <Route path="/team/:teamId/public" element={<TeamPublic />} />
           <Route path="/team/:teamId/private" element={<TeamPrivate />} />
+          <Route path="/ctf" element={<CTFSummary />} />
+          <Route path="/ctf/problem/:problemId" element={<CTFIndividualProblem />} />
         </Routes>
       </Scrollable>
     </Body>

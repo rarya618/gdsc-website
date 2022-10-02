@@ -15,6 +15,8 @@ import {
   getDoc, getDocFromServer, getDocs, query, where
 } from "firebase/firestore";
 
+import {getDatabase, get, set, child, ref} from "firebase/database";
+
 import { getAnalytics } from "firebase/analytics";
 import UserDetails from "../dataTypes/UserDetails";
 import Task from "../dataTypes/Task";
@@ -22,7 +24,7 @@ import Team from "../dataTypes/Team";
 import { addToList, randomString } from "../App";
 import UserTeam from "../dataTypes/UserTeam";
 
-let isTesting = true;
+let isTesting = false;
 
 // Your web app's Firebase configuration
 const testConfig = {
@@ -54,6 +56,9 @@ const auth = getAuth(app);
 // Initialize db
 const db = app.firestore();
 
+// get Realtime Database
+const realtimeDb = getDatabase(app);
+
 // Initialize analytics
 const analytics = getAnalytics(app);
 
@@ -64,8 +69,8 @@ const firebaseSignIn = async (email: string, password: string, route?: string) =
   await signInWithEmailAndPassword(auth, email, password)
   .then((response) => {
     // @ts-ignore
-    sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken);
-    sessionStorage.setItem('userId', response.user.uid);
+    localStorage.setItem('Auth Token', response._tokenResponse.refreshToken);
+    localStorage.setItem('userId', response.user.uid);
 
     status = true;
   })
@@ -90,8 +95,8 @@ const firebaseSignUp = async (firstName: string, lastName: string, email: string
     const user = response.user;
 
     // @ts-ignore
-    sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken);
-    sessionStorage.setItem('userId', user.uid);
+    localStorage.setItem('Auth Token', response._tokenResponse.refreshToken);
+    localStorage.setItem('userId', user.uid);
 
     await db.collection("users").doc(user.uid).set({
       firstName: firstName,
@@ -128,7 +133,7 @@ const resetPassword = async (email: string) => {
 
 const logout = () => {
   signOut(auth);
-  sessionStorage.clear();
+  localStorage.clear();
   window.location.href = "/";
 };
 
@@ -297,11 +302,51 @@ const createTeam = async (uid: string, name: string, pin: string, type: string) 
   return success;
 }
 
+const getFromRealtimeDb = async (query: string) => {
+  let result: any = null;
+
+  const dbRef = ref(realtimeDb);
+
+  await get(child(dbRef, query)).then((snapshot) => {
+    if (snapshot.exists()) {
+      result = snapshot.val();
+    } else {
+      result = null;
+    }
+  }).catch((error) => {
+    console.error(error);
+  });;
+
+  return result;
+}
+
+const writeToRealtimeDb = async(location: string, data: any) => {
+  return await set(ref(realtimeDb, location), data);
+}
+
+const getCTFQuestion = async (questionId: number) => {
+  return await getFromRealtimeDb(`eventData/ctf/questions/${questionId}`);
+  
+}
+
+const getCTFUserResponses = async (userId: string) => {
+  return await getFromRealtimeDb(`eventData/ctf/userData/${userId}/responses`);  
+}
+
+const getCTFUserResponse = async (userId: string, questionId: number) => {
+  return await getFromRealtimeDb(`eventData/ctf/userData/${userId}/responses/${questionId}`);  
+}
+
+const submitCTFResponse = async (userId: string, questionId: number, response: {time: number, tries: number, correct?: boolean, marked?: boolean}) => {
+  return await writeToRealtimeDb(`eventData/ctf/userData/${userId}/responses/${questionId}`, response);  
+}
+
 export {
   app, db, analytics, 
   firebaseSignIn, firebaseSignUp, resetPassword, logout,
   getUser, updateTasksInUser, 
   getTasks, getTask, updateUsersInTask, 
   getEventData,
-  joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser
+  joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,
+  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse
 };

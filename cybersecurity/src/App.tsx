@@ -9,8 +9,6 @@ import Rules from './pages/rules/Rules';
 import Footer from './Footer';
 
 import { Link, Route, Routes } from 'react-router-dom';
-import IndividualProblem from './pages/ctf/IndividualProblem';
-
 
 function App() {
   return (
@@ -20,8 +18,6 @@ function App() {
       <Routes>
 				<Route path="/" element={<Event />} />
         <Route path="/rules" element={<Rules />} />
-        <Route path="/summary" element={<Rules />} />
-        <Route path="/problem/:problemId" element={<IndividualProblem />} />
 			</Routes>
       <Footer />
     </div>

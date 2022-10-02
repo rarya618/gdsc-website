@@ -8,8 +8,13 @@ const fields = [
 	{id: 'password', type: 'password', label: 'Password*', placeholder: 'Your password', desc: "Password must be at least 8 characters"},
 ]
 
+function useQuery() {
+	return new URLSearchParams(window.location.search);
+}
+
 const SignIn = () => {
 	useTitle("Sign in");
+	let next = useQuery().get('next');
 
 	const signIn = async (event: FormEvent) => {
 		event.preventDefault();
@@ -32,7 +37,11 @@ const SignIn = () => {
 				
 			if (await firebaseSignIn(data.email, data.password)) {
 				console.log("Sign in successful.");
-				window.location.href = "/";
+				if (next) {
+					window.location.href = next;
+				} else {
+					window.location.href = "/";
+				}
 			} else {
 				alert("Sign in failed...");
 			}
