@@ -54,7 +54,7 @@ export const mainLinkStyle = {
 
 const menuItems = [
     {text: "Capture the Flag", link: "/event"},
-    {text: "Rules"},
+    {text: "Rules", link: "/rules"},
 ]
 
 const Subheader = () => {
