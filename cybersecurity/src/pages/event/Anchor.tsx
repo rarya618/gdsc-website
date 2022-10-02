@@ -47,10 +47,10 @@ const Image = styled.img`
 `;
 
 const menuItems = [
-    {text: "What is Capture The Flag?", link: "/event/#about"},
-    {text: "Timeline", link: "/event/#timeline"},
-    {text: "How to Register?", link: "/event/#register"},
-    {text: "Team", link: "/event/#team"},
+    {text: "What is Capture The Flag?", link: "/#about"},
+    {text: "Timeline", link: "/#timeline"},
+    {text: "How to Register?", link: "/#register"},
+    {text: "Team", link: "/#team"},
 
 ]
 
