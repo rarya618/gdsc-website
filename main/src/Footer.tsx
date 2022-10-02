@@ -6,10 +6,13 @@ import background from './resources/footer.png';
 import logo from './resources/footer-logo.png';
 
 // social symbols
-import gdscLogo from './resources/GDSC-logo.png';
-import facebookLogo from './resources/Facebook-logo.png';
-import instagramLogo from './resources/Instagram-logo.png';
-import linkedInLogo from './resources/LinkedIn-logo.png';
+import gdscLogo from './resources/GDSC-logo.svg';
+import facebookLogo from './resources/Facebook-logo.svg';
+import instagramLogo from './resources/Instagram-logo.svg';
+import linkedInLogo from './resources/Linkedin-logo.svg';
+import emailLogo from './resources/Email-logo.svg';
+import discordLogo from './resources/Discord-logo.svg';
+import { Link } from 'react-router-dom';
 
 const margin = "margin: 10px 20px;";
 
@@ -18,24 +21,62 @@ const Page = styled.div`
     // background: url(${background});
     background: ${blueHex};
     background-size: cover;
-    padding: 50px 20px;
+    padding: 50px 30px;
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: top;
+
+    @media only screen and (max-width: 768px) { 
+        align-items: center;
+        padding: 40px 20px;
+    } 
+
+    @media only screen and (max-width: 525px) { 
+        padding: 30px 20px;
+    } 
 `;
 
 const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) { 
+        flex-direction: column;
+        align-items: center;
+    } 
 `;
+
+const ContainerSocial = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 768px) { 
+        justify-content: center;
+    } 
+
+`;
+
 
 const Content = styled.div`
     padding: 10px;
     width: 26%;
     display: flex;
     flex-direction: column;
+`;
+
+const Divider = styled.div`
+    margin: 15px;
+    width: calc(100% - 30px);
+    height: 0.05em;
+    background-color: ${whiteHex}; 
+
+    @media only screen and (max-width: 768px) { 
+        width: calc(20% - 30px);
+    } 
+
 `;
 
 export const Title = styled.h2`
@@ -48,29 +89,67 @@ export const Text = styled.p`
     font-size: calc(18px + 1vmin);
 `;
 
+const socialWidth = 40;
+
+const socialVMargin = 10;
+
 const Image = styled.img`
-    margin: 25px;
-    height: 40px;
+    margin: ${socialVMargin + 2.5}px 16px ${socialVMargin + 4.5}px 16px;
+    height: ${socialWidth - 5}px;
+    
+    @media only screen and (max-width: 925px) {
+        margin: ${socialVMargin + 4}px 16px ${socialVMargin + 6}px 16px;
+        height: ${socialWidth - 8}px;
+    }
+
+    @media only screen and (max-width: 825px) { 
+        height: ${socialWidth - 10}px;
+    }
+
+    @media only screen and (max-width: 425px) { 
+        width: 90%;
+        height: ${socialWidth - 15}px;
+    }
 `;
 
 const Spacer = styled.div`
     height: 120px;
 `;
 
-const socialWidth = 48;
 
 const Social = styled.img`
     height: ${socialWidth}px;
     width: ${socialWidth}px;
-    margin: 18px 16px;
+    margin: ${socialVMargin}px 12px ${socialVMargin + 2}px 12px;
+
+    @media only screen and (max-width: 825px) { 
+        margin: ${socialVMargin}px 10px ${socialVMargin + 2}px 10px;
+        width: ${socialWidth - 5}px;
+    }
+
+    @media only screen and (max-width: 768px) { 
+        width: ${socialWidth - 10}px;
+    }
+
+    @media only screen and (max-width: 425px) { 
+        margin: ${socialVMargin}px 8px ${socialVMargin + 2}px 8px;
+        width: ${socialWidth - 15}px;
+    }
+
+    @media only screen and (max-width: 375px) { 
+        margin: ${socialVMargin}px 5px ${socialVMargin + 2}px 5px;
+    }
 `;
 
 const socialList = [
+    {name: "Email", icon: emailLogo, link: "mailto:gdsc.usyd@gmail.com"},
     {name: "GDSC Page", icon: gdscLogo, link: "https://gdsc.community.dev/the-university-of-sydney/"},
     {name: "Facebook Page", icon: facebookLogo, link: "https://fb.me/gdsc.usyd"},
     {name: "Instagram Page", icon: instagramLogo, link: "https://www.instagram.com/gdscusyd"},
     {name: "LinkedIn Page", icon: linkedInLogo, link: "https://linkedin.com/company/gdsc-usyd"},
+    {name: "Discord Page", icon: discordLogo, link: "https://discord.gg/3xswfeUb"},
 ];
+
 
 const footerContent = [
     {
@@ -100,6 +179,21 @@ const footerContent = [
     },
 ]
 
+// Last Footer
+const FinalFooter = styled.div`
+    color: ${whiteHex};
+    padding: 12px 15px;
+
+    @media only screen and (max-width: 768px) { 
+        text-align: center;
+    }
+`;
+
+const whiteLink = {
+    color: whiteHex,
+    textDecoration: 'none'
+}
+
 function Footer() {
     return (
         <Page>
@@ -118,15 +212,19 @@ function Footer() {
             {/* <Spacer /> */}
             <Container>
                 <Image src={logo} />
-                <Container>
+                <ContainerSocial>
                     {socialList.map(social => {
                         if (social.link) {
                             return <a href={social.link}><Social className="btn-hoverable" src={social.icon} title={social.name} alt={social.name} /></a>
                         }
                         return <Social className="btn-hoverable" src={social.icon} title={social.name} alt={social.name} />
                     })}
-                </Container>
+                </ContainerSocial>
             </Container>
+            <Divider />
+            <FinalFooter>
+                <Link style={whiteLink} to="/terms" target="_blank" rel="noopener noreferrer">Terms</Link>&ensp;|&ensp;<Link style={whiteLink} to="/privacy" target="_blank" rel="noopener noreferrer">Privacy</Link>
+            </FinalFooter>
         </Page>
     );
 }

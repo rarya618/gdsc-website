@@ -30,16 +30,22 @@
 
 .hoverable:hover {
 	cursor: pointer;
-	background-color: #EBF6EE;
-	color: #34A853;
+	border: solid 1px;
 }
 
 .deep-hoverable:hover {
 	cursor: pointer;
-	background-color: #CDEAD6;
-	color: #34A853;
+	opacity: 0.6;
 }
 
 .spaced {
     justify-content: space-between;
+}
+
+.vertical-timeline-element-date{
+	display: none !important;
+}
+
+.vertical-timeline-element--work{
+	margin-bottom: 50px !important;
 }
