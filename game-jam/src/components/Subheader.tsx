@@ -87,9 +87,9 @@ const Subheader = () => {
                     </MenuItem>
 
                 })}
-                <CallToAction className="deep-hoverable">
+                {/* <CallToAction className="deep-hoverable">
                     <a href="https://profile.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Log in</a>
-                </CallToAction>
+                </CallToAction> */}
                 </div>
             </SafeArea>
         </HeaderObject>

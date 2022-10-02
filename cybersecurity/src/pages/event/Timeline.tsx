@@ -79,7 +79,6 @@ const ContentTitle = styled.div`
     margin: 10px 0;
 `;
 
-
 const ButtonGroup = styled.div`
     display: flex;
 `;
@@ -91,7 +90,19 @@ const ButtonMain = styled.div`
     background-color: ${mainHex};
     color: #ffffff;
     border: 1px solid ${mainHex};
-    margin: 10px 0;
+    margin: 10px 15px 10px 0;
+    border-radius: 3px;
+`;
+
+const ButtonAlt = styled.div`
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: ${mainHex};
+    color: #ffffff;
+    border: 1px solid ${mainHex};
+    margin: 10px 15px 10px 0;
     border-radius: 3px;
 `;
 
@@ -163,13 +174,40 @@ export const bttnLinkStyle = {
     color: "#ffffff",
 };
 
+const eventList = [
+    {
+        title: "Competition",
+        date: "3rd Oct 9am - 9 Oct 9am",
+        description: "Capture the Flag is a cyber security exercise consisting of multiple puzzles/challenges. For those that have never heard of it, read more here. Detailed rules and info will be on the Rules page.",
+        info: {
+            text: "Learn more",
+            link: "https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/"
+        },
+        callToAction: { 
+            text: "Register",
+            link: "https://profile.gdscusyd.org/"
+        }
+    },
+    {
+        title: "Workshop I",
+        date: "4th Oct 8pm",
+        description: "For the first half hour, we are going to be talking about networking in cybersecurity! For the next half hour, we will go through hints on all the encryption questions!"
+    },
+    {
+        title: "Workshop II",
+        date: "5th Oct 8pm",
+        description: "Here we mainly troubleshoot through problems you may have and provide any extra hints you might need just to pull through!"
+    },
+];
+
 function Home() {
     return (
         <Page id="timeline">
             <SafeArea>
                 <Title>Timeline</Title>
                 <VerticalTimeline layout="1-column-left" lineColor='#34A853'>
-                    <VerticalTimelineElement
+                    {eventList.map((eventObj) => {
+                    return <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         position='right'
                         iconStyle={{ background: '#34A853', color: '#fff' }}
@@ -177,63 +215,27 @@ function Home() {
                     >
                         <Content>
                             <ContentInfo>
-                                <ContentTitle>Workshop I</ContentTitle>
-                                <ContentSubtitle className="vertical-timeline-element-subtitle">Date | Location</ContentSubtitle>
+                                <ContentTitle>{eventObj.title}</ContentTitle>
+                                <ContentSubtitle className="vertical-timeline-element-subtitle">{eventObj.date}</ContentSubtitle>
                                 <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    {eventObj.description}
                                 </ContentText>
                                 <ButtonGroup>
-                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/">RSVP now</a></ButtonMain>
-                                </ButtonGroup>
+                                    {eventObj.callToAction ? 
+                                        <ButtonMain><a style={bttnLinkStyle} href={eventObj.callToAction.link}>{eventObj.callToAction.text}</a></ButtonMain>
+                                    : null}
+                                    {eventObj.info ? 
+                                        <ButtonAlt><a style={{
+                                            textDecoration: "none",
+                                            color: mainHex,
+                                        }} href={eventObj.info.link}>{eventObj.info.text}</a></ButtonAlt>
+                                    : null}
+                                 </ButtonGroup>
                             </ContentInfo>
                             <Image src={placeholder} />
                         </Content>
                         
-                    </VerticalTimelineElement>
-
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        position='right'
-                        iconStyle={{ background: '#34A853', color: '#fff' }}
-                        icon={ <Icon src={icon}/> }
-                    >
-                        <Content>
-                            <ContentInfo>
-                                <ContentTitle>Workshop II</ContentTitle>
-                                <ContentSubtitle className="vertical-timeline-element-subtitle">Date | Location</ContentSubtitle>
-                                <ContentText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu augue, vulputate quis arcu et, euismod molestie augue. Sed tempor et arcu ut luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                </ContentText>
-                                <ButtonGroup>
-                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/">RSVP now</a></ButtonMain>
-                                </ButtonGroup>
-                            </ContentInfo>
-                            <Image src={placeholder} />
-                        </Content>
-                    </VerticalTimelineElement>
-
-
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        position='right'
-                        iconStyle={{ background: '#34A853', color: '#fff' }}
-                        icon={ <Icon src={icon}/> }
-                    >
-                        <Content>
-                            <ContentInfo>
-                                <ContentTitle>Capture the Flag</ContentTitle>
-                                <ContentSubtitle className="vertical-timeline-element-subtitle">3rd Oct 9 am to 9th October 9 am</ContentSubtitle>
-                                <ContentText>
-                                Capture the Flag is a cyber security exercise consisting of multiple puzzles/challenges. For those that have never heard of it, read more here. Detailed rules and info will be on the Rules page. 
-                                </ContentText>
-                                <ButtonGroup>
-                                    <ButtonMain><a style={bttnLinkStyle} href="https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/">RSVP now</a></ButtonMain>
-                                </ButtonGroup>
-                            </ContentInfo>
-                            <Image src={placeholder} />
-                        </Content>
-                        
-                    </VerticalTimelineElement>
+                    </VerticalTimelineElement>})}
                 </VerticalTimeline>
             </SafeArea>
         </Page>
