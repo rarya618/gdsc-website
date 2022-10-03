@@ -203,7 +203,7 @@ const Dashboard = () => {
 					</Box>
 
 					<Box>
-						<BoxTitle>Upcoming tasks</BoxTitle>
+						<BoxTitle>Upcoming</BoxTitle>
 						{tasks.length != 0 ? 
 						<TaskPane>
 							{tasks.map(task => {
@@ -218,7 +218,7 @@ const Dashboard = () => {
 											marginTop: '18px'
 										}}
 										onClick={async () => {
-											await enrollInTask(task.id, uid)
+											await enrollInTask(task.id, uid);
 										}}>
 										{task.callToAction}
 									</StandardButton> : task.postEnrolment ? 
@@ -229,7 +229,7 @@ const Dashboard = () => {
 											marginLeft: 0, 
 											marginTop: '18px'
 										}}
-										onClick={() => {
+										onClick={async () => {
 											// @ts-ignore
 											window.location.href = task.postEnrolment.link ? task.postEnrolment.link : '/';
 										}}

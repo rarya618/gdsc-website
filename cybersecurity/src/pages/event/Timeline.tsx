@@ -195,8 +195,8 @@ const eventList = [
             link: "https://gdsc.community.dev/events/details/developer-student-clubs-the-university-of-sydney-presents-gdscs-capture-the-flag-hackathon/"
         },
         callToAction: { 
-            text: "Register",
-            link: "https://profile.gdscusyd.org/"
+            text: "Get started",
+            link: "https://competitions.gdscusyd.org/"
         }
     },
     {

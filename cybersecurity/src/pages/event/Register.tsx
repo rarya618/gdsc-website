@@ -117,7 +117,7 @@ function Home() {
                     <Title>Interested? Register Now!</Title>
                     <Text>Capture the Flag starts on 3rd October at 9am.</Text>
                     <ButtonGroup>
-                    <ButtonAlt><a href="https://profile.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Register Now</a></ButtonAlt>
+                    <ButtonAlt><a href="https://competitions.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Get started</a></ButtonAlt>
                     </ButtonGroup>
                 </Content>
             </SafeArea>

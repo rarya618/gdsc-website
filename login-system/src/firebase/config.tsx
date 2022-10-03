@@ -307,6 +307,53 @@ const createTeam = async (uid: string, name: string, pin: string, type: string) 
   return success;
 }
 
+let ctfSample = {
+	"responses": {
+	  "1": {
+		"tries": 0,
+		"time": 0,
+		"correct": false
+	  },
+	  "2": {
+		"tries": 0,
+		"time": 0,
+		"correct": false,
+		"marked": false
+	  },
+	  "3": {
+		"tries": 0,
+		"time": 0,
+		"correct": false
+	  },
+	  "4": {
+		"tries": 0,
+		"time": 0,
+		"correct": false,
+		"marked": false
+	  },
+	  "5": {
+		"tries": 0,
+		"time": 0,
+		"correct": false
+	  },
+	  "6": {
+		"tries": 0,
+		"time": 0,
+		"correct": false
+	  },
+	  "7": {
+		"tries": 0,
+		"time": 0,
+		"correct": false
+	  },
+	  "8": {
+		"tries": 0,
+		"time": 0,
+		"correct": false
+	  }
+	}
+}
+
 const getFromRealtimeDb = async (query: string) => {
   let result: any = null;
 
@@ -335,7 +382,16 @@ const getCTFQuestion = async (questionId: number) => {
 }
 
 const getCTFUserResponses = async (userId: string) => {
-  return await getFromRealtimeDb(`eventData/ctf/userData/${userId}/responses`);  
+  let results = await getFromRealtimeDb(`eventData/ctf/userData/${userId}/responses`);
+  
+  if (!results) {
+    await writeToRealtimeDb(`eventData/ctf/userData/${userId}`, ctfSample);
+
+    results = await getFromRealtimeDb(`eventData/ctf/userData/${userId}/responses`);
+  }
+  
+  return results
+
 }
 
 const getCTFUserResponse = async (userId: string, questionId: number) => {
@@ -362,6 +418,6 @@ export {
   getTasks, getTask, updateUsersInTask, 
   getEventData,
   joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,
-  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse,
+  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse, writeToRealtimeDb,
   storage, storageRef, getDownloadURL, getQuestionURLfromStorage
 };

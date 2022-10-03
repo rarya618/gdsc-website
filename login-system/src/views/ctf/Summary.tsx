@@ -48,7 +48,7 @@ const Summary = () => {
 
 	useTitle("Summary - Capture the Flag"); 
 
-    const [problems, setProblems] = useState<{correct: boolean, marked?: boolean, time: number, tries: number}[]>([])
+    const [problems, setProblems] = useState<any[]>([])
 
     async function getProblems() {
         if (userId) {

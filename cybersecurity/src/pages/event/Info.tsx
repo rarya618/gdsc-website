@@ -174,7 +174,9 @@ function Home() {
                     <Content>
                         <Text>Each puzzle has a flag hidden somewhere and the challenge is to find the flag. The flag usually is a sequence of alphanumeric characters. Once you find a flag you get some points. The objective is the find as many flags as possible and collects points in the shortest time possible.</Text>
                         <ButtonGroup>
-                            <ButtonMain>Register now</ButtonMain>
+                            <ButtonMain onClick={() => {
+                                window.location.href = "https://competitions.gdscusyd.org"
+                            }}>Get started</ButtonMain>
                         </ButtonGroup>
                     </Content>
                 </Container>

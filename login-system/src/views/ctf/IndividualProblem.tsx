@@ -180,7 +180,7 @@ const IndividualProblem = () => {
 
                 response = {...response, correct}
             } else {
-                response = {...response, answer: "", marked: false}
+                response = {...response, answer: data.answer, marked: false}
             }
 
             await submitCTFResponse(userId, problemId, response);
@@ -204,7 +204,7 @@ const IndividualProblem = () => {
         {problem ? <Problem>
             <QuestionArea>
                 <Title>Problem {problemId}</Title>
-                <a href={fileUrl} target="_blank"><Button style={{background: "#fff", color: greenHex, position: "absolute", right: 24, top: 26}}>Download</Button></a>
+                <a href={fileUrl} target="blank"><Button style={{background: "#fff", color: greenHex, position: "absolute", right: 24, top: 26}}>Download</Button></a>
                 <Text>{problem.question}</Text>
                 <Text>{problem.note ? "Note: " + problem.note : ""}</Text>
             </QuestionArea>
