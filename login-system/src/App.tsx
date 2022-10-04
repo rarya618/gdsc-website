@@ -21,6 +21,7 @@ import GetTeam from './views/Teams/GetTeam';
 // ctf imports
 import CTFIndividualProblem from './views/ctf/IndividualProblem';
 import CTFSummary from './views/ctf/Summary';
+import CTFLeaderboard from './views/ctf/Leaderboard';
 
 // set page title
 export function useTitle(title: string) {
@@ -66,7 +67,7 @@ const Body = styled.div`
 const Logo = styled.img`
   max-width: 400px;
   width: 75%;
-  position: fixed;
+  position: absolute;
   left: 20px;
   top: 10px;
   z-index: 1000;
@@ -177,6 +178,7 @@ function App() {
           <Route path="/team/:teamId/public" element={<TeamPublic />} />
           <Route path="/team/:teamId/private" element={<TeamPrivate />} />
           <Route path="/ctf" element={<CTFSummary />} />
+          <Route path="/ctf/leaderboard" element={<CTFLeaderboard />} />
           <Route path="/ctf/problem/:problemId" element={<CTFIndividualProblem />} />
         </Routes>
       </Scrollable>

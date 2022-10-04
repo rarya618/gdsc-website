@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { useTitle } from '../../App';
 import { greenHex } from '../../colors';
 import { getCTFQuestion, getCTFUserResponse, submitCTFResponse, getQuestionURLfromStorage } from '../../firebase/config';
+import Menu from './components/Menu';
 
 const Problem = styled.div`
     margin: auto;
@@ -201,6 +202,7 @@ const IndividualProblem = () => {
 
     return (
         <>
+        <Menu />
         {problem ? <Problem>
             <QuestionArea>
                 <Title>Problem {problemId}</Title>

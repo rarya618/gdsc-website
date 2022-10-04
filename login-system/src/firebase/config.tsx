@@ -381,6 +381,10 @@ const getCTFQuestion = async (questionId: number) => {
   
 }
 
+const getCTFUsersData = async () => {
+  return await getFromRealtimeDb(`eventData/ctf/userData`);
+}
+
 const getCTFUserResponses = async (userId: string) => {
   let results = await getFromRealtimeDb(`eventData/ctf/userData/${userId}/responses`);
   
@@ -389,7 +393,7 @@ const getCTFUserResponses = async (userId: string) => {
 
     results = await getFromRealtimeDb(`eventData/ctf/userData/${userId}/responses`);
   }
-  
+
   return results
 
 }
@@ -412,12 +416,12 @@ const getQuestionURLfromStorage = async (fileName: string) => {
 }
 
 export {
-  app, db, analytics, 
+  app, db, analytics, storage,
   firebaseSignIn, firebaseSignUp, resetPassword, logout,
   getUser, updateTasksInUser, 
   getTasks, getTask, updateUsersInTask, 
-  getEventData,
+  getEventData, writeToRealtimeDb, getCTFUsersData,
   joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,
-  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse, writeToRealtimeDb,
-  storage, storageRef, getDownloadURL, getQuestionURLfromStorage
+  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse,
+  storageRef, getDownloadURL, getQuestionURLfromStorage
 };

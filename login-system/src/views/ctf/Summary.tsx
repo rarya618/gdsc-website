@@ -5,15 +5,17 @@ import styled from "styled-components";
 import { useTitle } from '../../App';
 import { greenHex, redHex } from '../../colors';
 import { getCTFUserResponses } from '../../firebase/config';
+import Menu from './components/Menu';
 
-const Page = styled.div`
+export const Page = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px 0;
+    padding: 30px 0;
+    margin-bottom: 100px;
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
     color: ${greenHex};
 `;
 
@@ -27,7 +29,7 @@ const Problems = styled.div`
 const Problem = styled.div`
     padding: 6px 24px 10px 24px;
     border: solid 1px;
-    margin: 10px;
+    margin: 0 10px 30px 10px;
     border-radius: 5px;
     width: calc(50% - 70px);
 `;
@@ -71,6 +73,7 @@ const Summary = () => {
     
     return (
         <Page>
+            <Menu current="summary"/>
             <Title>Summary</Title>
             <Problems>
             {problems ? problems.map((problem, index) => {
