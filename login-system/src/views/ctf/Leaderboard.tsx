@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useTitle } from "../../App";
 import { greenHex, lightGreenHex, redHex } from "../../colors";
-import { getCTFUsersData } from "../../firebase/config";
+import UserDetails from "../../dataTypes/UserDetails";
+import { getCTFUsersData, getUserName, getUsersByTask } from "../../firebase/config";
 
 import Menu from "./components/Menu";
-import { Page, Title } from "./Summary";
+import { Page, Title, Text } from "./Summary";
 
 const LeaderboardView = styled.div`
     background: #fff;
@@ -103,8 +105,13 @@ const displayTimeString = (timeInt: number) => {
     return "00:00";
 }
 
+function createName(data: UserDetails) {
+    return data.firstName.trim() + " " + data.lastName.trim();
+}
+
 const Leaderboard = () => {
     const [users, setUsers] = useState<any>();
+    const [userNames, setUserNames] = useState<any>();
 
 	let userId = localStorage.getItem('userId');
 
@@ -112,9 +119,25 @@ const Leaderboard = () => {
         let tempDoc = await getCTFUsersData();
 
         if (tempDoc) {
-            console.log(tempDoc);
             setUsers(tempDoc);
         }
+    }
+
+    async function getUserNames() {
+        let ctfUserDetails = await getUsersByTask("QfWZrQ1FcfuMWKnOeMld"); 
+        let keys = Object.keys(ctfUserDetails);
+
+        var dict: any = {};
+
+        var addPair = function (myKey: string, myValue: string) {
+            dict[myKey] = myValue;
+        };
+        
+        keys.map((key) => {
+            addPair(key.trim(), createName(ctfUserDetails[key]));
+        })
+
+        setUserNames(dict);
     }
 
     // call function
@@ -122,16 +145,36 @@ const Leaderboard = () => {
 		getUsers();
 	}, [])
 
+    // call function
+	useEffect(() => {
+		getUserNames();
+	}, [users])
+
+    useTitle("Leaderboard | Capture the Flag");
+
     if (users) {
         let keys = Object.keys(users);
-
-        let sortedUsers = keys.map((key) => {
+        let sortedUsers: any[] = [];
+        
+        keys.map((key) => {            
             let responses = returnResponses(users[key]);
 
             let time = 0;
             let score = 0;
 
             responses.map((response: any) => {
+                let notMarked = !response.marked && response.marked === false;
+
+                if (response.tries !== 0) {
+                    let tempTries = response.tries
+
+                    if (response.correct || notMarked)
+                        tempTries -= 1
+                    
+                    time += tempTries * 30 * 60
+
+                }
+
                 time += response.time;
 
                 if (response.correct) {
@@ -139,7 +182,8 @@ const Leaderboard = () => {
                 }
             })
 
-            return {id: key, ...users[key], time: time, score: score}
+            if (time !== 0)
+                sortedUsers.push({id: key, ...users[key], time: time, score: score});
         })
 
         sortedUsers.sort((a, b) => {
@@ -165,11 +209,12 @@ const Leaderboard = () => {
         return (<Page>
             <Menu current="leaderboard"/>
             <Title>Leaderboard</Title>
+            <Text>A quick look at where you stand, compared to other participants.</Text>
             <LeaderboardView>
             <LeaderboardTable>
                 <LeaderboardTop>
                     <LeaderboardHeader>#</LeaderboardHeader>
-                    <LeaderboardHeader>User ID</LeaderboardHeader>
+                    <LeaderboardHeader>Participant</LeaderboardHeader>
                     <LeaderboardHeader>Time</LeaderboardHeader>
                     {problemNumbers.map(problemNumber => {
                         return <LeaderboardHeader>P{problemNumber}</LeaderboardHeader>
@@ -179,17 +224,32 @@ const Leaderboard = () => {
                 {sortedUsers.map((user, index) => {
                     let responses = returnResponses(user);
 
+                    if (user.time !== 0)
                     return (<LeaderboardItem style={userId && userId === user.id ? {background: lightGreenHex} : {}}>
                         <LeaderboardCol>{index + 1}</LeaderboardCol>
-                        <LeaderboardCol>{user.id}</LeaderboardCol>
+                        <LeaderboardCol style={{textAlign: 'left'}}>{userNames ? userNames[user.id] : user.id}</LeaderboardCol>
                         <LeaderboardCol>{displayTimeString(user.time)}</LeaderboardCol>
                         {responses.map((response: any) => {
-                            let color = response.correct ? greenHex : redHex;
+                            let notMarked = !response.marked && response.marked === false;
+                            let color = response.correct ? greenHex : notMarked ? '' : redHex;
+                            let time = 0;
+
+                            if (response.tries !== 0) {
+                                let timerOffset = response.tries
+
+                                if (response.correct || notMarked)
+                                    timerOffset -= 1
+
+                                if (!(response.tries === 1 && response.correct))
+                                    time += timerOffset * 30 * 60
+                            }
+
+                            time += response.time;
 
                             return (<LeaderboardProblemCol>
-                                { response.time != 0 ? <FlexColumn>
-                                <LeaderboardProblemColTime style={{color: color}}>{displayTimeString(response.time)}</LeaderboardProblemColTime>
-                                <LeaderboardProblemColTries>{response.tries} tr{response.tries != 1 ? "ies" : "y"}</LeaderboardProblemColTries>
+                                { response.time !== 0 ? <FlexColumn>
+                                <LeaderboardProblemColTime style={{color: color}}>{displayTimeString(time)}</LeaderboardProblemColTime>
+                                <LeaderboardProblemColTries>{response.tries} tr{response.tries !== 1 ? "ies" : "y"}</LeaderboardProblemColTries>
                                 </FlexColumn>: null}
                             </LeaderboardProblemCol>);
                         })}
@@ -202,7 +262,7 @@ const Leaderboard = () => {
     } else { 
         return (<Page>
             <Menu current="leaderboard"/>
-            <Title>Retrieving data....</Title>
+            <Title>Retrieving data...</Title>
         </Page>)
     }
 }

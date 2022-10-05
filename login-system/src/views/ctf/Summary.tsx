@@ -12,11 +12,17 @@ export const Page = styled.div`
     flex-direction: column;
     width: 100%;
     padding: 30px 0;
-    margin-bottom: 100px;
 `;
 
 export const Title = styled.h1`
     color: ${greenHex};
+    margin: 0;
+    margin-top: 20px;
+`;
+
+
+export const Text = styled.p`
+    margin-bottom: 30px;
 `;
 
 const Problems = styled.div`
@@ -29,7 +35,7 @@ const Problems = styled.div`
 const Problem = styled.div`
     padding: 6px 24px 10px 24px;
     border: solid 1px;
-    margin: 0 10px 30px 10px;
+    margin: 0 10px 25px 10px;
     border-radius: 5px;
     width: calc(50% - 70px);
 `;
@@ -45,7 +51,7 @@ const ProblemText = styled.p`
 
 
 const Summary = () => {
-	let authToken = localStorage.getItem('authToken');
+	// let authToken = localStorage.getItem('authToken');
 	let userId = localStorage.getItem('userId');
 
 	useTitle("Summary - Capture the Flag"); 
@@ -75,14 +81,15 @@ const Summary = () => {
         <Page>
             <Menu current="summary"/>
             <Title>Summary</Title>
+            <Text>Have a look at which problems you have solved, and which ones are pending.</Text>
             <Problems>
             {problems ? problems.map((problem, index) => {
-                let color = problem.tries != 0 ? problem.correct ? greenHex : redHex : "#424243";
+                let color = problem.tries !== 0 ? problem.correct ? greenHex : redHex : "#424243";
                 // let color = problem.correct ? greenHex : redHex;
                 return <Problem style={{color: color}}>
                     <Link to={`problem/${index}`} style={{color: color, textDecoration: "none"}}>
                     <ProblemTitle>Problem {index}</ProblemTitle>
-                    <ProblemText>{problem.tries != 0 ? `${problem.tries} tr${problem.tries === 1 ? "y": "ies"} - ${problem.time} seconds` : "Not attempted"}</ProblemText>
+                    <ProblemText>{problem.tries !== 0 ? `${problem.tries} tr${problem.tries === 1 ? "y": "ies"} - ${problem.time} seconds` : "Not attempted"}</ProblemText>
                     </Link>
                 </Problem>
             }) : <>Nothing found</>}

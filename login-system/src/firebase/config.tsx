@@ -142,6 +142,22 @@ const logout = () => {
   window.location.href = "/";
 };
 
+const getUsersByTask = async (taskId: string) => {
+  const filesRef = collection(db, 'users');
+  const q = query(filesRef, where("tasks", "array-contains", taskId));
+
+  const tempDoc: any = {};
+
+  (await getDocs(q)).docs.map((doc) => {
+    // @ts-ignore
+    const file: UserDetails = {id: doc.id, ...doc.data()};
+
+    tempDoc[doc.id] = file;
+  })
+
+  return tempDoc;
+}
+
 const getUser = async (uid: string) => {
   let docRef = db.collection('users').doc(uid);
 
@@ -149,6 +165,12 @@ const getUser = async (uid: string) => {
   let tempDoc: UserDetails = (await getDocFromServer(docRef)).data();
 
   return tempDoc;
+}
+
+const getUserName = async (uid: string) => {
+  let user = await getUser(uid);
+
+  return user.firstName.trim() + " " + user.lastName.trim();
 }
 
 const updateTasksInUser = async (uid: string, tasks: string[]) => {
@@ -418,7 +440,7 @@ const getQuestionURLfromStorage = async (fileName: string) => {
 export {
   app, db, analytics, storage,
   firebaseSignIn, firebaseSignUp, resetPassword, logout,
-  getUser, updateTasksInUser, 
+  getUser, updateTasksInUser, getUserName, getUsersByTask,
   getTasks, getTask, updateUsersInTask, 
   getEventData, writeToRealtimeDb, getCTFUsersData,
   joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,

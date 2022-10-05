@@ -57,6 +57,7 @@ let buttonStyle = `
     font-size: 16px;
     margin: auto;
     padding: 10px 14px;
+    cursor: pointer;
 `;
 
 const SubmitButton = styled.button`
@@ -112,7 +113,8 @@ const IndividualProblem = () => {
             let tempDoc = await getCTFQuestion(problemId);
 
             if (tempDoc) {
-                setProblem(tempDoc);                await getUrl(tempDoc.fileName);
+                setProblem(tempDoc);
+                await getUrl(tempDoc.fileName);
                 await getUserResponse();
             }
         } 
