@@ -6,6 +6,7 @@ import { useTitle } from '../../App';
 import { greenHex } from '../../colors';
 import { getCTFQuestion, getCTFUserResponse, submitCTFResponse, getQuestionURLfromStorage } from '../../firebase/config';
 import Menu from './components/Menu';
+import { displayTimeString } from './Leaderboard';
 
 const Problem = styled.div`
     margin: auto;
@@ -93,6 +94,10 @@ const Button = styled.button`
     margin-left: 20px;
 `;
 
+const CenterText = styled.h1`
+    margin: auto;
+`;
+
 const IndividualProblem = () => {
     let params = useParams();
 
@@ -101,7 +106,21 @@ const IndividualProblem = () => {
 
     let problemIdFromQuery = params.problemId;
 
-	useTitle("Problem " + problemIdFromQuery + " - Capture the Flag"); 
+    let currentTimeStamp = Date.now();
+
+    // Formatted as MM/DD/YYYY hh:mm:ss
+    const fullExpiryTime = '10/09/2022 09:00:00';
+
+    const [expiryDate, expiryTime] = fullExpiryTime.split(' ');
+
+    const [month, day, year] = expiryDate.split('/');
+    const [hours, minutes, seconds] = expiryTime.split(':');
+
+    const expiryTimeObject = new Date(+year, +month - 1, +day, +hours, +minutes, +seconds);
+
+    const expiryTimeStamp = expiryTimeObject.getTime();
+
+	useTitle("Problem " + problemIdFromQuery + " | Capture the Flag"); 
 
     const [problem, setProblem] = useState<any>();
     const [userResponse, setUserResponse] = useState<any>();
@@ -150,7 +169,6 @@ const IndividualProblem = () => {
 
         const incrementTime = () => {
             time += 1;
-            console.log(time);
         }
 
         setInterval( incrementTime, 1000);
@@ -205,32 +223,39 @@ const IndividualProblem = () => {
     return (
         <>
         <Menu />
-        {problem ? <Problem>
+        { (currentTimeStamp < expiryTimeStamp) ? <>
+        <Problem>{problem ? <>
             <QuestionArea>
                 <Title>Problem {problemId}</Title>
                 <a href={fileUrl} target="blank"><Button style={{background: "#fff", color: greenHex, position: "absolute", right: 24, top: 26}}>Download</Button></a>
                 <Text>{problem.question}</Text>
                 <Text>{problem.note ? "Note: " + problem.note : ""}</Text>
             </QuestionArea>
-            {userResponse && !userResponse.correct ?
             <Answer onSubmit={sendResponse}>
+            {userResponse && !userResponse.correct ? <>
                 <AnswerInput 
                 id="answer"
                 className="no-focus-outline" placeholder="Enter answer" />
-                 <SubmitButton>Submit</SubmitButton>
+                <SubmitButton>Submit</SubmitButton>
+            </>: <Text>Loading...</Text>}
+
             </Answer>
-            : null}
-        </Problem> : <Text>Fetching...</Text>}
+        </> : 
+            <QuestionArea>
+                <Title>Loading...</Title>
+            </QuestionArea>
+        }</Problem> 
         <Bottom>
             {userResponse ? <>
                 <BottomText>{userResponse.tries} tries</BottomText> 
-                <BottomText>{time} seconds</BottomText> 
+                <BottomText>{displayTimeString(time)} + penalties</BottomText> 
                 </> : "Loading data..."}
             <Buttons>
                 {problemId != 1 ? <Button onClick={() => {window.location.href = '../problem/' + (problemId - 1)}} style={{ background: greenHex, color: '#fff'}}>Previous</Button> : null}
                 {problemId != 8 ? <Button onClick={() => {window.location.href = '../problem/' + (problemId + 1)}} style={{ background: '#fff', color: greenHex}}>Next</Button> : null}
             </Buttons>
         </Bottom>
+        </> : <CenterText>Competition is now closed.</CenterText>}
         </>
     )
 

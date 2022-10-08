@@ -79,7 +79,7 @@ const returnResponses = (user: any) => {
 
 const problemNumbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const displayTimeString = (timeInt: number) => {
+export const displayTimeString = (timeInt: number) => {
     if (timeInt !== 0) {
         let seconds = (timeInt % 60).toLocaleString('en-US', {
             minimumIntegerDigits: 2
