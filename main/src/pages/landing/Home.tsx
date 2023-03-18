@@ -11,7 +11,7 @@ const margin = "margin: 10px 20px;";
 const Page = styled.div`
     color: ${blueHex};
     padding: 20px;
-    min-height: calc(100vh - 84px);
+    min-height: calc(100vh - 127px);
     text-align: left;
     display: flex;
     flex-direction: row;
