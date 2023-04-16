@@ -10,7 +10,7 @@ const margin = "margin: 10px 20px;";
 const Page = styled.div`
     background-color: ${mainHex};
     color:: #000000;
-    padding: 70px 0;
+    padding: 40px 0 50px 0;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -18,12 +18,12 @@ const Page = styled.div`
 
     @media only screen and (max-width: 768px) {
         height: auto;
-        padding: 75px 0;
+        padding: 35px 0 45px 0;
     } 
 
     @media only screen and (max-width: 425px) {
         height: auto;
-        padding: 50px 0;
+        padding: 40px 0 50px 0;
     } 
 `;
 
@@ -69,7 +69,7 @@ export const Text = styled.p`
     color: #ffffff;
     font-size: calc(12px + 1vmin);
     line-height: 1.5em;
-    text-align: center;
+    text-align: left;
 
     @media only screen and (max-width: 1024px) {
         font-size: calc(12px + 1vmin);
@@ -83,23 +83,6 @@ export const Text = styled.p`
     @media only screen and (max-width: 425px) {
         margin: 0 0 15px 0;
         font-size: calc(10px + 1vmin);
-    }
-`;
-
-
-const Image = styled.img`
-    margin: 0 30px;
-
-    @media only screen and (max-width: 1024px) {
-        width: 400px;  
-    }
-
-    @media only screen and (max-width: 525px) {
-        width: 360px;  
-    }
-    
-    @media only screen and (max-width: 435px) {
-        width: 100%;
     }
 `;
 
@@ -119,58 +102,51 @@ const ContainerVertical = styled.div`
 export const Category = styled.div`
     box-shadow: 1px 3.97px 3.97px 0 rgb(84,84,84,0.15);
     background-color: #ffffff;
-    padding: 30px;
-    // margin: 0 25px;
+    padding: 28px 24px 20px 22px;
+    margin: 0 8px;
     border-radius: 2%;
     width: 25%;
 
     @media only screen and (max-width: 1024px) {
-        padding: 15px;
         width: 25%;  
     }
 
     @media only screen and (max-width: 768px) {
-        padding: 15px;
         width: 75%;  
-        margin: 15px 0;
+        margin: 10px 0;
     }
-`;
-
-export const CategoryLine = styled.hr`
-    border-top: 0.05% solid ${mainHex};
-    border-color: ${mainHex};
 `;
 
 export const CategoryTextMain = styled.p`
     color: ${mainHex};
-    font-size: calc(45px + 1vmin);
+    font-size: calc(26px + 1vmin);
     font-weight: 700;
     margin:0;
     padding:0;
 
     @media only screen and (max-width: 425px) {
-        font-size: calc(35px + 1vmin);
+        font-size: calc(28px + 1vmin);
     }
-`;
-
-export const CategoryTextMinor = styled.p`
-    color: #3a3a3a;
-    font-size: calc(8px + 1vmin);
-    margin:25px 0 0 0;
-    padding:0;
 `;
 
 export const CategoryText = styled.p`
     color: ${mainHex};
-    font-size: calc(15px + 1vmin);
+    font-size: calc(10px + 1vmin);
     font-weight: 700;
-    margin:0 0 25px 0;
+    margin: 3px 0 25px 0;
     padding:0;
 
     @media only screen and (max-width: 425px) {
         font-size: calc(12px + 1vmin);
     }
 `;
+
+const prizes = [
+    {title: "1st Grand Prize", main: "$50", subtext: "gift voucher"},
+    {title: "2nd - 5th High Tier", main: "Shirts", subtext: "GDSC exclusive"},
+    {title: "6th - 10th Mid Tier", main: "Bottle", subtext: "and hats"},
+    {title: "11th - 20th Mid Tier", main: "Stickers", subtext: "and socks"},
+]
 
 
 function Home() {
@@ -179,30 +155,18 @@ function Home() {
             <SafeArea>
                 <Content>
                     <Title>Prizes</Title>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Text>
+                    <Text>Once you earn 500 pts (~4-5 markers), you are entered into the tournament. If you are a part of the top 20 when to competition ends you get a prize based on your place: </Text>
                     <ContainerVertical>
-                        <Category>
-                            <CategoryText>Overall Winner</CategoryText>
-                            <CategoryTextMain>$250</CategoryTextMain>
-                            <CategoryText>cash</CategoryText>
-                            <CategoryLine></CategoryLine>
-                            <CategoryTextMinor>Judged by GDSC</CategoryTextMinor>
-                        </Category>
-                        <Category>
-                            <CategoryText>People’s Choice</CategoryText>
-                            <CategoryTextMain>$115</CategoryTextMain>
-                            <CategoryText>of merch</CategoryText>
-                            <CategoryLine></CategoryLine>
-                            <CategoryTextMinor>Voted by students</CategoryTextMinor>
-                        </Category>
-                        <Category>
-                            <CategoryText>Best Design</CategoryText>
-                            <CategoryTextMain>$135</CategoryTextMain>
-                            <CategoryText>of merch</CategoryText>
-                            <CategoryLine></CategoryLine>
-                            <CategoryTextMinor>Polished mechanics</CategoryTextMinor>
-                        </Category>
+                        {prizes.map(prize => {
+                            return <Category>
+                                <CategoryText>{prize.title}</CategoryText>
+                                <CategoryTextMain>{prize.main}</CategoryTextMain>
+                                <CategoryText>{prize.subtext}</CategoryText>
+                            </Category>
+                        })}
                     </ContainerVertical>
+                    <Text>Your position and the points required to level up are always present in the app, by pressing the yellow button.</Text>
+                    <Text>After the conclusion of the event, winners will be contacted via their Google email to sort the collection of prizes.</Text>
                 </Content>
             </SafeArea>
         </Page>

@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mainHex, greenLightHex, whiteHex } from '../colors';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import SafeArea from './SafeArea';
+import { appUrl } from '../App';
 
 interface Props {
     open: boolean,
@@ -40,10 +42,10 @@ const CallToAction = styled.button`
 `;
 
 const MenuItem = styled.span`
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 5px;
 	border: solid 1px transparent;
-    margin: 0 10px;
+    margin: 0 8px;
 `;
 
 export const menuLinkStyle = {
@@ -59,9 +61,8 @@ export const mainLinkStyle = {
 
 
 const menuItems = [
-    // {text: "Game Jam Week", link: "/event"},
-    // {text: "Guidelines", link: "/guidelines"},
-    // {text: "Gallery", link: "/gallery"},
+    {text: "Rules", link: "/rules"},
+    {text: "Clues", link: "/clues"},
 ]
 
 export const bttnLinkStyleAlt = {
@@ -75,21 +76,22 @@ const Subheader = () => {
             <SafeArea className="row spaced">
             <Link to="/" style={mainLinkStyle}><Heading>Disney AR Scavenger Hunt</Heading></Link>
                 <div>
-                {/* {menuItems.map(menuItem => { 
+                {menuItems.map(menuItem => { 
                     return <MenuItem 
                     className="hoverable" 
                     >
                         <Link  
-                        to={menuItem.link ? menuItem.link : ""}
-                        style={menuLinkStyle}>
+                            to={menuItem.link ? menuItem.link : ""}
+                            style={menuLinkStyle}
+                        >
                             {menuItem.text}
                         </Link>
                     </MenuItem>
 
-                })} */}
-                {/* <CallToAction className="deep-hoverable">
-                    <a href="https://competitions.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Get started</a>
-                </CallToAction> */}
+                })}
+                <CallToAction className="deep-hoverable">
+                    <a href={appUrl} style={bttnLinkStyleAlt} target="blank">Get started</a>
+                </CallToAction>
                 </div>
             </SafeArea>
         </HeaderObject>

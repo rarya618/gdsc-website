@@ -14,18 +14,18 @@ interface Props {
   }
 
 const HeaderObject = styled.div`
-background: #ffffff;
-color: ${mainHex};
-padding: 6px;
-display: flex;
-justify-content: space-between;
-position: sticky;
-top: 58px;
-z-index: 10;
+    background: #ffffff;
+    color: ${mainHex};
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 58px;
+    z-index: 10;
 
-@media only screen and (max-width: 768px) {
-    display: none;
-}
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const MenuItem = styled.span`
@@ -52,18 +52,18 @@ const Image = styled.img`
 `;
 
 const menuItems = [
-    {text: "Registration", link: "/guidelines/#register"},
-    {text: "Setup", link: "/guidelines/#setup"},
-    {text: "Prizes", link: "/guidelines/#prizes"},
-    {text: "Marking Rubric", link: "/guidelines/#rubric"},
-    {text: "Dates & Duration", link: "/guidelines/#dates"},
+    {text: "Info", link: "/rules/#info"},
+    {text: "Rules", link: "/rules/#rules"},
+    {text: "Prizes", link: "/rules/#prizes"},
+    {text: "Tips", link: "/rules/#tips"},
 ]
 
 const RowMenu = styled.div`
     display: flex;
+    justify-content: space-around;
 `;
 
-const scrollWithOffset = (el) => {
+export const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = -58; 
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 

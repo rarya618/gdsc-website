@@ -190,11 +190,11 @@ function Home() {
                 <RowContainer>
                     <Content>
                         <Title style={{color: mainHex}}>Disney AR Scavenger Hunt @ USYD</Title>
-                        <Text>A scavenger hunt available for all university members to compete in over the duration of Week 8.</Text>
-                        {/* <ButtonGroup>
-                            <ButtonMain><Link to="/event" style={bttnLinkStyle}>Learn more</Link></ButtonMain>
-                            <ButtonAlt><a href="https://competitions.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonAlt>
-                        </ButtonGroup> */}
+                        <Text>Disney AR Scavenger Hunt is a game for all to play. All you need is your phone and the spirit of adventure.</Text>
+                        <ButtonGroup>
+                            <ButtonMain><Link to="/rules" style={bttnLinkStyle}>Rules</Link></ButtonMain>
+                            <ButtonAlt><a href="https://competitions.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Get started</a></ButtonAlt>
+                        </ButtonGroup>
                     </Content>
                     <Content>
                         <Image src={placeholder} />

@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { appUrl } from '../../App';
 import { mainHex, greenLightHex } from '../../colors';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
-import grid from '../../resources/redGrid.png';
-
-import { Link, Route, Routes } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 
 const margin = "margin: 10px 20px;";
 
@@ -13,15 +10,13 @@ const space = "height: 25px";
 
 const Page = styled.div`
     color: ${mainHex};
-    padding: 100px 20px;
+    padding: 60px 20px;
     // height: calc(100vh - 80px);
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: url(${grid});
-    background-repeat: repeat;
-    background-size: contain;
+    background-color: ${greenLightHex};
 
     @media only screen and (max-width: 768px) {
         height: auto;
@@ -54,7 +49,7 @@ const Content = styled.div`
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-    }  
+    } 
 
     @media only screen and (max-width: 525px) {
         padding: 1px;
@@ -104,42 +99,48 @@ export const Text = styled.p`
 
 const ButtonGroup = styled.div`
     display: flex;
+    margin-top: 15px;
 `;
 
 const ButtonMain = styled.div`
-    padding: 10px 15px;
+    padding: 10px 18px;
     display: flex;
     flex-direction: column;
     background-color: ${mainHex};
     color: #ffffff;
     border: 1px solid ${mainHex};
     margin: 10px 5px 10px 20px;
-    border-radius: 3px;
+    border-radius: 5px;
 
     @media only screen and (max-width: 425px) {
         margin: 10px 0px;
     }
 `;
 
+export const linkStyle = {
+    color: "#ffffff",
+	textDecoration: "none",
+};
 
-export const bttnLinkStyle = {
+export const bttnLinkStyleAlt = {
 	textDecoration: "none",
     color: "#ffffff",
 };
 
 
-
 function Home() {
     return (
-        <Page  id="dates">
+        <Page id="info">
             <SafeArea>
                 <Container>
                     <Content>
-                        <Title>Dates and Duration</Title>
-                        <Text>The Game Jam Event (competition) will run from Friday, 30th September 10 AM until 5 PM Sunday. You will have 55h to code. You may prepare for the event beforehand, brainstorming basic ideas and researching different options for games (PVP, platformers, paddle games, etc). However, you are not allowed to start coding until 10 AM Friday. The Game Jam competition will have a theme that will be given to you on Friday to mark the start of the Competition. </Text>
+                        <Title>Info</Title>
+                        <Text>You’ll be competing individually to find all the GDSC posters/markers around the campus,  meeting all the Disney characters that have made their way to USYD. You can then scan the center marker with your phone, and rack up points 💥. </Text>
+                            
+                        <Text>The competition is running during <b>week 8, 17th - 21st of April</b> ⏰. During any of this time, you can go out into the campus and collect points. </Text>
                         <ButtonGroup>
-                            <ButtonMain>
-                                <Link to="/event" style={bttnLinkStyle}>Learn More</Link>
+                            <ButtonMain id="setup">
+                                <a href={appUrl} style={bttnLinkStyleAlt} target="blank">Get started</a>
                             </ButtonMain>
                         </ButtonGroup>
                     </Content>

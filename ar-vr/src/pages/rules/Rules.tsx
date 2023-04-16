@@ -1,21 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mainHex, greenLightHex } from '../../colors';
-import SafeArea, { RowContainer } from '../../components/SafeArea';
+import { mainHex } from '../../colors';
+import SafeArea from '../../components/SafeArea';
+import grid from '../../resources/greenGrid.svg';
+
+import { appUrl } from '../../App';
 
 const margin = "margin: 10px 20px;";
 
-const space = "height: 25px";
-
 const Page = styled.div`
     color: ${mainHex};
-    padding: 100px 20px;
+    padding: 60px 20px 70px 20px;
     // height: calc(100vh - 80px);
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: ${greenLightHex};
+    background: url(${grid});
+    background-repeat: repeat;
+    background-size: contain;
 
     @media only screen and (max-width: 768px) {
         height: auto;
@@ -33,10 +36,6 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
-const Space = styled.div`
-    ${space}
-`;
-
 const Content = styled.div`
     padding: 10px;
     display: flex;
@@ -48,7 +47,7 @@ const Content = styled.div`
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-    } 
+    }  
 
     @media only screen and (max-width: 525px) {
         padding: 1px;
@@ -98,57 +97,68 @@ export const Text = styled.p`
 
 const ButtonGroup = styled.div`
     display: flex;
+    margin-top: 15px;
 `;
 
 const ButtonMain = styled.div`
-    padding: 10px 15px;
+    padding: 10px 18px;
     display: flex;
     flex-direction: column;
     background-color: ${mainHex};
     color: #ffffff;
     border: 1px solid ${mainHex};
     margin: 10px 5px 10px 20px;
-    border-radius: 3px;
+    border-radius: 5px;
 
     @media only screen and (max-width: 425px) {
         margin: 10px 0px;
     }
 `;
 
-export const linkStyle = {
-    color: "#ffffff",
+
+export const bttnLinkStyle = {
 	textDecoration: "none",
+    color: "#ffffff",
 };
 
-export const bttnLinkStyleAlt = {
-	textDecoration: "none",
-    color: "#ffffff",
-};
+export const Bullet = styled.li`
+    ${margin}
+    color: #3a3a3a;
+    font-size: calc(12px + 1vmin);
+    line-height: 1.2em;
+
+    @media only screen and (max-width: 1024px) {
+        font-size: calc(11px + 1vmin);
+        line-height: 1.5em;
+    }   
+
+    @media only screen and (max-width: 768px) {
+        // text-align: center; 
+    }
+
+    @media only screen and (max-width: 425px) {
+        margin: 0 0 15px 0;
+        font-size: calc(10px + 1vmin);
+    }
+`;
+
 
 
 function Home() {
     return (
-        <Page id="register">
+        <Page id="rules">
             <SafeArea>
                 <Container>
                     <Content>
-                        <Title>Registration</Title>
-                        <Text>You’ll be working in teams of 1 - 4 for the Game Jam. Each member of your group will have to signup using the individual registration portal on the GDSC USYD Community Website. Following the individual registration of all members, one member of the team will be tasked with registering the team (and its members) on this website. Please note that this user will be linked to the team registration. If you need to add or remove team members you can do so by following the team registration. However, please contact us should you wish to do so. </Text>
-                        <ButtonGroup>
-                            <ButtonMain id="setup">
-                                <a href="https://profile.gdscusyd.org/sign-in" style={bttnLinkStyleAlt} target="blank">Register</a>
-                            </ButtonMain>
-                        </ButtonGroup>
-                    </Content >
-                    <Space/>
-                    <Content >
-                        <Title>Setup</Title>
-                        <Text>After registering for the event your team will be allocated a page on the website which you can customise and populate with information regarding the game your team will be presenting. Now that your team has completed registration you are all set for the Game Jam. The last thing would be to join our GDSC Discord Page and add yourself to the Game Jam Role. </Text>
+                        <Title>Rules</Title>
+                        <Text>There are very few rules for this game. Always abide by them to ensure others can also have a great time. </Text>
+                        <Bullet>Never share the location of a poster with any other competitor</Bullet>
+                        <Bullet>Do not damage the posters</Bullet>
+                        <Bullet>Do not go into any areas that are usually restricted for students</Bullet>
+                        <Text>Once you have logged in, via Google, points can be awarded for each marker you scan. You can always check the number of points you have by pressing the yellow button in the AR App. More points are awarded earlier in the competition than later, so get hunting right away.</Text>
                         <ButtonGroup>
                             <ButtonMain>
-                                <a href="https://discord.gg/H566km5k" style={linkStyle}>
-                                    Join Discord
-                                </a>
+                                <a href={appUrl} style={bttnLinkStyle}>Get started</a>
                             </ButtonMain>
                         </ButtonGroup>
                     </Content>

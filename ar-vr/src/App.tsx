@@ -5,14 +5,15 @@ import Header from './components/Header';
 import Subheader from './components/Subheader';
 import MobileMenu from './components/MobileMenu';
 import Landing from './pages/landing/Landing';
-import Event from './pages/event/Event';
-import Guidelines from './pages/guidelines/Guidelines';
+import Rules from './pages/rules/Main';
+import Clues from './pages/clues/Main';
 import Footer from './Footer';
 
 import {Link, Route, Routes } from 'react-router-dom';
 
 import { ScrollToTop } from 'react-router-scroll-to-top';
 
+export const appUrl = "https://gdsc-ar-hunt.web.app/";
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/event" element={<Event />} />
-          <Route path="/guidelines" element={<Guidelines />} />
+          <Route path="/rules" element={<Rules />} />
+          <Route path="/clues" element={<Clues />} />
         </Routes>
       <Footer />
     </div>

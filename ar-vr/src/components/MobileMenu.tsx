@@ -6,6 +6,7 @@ import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 import logo from '../resources/header-logo.png';
 import './MobileMenu.css';
+import { appUrl } from '../App';
 
 const HeaderObject = styled.div`
     background: ${whiteHex};
@@ -51,7 +52,9 @@ const MobileMenu = () => {
             <Link to="/"><Logo src={logo}/></Link>		
             <Menu isOpen={ false } width={ '100%' } noOverlay right>
                 <a id="home" className="menu-item" href="https://gdscusyd.org/">Home</a>
-                <a className="menu-item" href="https://competitions.gdscusyd.org/">Get started</a>
+                <a className="menu-item" href="/rules">Rules</a>
+                <a className="menu-item" href="/clues">Clues</a>
+                <a className="menu-item" href={appUrl}>Get started</a>
                 <a className="menu-item" href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/">Join GDSC</a>
             </Menu>
         </HeaderObject>

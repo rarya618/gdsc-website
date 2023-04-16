@@ -67,7 +67,7 @@ const menuItems = [
     // {text: "AI/ML"},
     // {text: "Cybersecurity"},
     {text: "Home", link: "https://gdscusyd.org"},
-    {text: "Scavenger Hunt", link: "https://dash.gdscusyd.org"},
+    {text: "Scavenger Hunt", link: "/"},
 ]
 
 const Header = () => {
