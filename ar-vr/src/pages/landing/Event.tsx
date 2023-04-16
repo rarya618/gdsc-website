@@ -38,13 +38,13 @@ const Content = styled.div`
     width: 50%;
 
     @media only screen and (max-width: 1024px) {
-        padding: 5px;
+        padding: 0px;
         width:auto;
     } 
 
     @media only screen and (max-width: 768px) {
-        padding: 5px;
-        width:100%;
+        padding: 0px;
+        width: 100%;
         justify-content: center;
         align-items: center;
     } 
@@ -59,6 +59,8 @@ const ButtonGroup = styled.div`
     margin: 0 10px;
 
     @media only screen and (max-width: 768px) {
+        passing-left: 10px;
+        margin: 0 30px;
         justify-content: center;
         align-items: center;
     } 
@@ -158,7 +160,9 @@ const Image = styled.img`
     border-radius: 5px;
 
     @media only screen and (max-width: 1024px) {
-        display: none; 
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -190,10 +194,10 @@ function Home() {
                     <Content>
                         <Title>Scavenger Hunt Week</Title>
                         <Text>Students will go around the campus following clues and finding designated markers. These markers can be scanned with their phones and using an online AR website images will appear in the footage. Once the marker is found, it will be recorded, so that the students can progress towards collecting the most number of markers.</Text>
-                        <ButtonGroup>
-                            <ButtonAlt><Link to="/event" style={bttnLinkStyle}>Learn More</Link></ButtonAlt>
+                        {/* <ButtonGroup>
+                            <ButtonAlt><Link to="/event" style={bttnLinkStyle}>Learn more</Link></ButtonAlt>
                             <ButtonMain><a href="https://competitions.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Register</a></ButtonMain>
-                        </ButtonGroup>
+                        </ButtonGroup> */}
                     </Content>
                 </RowContainer>
             </SafeArea>

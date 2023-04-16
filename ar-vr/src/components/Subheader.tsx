@@ -87,9 +87,9 @@ const Subheader = () => {
                     </MenuItem>
 
                 })} */}
-                <CallToAction className="deep-hoverable">
-                    <a href="https://profile.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Get started</a>
-                </CallToAction>
+                {/* <CallToAction className="deep-hoverable">
+                    <a href="https://competitions.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Get started</a>
+                </CallToAction> */}
                 </div>
             </SafeArea>
         </HeaderObject>

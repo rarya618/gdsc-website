@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { mainHex } from '../../colors';
 
 import riley from '../../resources/riley.png';
-import antriksh from '../../resources/udit.png';
+import antriksh from '../../resources/antriksh.png';
 import sabaat from '../../resources/syed.png';
 
 import email from '../../resources/email.svg';
@@ -117,13 +117,14 @@ export const imageLinkStyle = {
 
 const Image = styled.img`
     margin: 0;
+    width: 200px;
 
     @media only screen and (max-width: 1024px) {
-        width: 80%;  
+        width: 160px;
     }
 
     @media only screen and (max-width: 768px) {
-        width: 75%;  
+        width: 120px;
     }
     
     @media only screen and (max-width: 425px) {
