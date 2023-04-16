@@ -4,8 +4,6 @@ import { mainHex } from '../../colors';
 
 import SafeArea from '../../components/SafeArea';
 
-const margin = "margin: 10px 20px;";
-
 const Page = styled.div`
     color: ${mainHex};
     padding: 0 0 100px 0;
@@ -24,109 +22,6 @@ const Page = styled.div`
         height: auto;
         padding: 50px 0;
     } 
-`;
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-
-const Content = styled.div`
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-
-    @media only screen and (max-width: 768px) {
-        padding: 5px;
-    } 
-
-    @media only screen and (max-width: 525px) {
-        padding: 1px;
-    } 
-`;
-
-export const Title = styled.h1`
-    font-size: calc(35px + 1vmin);
-    color: ${mainHex};
-    ${margin}
-    text-align: left;
-
-    @media only screen and (max-width: 1024px) {
-        font-size: calc(25px + 1vmin);
-    }    
-
-    @media only screen and (max-width: 768px) {
-        text-align: center;  
-        font-size: calc(25px + 1vmin);
-    } 
-
-    @media only screen and (max-width: 425px) {
-        font-size: calc(20px + 1vmin);
-    } 
-`;
-
-export const Text = styled.p`
-    ${margin}
-    color: #3a3a3a;
-    font-size: calc(12px + 1vmin);
-    line-height: 1.8em;
-    text-align: left;
-
-    @media only screen and (max-width: 1024px) {
-        font-size: calc(12px + 1vmin);
-        line-height: 1.5em;
-    }   
-
-    @media only screen and (max-width: 768px) {
-        text-align: center; 
-    }
-
-    @media only screen and (max-width: 425px) {
-        margin: 0 0 15px 0;
-        font-size: calc(10px + 1vmin);
-    }
-`;
-
-export const Category = styled.div`
-    box-shadow: 1px 3.97px 3.97px 0 rgb(84,84,84,0.15);
-    width: 13%;
-
-    @media only screen and (max-width: 768px) {
-        width: 25%;
-    }
-`;
-
-export const CategoryText = styled.p`
-    color: #3a3a3a;
-    font-size: calc(8px + 1vmin);
-`;
-
-export const CategoryImage = styled.img`
-    width: 50%;
-    height: 45%;
-`;
-
-export const Bullet = styled.li`
-   ${margin}
-    color: #3a3a3a;
-    font-size: calc(12px + 1vmin);
-    line-height: 1.6em;
-    text-align: left;
-
-    @media only screen and (max-width: 1024px) {
-        font-size: calc(12px + 1vmin);
-        line-height: 1.5em;
-    }   
-
-    @media only screen and (max-width: 768px) {
-        text-align: center; 
-    }
-
-    @media only screen and (max-width: 425px) {
-        margin: 0 0 15px 0;
-        font-size: calc(10px + 1vmin);
-    }
 `;
 
 export const clues = [
@@ -164,8 +59,8 @@ const CluesDisplay = styled.div`
 `;
 
 const Clue = styled.div`
-    padding: 5px 25px 40px 22px;
-    width: calc(33% - 63px);
+    padding: 5px 26px 40px 24px;
+    width: calc(33% - 69px);
     margin: 7px 8px;
     box-shadow: 0px 5px 20px 0 rgb(0,0,0,0.15);
     border: solid 1px;
@@ -173,11 +68,11 @@ const Clue = styled.div`
     position: relative;
 
     @media only screen and (max-width: 1024px) {
-        width: calc(50% - 65px);
+        width: calc(50% - 71px);
     }
 
     @media only screen and (max-width: 600px) {
-        width: calc(100% - 65px);
+        width: calc(100% - 71px);
     }
 `;
 

@@ -7,6 +7,7 @@ import grid from '../../resources/greenGrid.svg';
 import SafeArea, { RowContainer } from '../../components/SafeArea';
 
 import { Link, Route, Routes } from 'react-router-dom';
+import { appUrl } from '../../App';
 
 const margin = "margin: 10px 20px;";
 
@@ -77,7 +78,7 @@ const ButtonMain = styled.div`
     background-color: ${mainHex};
     color: #ffffff;
     border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 20px;
+    margin: 20px 5px 10px 12px;
     border-radius: 5px;
 
     @media only screen and (max-width: 1024px) {
@@ -97,7 +98,7 @@ const ButtonAlt = styled.div`
     background-color: #ffffff;
     color: ${mainHex};
     border: 1px solid ${mainHex};
-    margin: 10px 5px 10px 5px;
+    margin: 20px 5px 10px 20px;
     border-radius: 5px;
 
 
@@ -112,7 +113,7 @@ const ButtonAlt = styled.div`
     } 
 `;
 
-export const Title = styled.h1`
+const Title = styled.h1`
     font-size: calc(35px + 1vmin);
     color: #000000;
     ${margin}
@@ -135,7 +136,7 @@ export const Title = styled.h1`
     }
 `;
 
-export const Text = styled.p`
+const Text = styled.p`
     ${margin}
     color: #3a3a3a;
     font-size: calc(12px + 1vmin);
@@ -158,9 +159,6 @@ export const Text = styled.p`
         font-size: calc(14px + 1vmin);
     }
 `;
-
-
-
 
 const Image = styled.img`
     // width: 450px;
@@ -192,8 +190,8 @@ function Home() {
                         <Title style={{color: mainHex}}>Disney AR Scavenger Hunt @ USYD</Title>
                         <Text>Disney AR Scavenger Hunt is a game for all to play. All you need is your phone and the spirit of adventure.</Text>
                         <ButtonGroup>
-                            <ButtonMain><Link to="/rules" style={bttnLinkStyle}>Rules</Link></ButtonMain>
-                            <ButtonAlt><a href="https://competitions.gdscusyd.org/" style={bttnLinkStyleAlt} target="blank">Get started</a></ButtonAlt>
+                            <ButtonAlt><Link to="/rules" style={bttnLinkStyleAlt}>Rules</Link></ButtonAlt>
+                            <ButtonMain><a href={appUrl} style={bttnLinkStyle} target="blank">Get started</a></ButtonMain>
                         </ButtonGroup>
                     </Content>
                     <Content>
