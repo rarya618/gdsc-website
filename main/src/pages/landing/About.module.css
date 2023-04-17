@@ -1,0 +1,49 @@
+.background {
+  background-color: #e6f3ff;
+  height: 330px;
+}
+
+.aboutcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  font-size: 35px;
+  margin-top: 120px;
+  color: #4a8af1;
+}
+
+.usydgdsc {
+  text-align: center;
+  font-weight: 700;
+  font-size: 27px;
+}
+
+.bigtech {
+  text-align: center;
+  font-size: 22px;
+  font-style: italic;
+}
+
+.firstparagraph {
+  margin-bottom: 50px;
+  font-size: 22px;
+}
+
+.pastgdsc {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.eventscontainer {
+  font-size: 1.1em;
+}
+
+.organizers {
+  font-weight: normal;
+  font-size: 35px;
+  text-align: center;
+  color: #202124;
+}
