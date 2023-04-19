@@ -47,3 +47,55 @@
   text-align: center;
   color: #202124;
 }
+
+/* Styling for Organisers section */
+.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4a8af1;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #4c8cf3;
+}

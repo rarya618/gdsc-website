@@ -1,6 +1,8 @@
 import React from "react";
 import aboutcss from "./About.module.css";
 
+import placeholder from "../../resources/placeholder-300.png";
+
 const About: React.FC = () => {
   return (
     <div>
@@ -71,6 +73,39 @@ const About: React.FC = () => {
             encouraged everyone (especially women and underrepresented groups)
             to speak up about their achievements
           </p>
+        </div>
+      </div>
+      <h2 className={aboutcss.usydgdsc}>Industry Partners</h2>
+      <div className={aboutcss.gridcontainer}>
+        <div className={aboutcss.profile}>
+          <div className={aboutcss.icon}>
+            {/* Need to get the icons as a (preferably) 250x250 image to put in here. */}
+            <img src={placeholder} />
+          </div>
+          <div className={aboutcss.info}>
+            <h2 className={aboutcss.name}>SYNCS</h2>
+            <p className={aboutcss.description}>Sydney Computing Society</p>
+            <a className={aboutcss.button} href="https://syncs.org.au/">
+              Visit
+            </a>
+          </div>
+        </div>
+        <div className={aboutcss.profile}>
+          <div className={aboutcss.icon}>
+            <img src={placeholder} />
+          </div>
+          <div className={aboutcss.info}>
+            <h2 className={aboutcss.name}>Tech for Social Good</h2>
+            <p className={aboutcss.description}>
+              "Empowering the next generation of responsible tech leaders"
+            </p>
+            <a
+              className={aboutcss.button}
+              href="https://www.techforsocialgood.org/"
+            >
+              Visit
+            </a>
+          </div>
         </div>
       </div>
     </div>
