@@ -83,6 +83,8 @@ const Scrollable = styled.div`
   width: 100%;
   display: flex;
   position: absolute;
+  flex-direction: column;
+
 `;
 
 // box structure
@@ -153,6 +155,26 @@ export const Submit = styled.button`
   background: ${blueHex};
   color: #fff;
   margin-right: 0;
+`;
+
+export const SSOSubmit = styled.button`
+  // ${buttonStyle}
+
+  background: ${blueHex};
+  color: #fff;
+  max-width: 350px;
+  // width: 100%;
+  // left: 0;
+  // right: 0;
+  margin: auto;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+
+  // padding: 15px 0;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 // link styles

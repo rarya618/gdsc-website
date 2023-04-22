@@ -1,7 +1,7 @@
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer, useTitle } from '../App';
-import { firebaseSignIn } from '../firebase/config';
+import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer, useTitle, SSOSubmit } from '../App';
+import { firebaseSignIn, googleSignIn } from '../firebase/config';
 
 const fields = [
 	{id: 'email', type: 'email', label: 'Email*', placeholder: 'john.doe@example.com'},
@@ -51,7 +51,42 @@ const SignIn = () => {
 			alert(error);
 		}
 	}
+
+	const googleSSO = async () => {
+		// event.preventDefault();
+
+		// // @ts-ignore
+		// const elementsArray = [...event.target.elements];
+
+		// const data = elementsArray.reduce((acc, element) => {
+		// 	if (element.id) {
+		// 		acc[element.id] = element.value;
+		// 	}
+
+		// 	return acc;
+		// }, {});
+
+		try {
+	
+			if (await googleSignIn()) {
+				console.log("Sign in successful.");
+				if (next) {
+					window.location.href = next;
+				} else {
+					window.location.href = "/";
+				}
+			} else {
+				alert("Sign in failed...");
+			}
+		}
+
+		catch (error) {
+			alert(error);
+		}
+	}
+
 	return (
+		<div>
 		<Box onSubmit={signIn}>
 			{fields.map(field => {
 				return (<Field>
@@ -67,7 +102,11 @@ const SignIn = () => {
 				<Link style={linkStyle} to='/sign-up'>Create account</Link>
 				<Submit>Sign in</Submit>
 			</Bottom>
+			{/* <Submit onSubmit={googleSignIn}>Sign In with Google</Submit> */}
 		</Box>
+		<SSOSubmit onClick={googleSSO}>Sign In with Google</SSOSubmit>
+		</div>
+		
 	)
 }
 

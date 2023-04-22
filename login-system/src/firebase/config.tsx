@@ -7,6 +7,9 @@ import {
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword, 
   sendPasswordResetEmail,
+  signInWithRedirect,
+  getRedirectResult,
+  GoogleAuthProvider,
   signOut 
 } from "firebase/auth";
 
@@ -66,6 +69,42 @@ const storage = getStorage();
 
 // Initialize analytics
 const analytics = getAnalytics(app);
+
+// Initialize the Google Auth Provider
+const googleProvider = new GoogleAuthProvider();
+
+//Google SSO function
+const googleSignIn = async () => {
+
+  let status = false;
+
+  signInWithRedirect(auth, googleProvider);
+
+  await getRedirectResult(auth)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access Google APIs.
+    // Added '!' after result to resolve typescript compiler warning that result might be null
+    const credential = GoogleAuthProvider.credentialFromResult(result!);
+    const token = credential!.accessToken;
+
+    // The signed-in user info.
+    const user = result!.user;
+
+    status = true;
+
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  })
+  // console.log(status);
+  return status;
+};
 
 // log in function
 const firebaseSignIn = async (email: string, password: string, route?: string) => {
@@ -438,12 +477,12 @@ const getQuestionURLfromStorage = async (fileName: string) => {
 }
 
 export {
-  app, db, analytics, storage,
-  firebaseSignIn, firebaseSignUp, resetPassword, logout,
-  getUser, updateTasksInUser, getUserName, getUsersByTask,
-  getTasks, getTask, updateUsersInTask, 
-  getEventData, writeToRealtimeDb, getCTFUsersData,
-  joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,
-  getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse,
-  storageRef, getDownloadURL, getQuestionURLfromStorage
+    app, db, analytics, storage,
+    firebaseSignIn, firebaseSignUp, resetPassword, logout,
+    getUser, updateTasksInUser, getUserName, getUsersByTask,
+    getTasks, getTask, updateUsersInTask,
+    getEventData, writeToRealtimeDb, getCTFUsersData,
+    joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,
+    getCTFQuestion, getCTFUserResponses, getCTFUserResponse, submitCTFResponse,
+    storageRef, getDownloadURL, getQuestionURLfromStorage, googleSignIn
 };
