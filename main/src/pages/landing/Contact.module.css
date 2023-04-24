@@ -1,0 +1,14 @@
+.background {
+  background-color: #e6f3ff;
+  height: 330px;
+  position: relative;
+}
+
+.contact {
+  font-size: 35px;
+  margin-top: 10px;
+  color: #4a8af1;
+  font-weight: 700;
+  position: relative;
+  top: 120px;
+}

@@ -1,10 +1,12 @@
 import React from "react";
+import contactcss from "./Contact.module.css";
 
 const Contact: React.FC = () => {
   return (
     <div>
-      <h1>Contact Us</h1>
-      <p>Our contact page</p>
+      <div className={contactcss.background}>
+        <div className={contactcss.contact}>Contact</div>
+      </div>
     </div>
   );
 };
