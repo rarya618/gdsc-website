@@ -29,7 +29,8 @@ import Team from "../dataTypes/Team";
 import { addToList, randomString } from "../App";
 import UserTeam from "../dataTypes/UserTeam";
 
-let isTesting = false;
+// testing config toggle
+let isTesting = true;
 
 // Your web app's Firebase configuration
 const testConfig = {
