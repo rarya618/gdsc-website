@@ -78,7 +78,7 @@ const googleSignIn = async () => {
 
   let status = false;
 
-  signInWithRedirect(auth, googleProvider);
+  await signInWithRedirect(auth, googleProvider);
 
   await getRedirectResult(auth)
   .then((result) => {
@@ -96,13 +96,15 @@ const googleSignIn = async () => {
     // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
+
+    console.log(errorMessage);
     // The email of the user's account used.
     const email = error.customData.email;
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   })
-  // console.log(status);
+  console.log(status);
   return status;
 };
 
