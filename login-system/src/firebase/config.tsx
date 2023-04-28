@@ -91,6 +91,10 @@ const googleSignIn = async () => {
     // The signed-in user info.
     const user = result!.user;
 
+    localStorage.setItem('Auth Token', user.refreshToken);
+    // localStorage.setItem('Auth Token', token!);
+    localStorage.setItem('userId', user.uid);
+
     status = true;
 
   }).catch((error) => {
@@ -116,7 +120,9 @@ const firebaseSignIn = async (email: string, password: string, route?: string) =
   await signInWithEmailAndPassword(auth, email, password)
   .then((response) => {
     // @ts-ignore
-    localStorage.setItem('Auth Token', response._tokenResponse.refreshToken);
+
+    //Firebase recommends using getIdToken() in place of .refreshToken, but it doesn't seem to work
+    localStorage.setItem('Auth Token', response._tokenResponse.refreshToken); 
     localStorage.setItem('userId', response.user.uid);
 
     status = true;
