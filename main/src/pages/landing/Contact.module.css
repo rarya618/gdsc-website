@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.whitebackground {
+  height: 500px;
+}
+
 .contact {
   font-size: 35px;
   margin-top: 10px;
@@ -13,12 +17,17 @@
   top: 120px;
 }
 
+.socialmedia {
+  font-size: 20px;
+  font-family: "Google Sans";
+}
+
 .instagram {
-  color: #4e8cf1;
+  color: #da4949;
   width: 70px;
   height: 70px;
   object-fit: cover;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .facebook {
@@ -26,26 +35,36 @@
   width: 70px;
   height: 70px;
   object-fit: cover;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .linkedin {
-  color: #4e8cf1;
+  color: #fdbe39;
   width: 70px;
   height: 70px;
   object-fit: cover;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .discord {
-  color: #4e8cf1;
+  color: #3eab5f;
   width: 70px;
   height: 70px;
   object-fit: cover;
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .emailbutton {
+  background-color: #4a8af1;
+  margin-top: 20px;
+  width: 100px;
+  height: 50px;
+  margin-left: 750px;
+  border-radius: 5px;
+}
+
+.emailfont {
+  color: white;
   position: relative;
-  margin-top: 60px;
+  top: 15px;
 }
