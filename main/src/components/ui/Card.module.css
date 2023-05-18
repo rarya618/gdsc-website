@@ -1,0 +1,71 @@
+.cardcontainer {
+  position: relative;
+  height: 600px;
+  width: 600px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  bottom: 150px;
+  left: 490px;
+  background-color: #fff; /* Add this line */
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.namelabel {
+  position: relative;
+  left: 25px;
+  bottom: 10px;
+}
+
+.nameinput {
+  position: relative;
+  right: 20px;
+  top: 20px;
+  width: 500px;
+  height: 25px;
+}
+
+.emailcontainer {
+  position: relative;
+  top: 50px;
+}
+
+.emaillabel {
+  position: relative;
+  left: 25px;
+  bottom: 10px;
+}
+
+.emailinput {
+  position: relative;
+  right: 20px;
+  top: 20px;
+  width: 500px;
+  height: 25px;
+}
+
+.messagecontainer {
+  position: relative;
+  top: 50px;
+}
+
+.messagelabel {
+  position: relative;
+  left: 35px;
+  bottom: 42px;
+}
+
+.messageinput {
+  position: relative;
+  right: 35px;
+  top: 76px;
+  width: 500px;
+  height: 200px;
+}
+
+.imagecontainer img {
+  overflow: hidden;
+  height: 200px;
+  box-shadow: 0px 0px 15px -5px;
+}

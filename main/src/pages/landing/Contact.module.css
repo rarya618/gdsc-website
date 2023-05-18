@@ -5,7 +5,7 @@
 }
 
 .whitebackground {
-  height: 500px;
+  height: 550px;
 }
 
 .contact {
@@ -14,7 +14,12 @@
   color: #4a8af1;
   font-weight: 700;
   position: relative;
-  top: 120px;
+  top: 70px;
+}
+
+.socials {
+  position: relative;
+  bottom: 110px;
 }
 
 .socialmedia {
@@ -54,6 +59,13 @@
   margin-right: 20px;
 }
 
+.emaillogo {
+  position: relative;
+  width: auto;
+  height: 30px;
+  top: 70px;
+}
+
 .emailbutton {
   background-color: #4a8af1;
   margin-top: 20px;
@@ -67,4 +79,14 @@
   color: white;
   position: relative;
   top: 15px;
+}
+
+.sendbutton {
+  position: relative;
+  bottom: 220px;
+}
+
+.sendbutton:hover {
+  background-color: #007bff;
+  color: #fff;
 }
