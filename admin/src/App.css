@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+* {
+  font-family: 'Google Sans';
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.no-focus-outline:focus{
+  outline: none;
+}
+
+.underlineHover:hover {
+  text-decoration: underline;
+}
