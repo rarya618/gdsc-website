@@ -89,10 +89,10 @@ const SignIn = () => {
 		<div>
 		<Box onSubmit={signIn}>
 			{fields.map(field => {
-				return (<Field>
-					<Label>{field.label}</Label>
-					<TextBox id={field.id} type={field.type} placeholder={field.placeholder} />
-					{field.desc ? <Description>{field.desc}</Description> : null}
+				return (<Field key={field.id}>
+					<Label key={1002}>{field.label}</Label>
+					<TextBox  key={1003} id={field.id} type={field.type} placeholder={field.placeholder} />
+					{field.desc ? <Description key={1004}>{field.desc}</Description> : null}
 				</Field>)
 			})}
 			<ForgotPasswordContainer>
