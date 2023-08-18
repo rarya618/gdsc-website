@@ -4,7 +4,8 @@ type EventObjectWithoutId = {
     name: string,
     location: string,
     active: boolean,
-    dateTime: DateTime
+    dateTime: DateTime,
+    members: string[]
 }
 
 export default EventObjectWithoutId

@@ -1,9 +1,11 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer, useTitle } from '../../App';
-import { Buttons, SignOutButton, View } from '../Dashboard';
+import { Buttons, SignOutButton, StandardButton, View } from '../Dashboard';
 import { logout } from '../../firebase/login';
 import { createEvent } from '../../firebase/event';
+import { redHex } from '../../colors';
+import { getUserFirstName } from '../../firebase/config';
 
 
 // create a date object from datetime input
@@ -27,9 +29,9 @@ const createDate = (dateString: string) => {
 }
 
 const fields = [
-	{id: 'name', type: 'text', label: "What's the event called?", placeholder: 'The name of the event'},
+	{id: 'name', type: 'text', label: "What's the event called?", placeholder: 'Name of the event'},
 	{id: 'dateTime', type: 'datetime-local', label: "When's the event happening?", placeholder: 'Select a date', desc: "Pick a date and time"},
-	{id: 'location', type: 'text', label: "Where's the event located?", placeholder: 'Add a location'},
+	{id: 'location', type: 'text', label: "Where's the event located?", placeholder: 'Location of the event'},
 ]
 
 function useQuery() {
@@ -40,9 +42,17 @@ const AddEvent = () => {
 	useTitle("Add Event");
 	let next = useQuery().get('next');
 
+	const [userName, setUserName] = useState("");
+
 	// check for valid log in
 	let authToken = localStorage.getItem('Auth Token');
 	let userId = localStorage.getItem('userId');
+
+	let uid = userId ? userId : "";
+
+	getUserFirstName(uid).then((value) => {
+		setUserName(value);
+	})
 
 	const addEvent = async (event: FormEvent) => {
 		event.preventDefault();
@@ -69,7 +79,7 @@ const AddEvent = () => {
 			
 			console.log(data);
 
-			if (await createEvent(data)) {
+			if (await createEvent(data, uid)) {
 				console.log("Added events successful.");
 				if (next) {
 					window.location.href = next;
@@ -93,7 +103,7 @@ const AddEvent = () => {
 	return (
 		<View>
 			<Buttons>
-				{/* <StandardButton style={{background: blueHex}}>Account</StandardButton> */}
+				<StandardButton onClick={() => {window.location.href = '/'}} style={{background: redHex}}>Hi, {userName}!</StandardButton>
 				<SignOutButton onClick={logout}>Sign out</SignOutButton>
 			</Buttons>
 			<Box onSubmit={addEvent}>
@@ -106,7 +116,6 @@ const AddEvent = () => {
 				})}
 				<Bottom>
 					<p></p>
-					{/* <Link style={linkStyle} to='/sign-up'>Create account</Link> */}
 					<Submit>Publish</Submit>
 				</Bottom>
 			</Box>

@@ -2,15 +2,16 @@ import { getDocs, query, where } from 'firebase/firestore';
 import {db, getDbRef} from './config';
 import EventObject from '../dataTypes/EventObject';
 import EventObjectWithoutId from '../dataTypes/EventObjectWithoutId';
-import { randomString } from '../App';
+import { addToList, randomString } from '../App';
 
 // create an event
-const createEvent = async (data: any) => {
+const createEvent = async (data: any, uid: string) => {
   let status = false;
 
   let eventWithoutId: EventObjectWithoutId = {
     ...data,
-    active: true
+    active: true,
+    members: [uid]
   }
 
   let eventId = randomString(6);

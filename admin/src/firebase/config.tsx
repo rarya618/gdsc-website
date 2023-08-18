@@ -96,6 +96,13 @@ const getUserName = async (uid: string) => {
   return user.firstName.trim() + " " + user.lastName.trim();
 }
 
+// get a user's first name with a uid
+const getUserFirstName = async (uid: string) => {
+  let user = await getUser(uid);
+
+  return user.firstName.trim();
+}
+
 const updateHotspotsInUser = async (uid: string, hotspots: string[]) => {
   await db.collection('users').doc(uid).update({hotspots: hotspots});
 }
@@ -279,8 +286,8 @@ const writeToRealtimeDb = async(location: string, data: any) => {
 
 export {
   app, db, analytics, storage, getDbRef,
-  getUser, updateHotspotsInUser, getUserName, getUsersByHotspot,
-  getHotspots, getHotspot, updateUsersInHotspot, 
+  getUser, updateHotspotsInUser, getUserName, getUserFirstName,
+  getUsersByHotspot, getHotspots, getHotspot, updateUsersInHotspot, 
   getEventData, getFromRealtimeDb, writeToRealtimeDb,
   joinTeam, createTeam, checkIfUserHasTeam, checkIfUserOwnsTeam, getTeamsByUser,
   storageRef, getDownloadURL
