@@ -1,7 +1,7 @@
 .cardcontainer {
   position: relative;
-  height: 600px;
-  width: 600px;
+  height: 620px;
+  width: 520px;
   overflow: hidden;
   box-shadow: 0px 0px 15px -5px;
   bottom: 150px;
@@ -10,20 +10,28 @@
   margin: auto;
   left: 0;
   right: 0;
+  border-radius: 5px;
+}
+
+.collapsed {
+  height: 280px;
 }
 
 .namelabel {
   position: relative;
-  left: 25px;
-  bottom: 10px;
+  left: 30px;
+  bottom: 0px;
 }
 
 .nameinput {
   position: relative;
   right: 20px;
-  top: 20px;
-  width: 500px;
-  height: 25px;
+  top: 40px;
+  width: 440px;
+  height: 40px;
+  border: 2px solid #d1e1fa;
+  outline: none; /* Remove the default outline */
+  border-radius: 5px;
 }
 
 .emailcontainer {
@@ -34,15 +42,18 @@
 .emaillabel {
   position: relative;
   left: 25px;
-  bottom: 10px;
+  top: 20px;
 }
 
 .emailinput {
   position: relative;
   right: 20px;
-  top: 20px;
-  width: 500px;
-  height: 25px;
+  top: 60px;
+  width: 440px;
+  height: 40px;
+  border: 2px solid #d1e1fa;
+  outline: none; /* Remove the default outline */
+  border-radius: 5px;
 }
 
 .messagecontainer {
@@ -53,19 +64,91 @@
 .messagelabel {
   position: relative;
   left: 35px;
-  bottom: 42px;
+  bottom: 0px;
 }
 
 .messageinput {
   position: relative;
   right: 35px;
-  top: 76px;
-  width: 500px;
+  top: 120px;
+  width: 440px;
   height: 200px;
+  border: 2px solid #d1e1fa;
+  outline: none; /* Remove the default outline */
+  border-radius: 5px;
 }
 
 .imagecontainer img {
   overflow: hidden;
   height: 200px;
   box-shadow: 0px 0px 15px -5px;
+}
+
+.sendbutton {
+  position: relative;
+  right: 180px;
+  top: 150px;
+  background-color: #498af1;
+  color: white;
+  padding: 10px 25px;
+  margin: 6px 12px;
+  border: #498af1;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.sendbutton:hover {
+  background-color: #208cff;
+  color: #fff;
+}
+
+.homebutton {
+  position: relative;
+  right: 100px;
+  top: 50px;
+  background-color: #498af1;
+  color: white;
+  padding: 10px 25px;
+  margin: 6px 12px;
+  border: #498af1;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.homebutton:hover {
+  background-color: #208cff;
+  color: #fff;
+}
+
+.learnbutton {
+  position: relative;
+  right: 100px;
+  top: 50px;
+  background-color: #fff;
+  color: #498af1;
+  padding: 10px 25px;
+  margin: 6px 12px;
+  border: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0px 0px 15px -12px black;
+}
+
+.learnbutton:hover {
+  background-color: #f5f5f5;
+  color: #498af1;
+}
+
+.messageSentText {
+  text-align: left;
+  padding-left: 35px;
+  font-size: 22px;
 }
