@@ -1,7 +1,8 @@
 import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Description, Field, linkStyle, Label, TextBox, Bottom, Submit, ForgotPasswordContainer, useTitle, SSOSubmit } from '../App';
-import { firebaseSignIn, googleSignIn } from '../firebase/config';
+import { firebaseSignIn } from '../firebase/config';
+import { googleSignIn } from '../firebase/googleSignIn';
 
 const fields = [
 	{id: 'email', type: 'email', label: 'Email*', placeholder: 'john.doe@example.com'},
@@ -53,21 +54,8 @@ const SignIn = () => {
 	}
 
 	const googleSSO = async () => {
-		// event.preventDefault();
-
-		// // @ts-ignore
-		// const elementsArray = [...event.target.elements];
-
-		// const data = elementsArray.reduce((acc, element) => {
-		// 	if (element.id) {
-		// 		acc[element.id] = element.value;
-		// 	}
-
-		// 	return acc;
-		// }, {});
 
 		try {
-	
 			if (await googleSignIn()) {
 				console.log("Sign in successful.");
 				if (next) {
