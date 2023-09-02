@@ -1,61 +1,74 @@
-import React, { useRef } from "react";
-import ReactDOM from "react-dom";
-import contactcss from "./Contact.module.css";
+import React from "react"; // Make sure to import React
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CallToAction } from "../../components/menu/Menu";
-import Card from "../../components/ui/Card";
 import {
   faInstagram,
   faFacebook,
   faLinkedin,
   faDiscord,
+  faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
-import emaillogo from "../../resources/email-logo.png";
+import styled from "styled-components";
+import contactcss from "./Contact.module.css";
+import Card from "../../components/ui/Card";
+import { blueHex } from "../../colors";
+import grid from "../../resources/blueGrid.png";
 
-const Contact: React.FC = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
+// Styled component for the main page container
+const Page = styled.div`
+  color: ${blueHex};
+  padding: 20px;
+  min-height: calc(100vh - 84px);
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: url(${grid});
+  background-repeat: repeat;
+  background-size: cover;
 
-  const handleClick = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-      inputRef.current.setSelectionRange(0, 0);
-    }
-  };
+  @media only screen and (max-width: 768px) {
+    height: calc(100vh - 80px);
+  }
 
+  @media only screen and (max-width: 425px) {
+    padding: 5px;
+  }
+`;
+
+function Contact() {
   return (
     <div>
       <div>
-        <div className={contactcss.background}>
-          <img
-            className={contactcss.emaillogo}
-            src={emaillogo}
-            alt="Contact Us"
-          />
-          <div className={contactcss.contact}>Contact Us</div>
-        </div>
+        <Page>
+          <div>
+            <div className={contactcss.contact}>Contact Us</div>
+          </div>
+        </Page>
       </div>
 
-      <Card
-        title="We're keen to hear from you!"
-        imageUrl="https://images.app.goo.gl/D6m6hHMnP1gjsKKV7"
-        body=""
-      />
+      <div className={contactcss.card}>
+        <Card
+          title="We're keen to hear from you!"
+          imageUrl="https://images.app.goo.gl/D6m6hHMnP1gjsKKV7"
+          body=""
+        />
+      </div>
 
-      <CallToAction
-        className={contactcss.sendbutton}
-        href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-sydney/"
-      >
-        Send
-      </CallToAction>
-
-      <div className={contactcss.whitebackground}>
+      <div className={contactcss.greenbackground}>
         <div className={contactcss.socials}>
-          <h1>Follow Our Socials</h1>
+          <h1 className={contactcss.oursocials}>Our Socials</h1>
           <p className={contactcss.socialmedia}>
-            Stay connected with GDSC USYD by following us on our social media
-            channels:
+            Stay connected with us through our social channels
           </p>
-          <div>
+
+          <div className={contactcss.socialcircles}>
+            <div className={contactcss.circle}></div>
+            <div className={contactcss.instagramcircle}></div>
+            <div className={contactcss.discordcircle}></div>
+            <div className={contactcss.linkedincircle}></div>
+          </div>
+
+          <div className={contactcss.sociallogos}>
             <a href="https://www.instagram.com/gdscusyd/">
               <FontAwesomeIcon
                 className={contactcss.instagram}
@@ -80,7 +93,7 @@ const Contact: React.FC = () => {
             <a href="https://www.linkedin.com/company/gdsc-usyd/">
               <FontAwesomeIcon
                 className={contactcss.linkedin}
-                icon={faLinkedin}
+                icon={faLinkedinIn}
               />
             </a>
           </div>
@@ -88,6 +101,6 @@ const Contact: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Contact;
