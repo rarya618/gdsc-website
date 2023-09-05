@@ -1,0 +1,173 @@
+.background {
+  background-color: #e6f3ff;
+  height: 1000px;
+  position: relative;
+}
+
+.card {
+  bottom: 580px;
+  position: relative;
+}
+
+.greenbackground {
+  background-color: #e1f2e5;
+  height: 450px;
+  bottom: 650px;
+  position: relative;
+}
+
+.contact {
+  font-size: 35px;
+  margin-top: 10px;
+  color: #4a8af1;
+  font-weight: 700;
+  position: relative;
+  bottom: 360px;
+  left: 680px;
+}
+
+.socials {
+  position: relative;
+  top: 100px;
+}
+
+.oursocials {
+  color: #3eab5f;
+}
+
+.socialmedia {
+  font-size: 20px;
+  font-family: "Google Sans";
+  color: #3eab5f;
+}
+
+.socialcircles {
+  position: relative;
+  top: 100px;
+  display: flex; /* Add this */
+  justify-content: center; /* Add this to center horizontally */
+}
+
+.circle {
+  width: 400px;
+  height: 100px;
+  background-color: white;
+  border-radius: 100px; /* Make it a circle */
+  margin: 20px auto; /* Center horizontally */
+  position: relative;
+  bottom: 120px;
+  left: 490px;
+}
+
+.instagramcircle {
+  width: 80px;
+  height: 80px;
+  background-color: #d03278;
+  border-radius: 100px; /* Make it a circle */
+  margin: 20px auto; /* Center horizontally */
+  position: relative;
+  bottom: 110px;
+  right: 140px;
+}
+
+.instagram {
+  color: white;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 20px;
+  position: relative;
+  bottom: 145px;
+  left: -3px;
+}
+
+.facebook {
+  color: #4e8cf1;
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  margin-right: 20px;
+  position: relative;
+  bottom: 130px;
+  left: 2px;
+}
+
+.fabrands {
+  color: red;
+}
+
+.linkedin {
+  color: white;
+  width: 47px;
+  height: 47px;
+  object-fit: cover;
+  margin-right: 20px;
+  position: relative;
+  bottom: 150px;
+  left: 38px;
+}
+
+.linkedincircle {
+  width: 80px;
+  height: 80px;
+  background-color: #0776a8;
+  border-radius: 100px; /* Make it a circle */
+  margin: 20px auto; /* Center horizontally */
+  position: relative;
+  bottom: 110px;
+  right: 480px;
+}
+
+.discordcircle {
+  width: 80px;
+  height: 80px;
+  background-color: #7289da;
+  border-radius: 100px; /* Make it a circle */
+  margin: 20px auto; /* Center horizontally */
+  position: relative;
+  bottom: 110px;
+  right: 260px;
+}
+
+.discord {
+  color: white;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 20px;
+  position: relative;
+  bottom: 145px;
+  left: 12px;
+}
+
+.emaillogo {
+  position: relative;
+  width: auto;
+  height: 30px;
+  top: 70px;
+}
+
+.emailbutton {
+  background-color: #4a8af1;
+  margin-top: 20px;
+  width: 100px;
+  height: 50px;
+  margin-left: 750px;
+  border-radius: 5px;
+}
+
+.emailfont {
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+.sendbutton {
+  position: relative;
+  bottom: 220px;
+}
+
+.sendbutton:hover {
+  background-color: #007bff;
+  color: #fff;
+}
