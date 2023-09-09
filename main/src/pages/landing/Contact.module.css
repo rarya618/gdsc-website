@@ -171,3 +171,61 @@
   background-color: #007bff;
   color: #fff;
 }
+
+.bluetext {
+  position: relative;
+  bottom: 50px;
+}
+
+.joinclub {
+  font-size: 35px;
+  color: #4285f5;
+  position: relative;
+  bottom: 550px;
+}
+
+.foraccess {
+  font-size: 23px;
+  font-family: "Google Sans";
+  color: #4285f5;
+  position: relative;
+  bottom: 550px;
+}
+
+.joinusbutton {
+  position: relative;
+  right: 180px;
+  bottom: 530px;
+  right: 5px;
+  background-color: #498af1;
+  color: white;
+  padding: 10px 25px;
+  margin: 6px 12px;
+  border: #498af1;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.joinusbutton:hover {
+  background-color: #208cff;
+  color: #fff;
+}
+
+.diagonalbluebackground {
+  background-color: #e3edfe;
+  height: 500px;
+  margin-top: -920px;
+  position: relative;
+  transform: skewY(2deg);
+  z-index: -1;
+}
+
+.blankbackground {
+  background-color: white;
+  height: 800px;
+  position: relative;
+  z-index: -2;
+}

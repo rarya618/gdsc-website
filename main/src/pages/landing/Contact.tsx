@@ -99,6 +99,19 @@ function Contact() {
           </div>
         </div>
       </div>
+
+      <div className={contactcss.bluetext}>
+        <h1 className={contactcss.joinclub}>Join the club today !</h1>
+        <p className={contactcss.foraccess}>
+          For access to our amazing events and competitions
+        </p>
+        <button className={contactcss.joinusbutton} type="submit">
+          Join us
+        </button>
+      </div>
+
+      <div className={contactcss.diagonalbluebackground}></div>
+      <div className={contactcss.blankbackground}></div>
     </div>
   );
 }
