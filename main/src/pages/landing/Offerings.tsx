@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { redHex, redBackground, whiteHex, blueHex, greenHex, yellowHex } from '../../colors';
 
-import placeholder from '../resources/placeholder-400.png';
+import placeholder from '../../resources/placeholder-400.png'; 
 import { Title } from './Home';
 
 const margin = "margin: 8px 16px;";
@@ -10,14 +10,15 @@ const margin = "margin: 8px 16px;";
 const Page = styled.div`
     color: ${redHex};
     background: ${redBackground};
-    padding: 50px 20px;
+    padding: 20px 40px 40px;
+    min-height: calc(100vh - 97px);
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 
 const Content = styled.div`
-    padding: 10px;
+    padding: 15px 10px 0px;
     display: flex;
     flex-direction: row;
 `;
@@ -28,6 +29,7 @@ const Image = styled.img`
 
 export const Text = styled.p`
     ${margin}
+    padding: 5px 0px 50px;
     font-size: calc(14px + 1vmin);
 `;
 
@@ -40,18 +42,19 @@ type Block = {
 
 const BlockTitle = styled.h2`
     font-size: calc(24px + 1vmin);
+    padding: 0px 0px 0px;
     ${margin}
 `;
 
 const BlockContent = styled.div`
-    padding: 15px 5px;
+    padding: 30px 10px 30px;
 `;
 
 const BlockGen = (block: Block) => {
     const BlockContainer = styled.div`
         padding: 0; 
-        margin: 5px 15px; 
-        border-radius: 5px;
+        margin: 5px 40px 5px; 
+        border-radius: 25px;
         background: ${whiteHex};
         color: ${block.color};
         text-align: left;
