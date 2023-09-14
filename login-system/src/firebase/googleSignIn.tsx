@@ -1,6 +1,9 @@
 import { GoogleAuthProvider, getAuth, getRedirectResult, signInWithRedirect } from "firebase/auth";
 import { app } from "./config";
 
+// Initialize db
+const db = app.firestore();
+
 // get auth
 const auth = getAuth(app);
 
@@ -14,7 +17,7 @@ const googleSignIn = async () => {
 
   // await signInWithRedirect(auth, googleProvider);
   console.log("Before Redirect!");
-  // alert("Before Redirect!");
+  alert("Before Redirect!");
   // Start a sign in process for an unauthenticated user.
   await signInWithRedirect(auth, provider)
   .catch((error) => {
@@ -32,16 +35,57 @@ const googleSignIn = async () => {
   })
   // This will trigger a full page redirect away from your app
   console.log("Passed Redirect!");
-  // alert("Passed Redirect!");
+  alert("Passed Redirect!");
   // After returning from the redirect when your app initializes you can obtain the result
   await getRedirectResult(auth).then((credentials) => {
     if (credentials) {
+
+      alert("Hallelujah!");
       const user = credentials.user;
       localStorage.setItem('Auth Token', user.refreshToken);
       // localStorage.setItem('Auth Token', token!);
       localStorage.setItem('userId', user.uid);
       console.log("Logged in!");
+
+      var userRef = db.collection("users").doc(user.uid);
+
+      userRef.get().then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            alert("Document Found!!");
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+            alert("No such document!");
+
+            // for (profile in auth.currentUser?.providerData)
+
+            // auth.getUser(user.uid)
+            // .then((userRecord) => {
+            //   // See the UserRecord reference doc for the contents of userRecord.
+            //   console.log(`Successfully fetched user data: ${userRecord.toJSON()}`);
+            // })
+            // .catch((error) => {
+            //   console.log('Error fetching user data:', error);
+            // });
+
+            // userRef.set({
+            //   firstName: firstName,
+            //   lastName: lastName,
+            //   email: email,
+            //   tasks: [],
+            //   teams: []
+            // });
+        }
+      }).catch((error) => {
+        console.log("Error getting document:", error);
+      });
+
+      status = true;
     }
+
+    return status;
+
   }).catch((error) => {
     console.log(error);
   });
