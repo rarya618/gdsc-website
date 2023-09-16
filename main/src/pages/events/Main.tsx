@@ -7,7 +7,7 @@ import SafeArea, { ColContainer } from '../../components/SafeArea';
 import { ClubEvent } from '../../dataTypes/ClubEvent';
 
 import { db } from "../../firebase/config";
-import Block from './Block';
+import Block from '../StudyGroups/Block';
 
 const Hero = styled.div`
     margin: 0;
