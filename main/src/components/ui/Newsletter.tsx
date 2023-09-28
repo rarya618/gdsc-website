@@ -5,7 +5,7 @@ import React, {
   FocusEvent,
   FormEvent,
 } from "react";
-import cardcss from "./Card.module.css";
+import newslettercss from "./Newsletter.module.css";
 import { randomString } from "../../App";
 import { sendData } from "../../firebase/config";
 
@@ -22,6 +22,7 @@ function Card(props: CardProps) {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
   const messageInputRef = useRef<HTMLInputElement>(null);
+  const agreeCheckboxRef = useRef<HTMLInputElement>(null); // Ref for the checkbox
 
   useEffect(() => {
     if (messageInputRef.current) {
@@ -45,7 +46,9 @@ function Card(props: CardProps) {
     if (
       nameInputRef.current &&
       emailInputRef.current &&
-      messageInputRef.current
+      messageInputRef.current &&
+      agreeCheckboxRef.current && // Ensure the checkbox is checked
+      agreeCheckboxRef.current.checked
     ) {
       const nameInput = nameInputRef.current.value;
       const emailInput = emailInputRef.current.value;
@@ -73,81 +76,71 @@ function Card(props: CardProps) {
 
   return (
     <div
-      className={`${cardcss.cardcontainer} ${
-        isCardCollapsed ? cardcss.collapsed : ""
+      className={`${newslettercss.cardcontainer} ${
+        isCardCollapsed ? newslettercss.collapsed : ""
       }`}
     >
-      <div className={cardcss.imagecontainer}>
+      <div className={newslettercss.imagecontainer}>
         <img src={props.imageUrl} alt="" />
       </div>
 
-      <div className={cardcss.cardbody}>
+      <div className={newslettercss.cardbody}>
         <p>{props.body}</p>
 
         {isMessageSent ? (
-          <div className={cardcss.messageSentContainer}>
-            <p className={cardcss.messageSentText}>
+          <div className={newslettercss.messageSentContainer}>
+            <p className={newslettercss.messageSentText}>
               Your message has been sent, we'll be in touch soon!
             </p>
 
-            <button className={cardcss.homebutton} type="submit">
+            <button className={newslettercss.homebutton} type="submit">
               Home
             </button>
 
-            <button className={cardcss.learnbutton} type="submit">
+            <button className={newslettercss.learnbutton} type="submit">
               Learn more
             </button>
           </div>
         ) : (
           <form onSubmit={submitHandler}>
-            <div>
-              <label className={cardcss.namelabel} htmlFor="name">
-                Name*
+            <div className={newslettercss.newscard}>
+              <h1 className={newslettercss.getournews}>Get our newsletter!</h1>
+              <p className={newslettercss.signup}>
+                Sign up for our newsletter to stay up-to-date with GDSC. It's
+                free!
+              </p>
+              <label className={newslettercss.namelabel} htmlFor="name">
+                Email*
               </label>
               <input
-                className={cardcss.nameinput}
+                className={newslettercss.nameinput}
                 type="text"
                 id="name"
                 name="name"
                 ref={nameInputRef}
               />
+              <p className={newslettercss.readandagreed}>
+                I have read and agreed with GDSC USYD's{" "}
+                <span className={newslettercss.blueText}>Terms of Service</span>{" "}
+                and{" "}
+                <span className={newslettercss.blueText}>Privacy Policy</span>{" "}
+                <input
+                  type="checkbox"
+                  id="agreeCheckbox"
+                  className={`${newslettercss.agreeCheckbox} custom-checkbox`}
+                  ref={agreeCheckboxRef}
+                />
+              </p>
             </div>
 
-            <div className={cardcss.emailcontainer}>
-              <label className={cardcss.emaillabel} htmlFor="email">
-                Email*
-              </label>
-              <input
-                className={cardcss.emailinput}
-                type="text"
-                id="email"
-                name="email"
-                ref={emailInputRef}
-              />
-            </div>
-
-            <div className={cardcss.messagecontainer}>
-              <label className={cardcss.messagelabel} htmlFor="message">
-                Message*
-              </label>
-              <input
-                ref={messageInputRef}
-                className={cardcss.messageinput}
-                type="text"
-                id="message"
-                name="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onFocus={handleFocus}
-              />
-
-              <button className={cardcss.sendbutton} type="submit">
-                Send
+            <div className={newslettercss.messagecontainer}>
+              <button className={newslettercss.sendbutton} type="submit">
+                Sign up
               </button>
             </div>
 
-            <button className={cardcss.sendbutton} type="submit">
-              Send
+            <button className={newslettercss.sendbutton} type="submit">
+              d Sign up
             </button>
           </form>
         )}
@@ -157,3 +150,4 @@ function Card(props: CardProps) {
 }
 
 export default Card;
+export {};

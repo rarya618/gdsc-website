@@ -1,0 +1,206 @@
+/* Container for the card */
+.cardcontainer {
+  position: relative;
+  height: 500px;
+  width: 400px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  bottom: 150px;
+  left: 490px;
+  background-color: #fff;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+/* Styles for the collapsed card */
+.collapsed {
+  height: 280px;
+}
+
+/* Heading style */
+.getournews {
+  font-size: 30px;
+  color: #4285f5;
+  position: relative;
+  bottom: 0px;
+  right: 20px;
+}
+
+/* Signup text style */
+.signup {
+  font-size: 17px;
+  color: black;
+  position: relative;
+  bottom: 0px;
+  left: 32px;
+  text-align: left;
+  width: 80%;
+}
+
+/* Name label style */
+.namelabel {
+  position: relative;
+  left: 30px;
+  bottom: -50px;
+  right: 80px;
+}
+
+/* Name input style */
+.nameinput {
+  position: relative;
+  right: 20px;
+  top: 100px;
+  width: 340px;
+  height: 40px;
+  border: 2px solid #d1e1fa;
+  outline: none;
+  border-radius: 5px;
+}
+
+/* Text for Terms of Service and Privacy Policy */
+.readandagreed {
+  font-size: 13px;
+  color: black;
+  position: relative;
+  top: 120px;
+  left: 32px;
+  text-align: left;
+  width: 80%;
+}
+
+/* Checkbox style */
+.agreeCheckbox {
+  margin-right: 20px;
+  margin-top: 5px;
+  cursor: pointer; /* Add cursor pointer on hover */
+}
+
+/* Styles for the custom checkbox */
+.custom-checkbox {
+  color: gray;
+}
+
+/* Styles for the checked custom checkbox */
+.custom-checkbox:checked {
+  color: blue; /* Change color when checked */
+}
+
+.custom-checkbox:hover {
+  color: red; /* Change color on hover */
+}
+v
+
+/* Blue text style */
+.blueText {
+  color: #4285f5;
+}
+
+/* Message container style */
+.messagecontainer {
+  position: relative;
+  top: 50px;
+}
+
+/* Message label style */
+.messagelabel {
+  position: relative;
+  left: 35px;
+  bottom: 0px;
+}
+
+/* Message input style */
+.messageinput {
+  position: relative;
+  right: 35px;
+  top: 120px;
+  width: 440px;
+  height: 200px;
+  border: 2px solid #d1e1fa;
+  outline: none;
+  border-radius: 5px;
+}
+
+/* Image container style */
+.imagecontainer img {
+  overflow: hidden;
+  height: 200px;
+  box-shadow: 0px 0px 15px -5px;
+}
+
+/* Send button style */
+.sendbutton {
+  position: relative;
+  right: 120px;
+  top: 230px;
+  background-color: #498af1;
+  color: white;
+  padding: 10px 25px;
+  margin: 6px 12px;
+  border: #498af1;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover style for the send button */
+.sendbutton:hover {
+  background-color: #208cff;
+  color: #fff;
+}
+
+/* Home button style */
+.homebutton {
+  position: relative;
+  right: 100px;
+  top: 50px;
+  background-color: #498af1;
+  color: white;
+  padding: 10px 25px;
+  margin: 6px 12px;
+  border: #498af1;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover style for the home button */
+.homebutton:hover {
+  background-color: #208cff;
+  color: #fff;
+}
+
+/* Learn more button style */
+.learnbutton {
+  position: relative;
+  right: 100px;
+  top: 50px;
+  background-color: #fff;
+  color: #498af1;
+  padding: 10px 25px;
+  margin: 6px 12px;
+  border: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0px 0px 15px -12px black;
+}
+
+/* Hover style for the learn more button */
+.learnbutton:hover {
+  background-color: #f5f5f5;
+  color: #498af1;
+}
+
+/* Message sent text style */
+.messageSentText {
+  text-align: left;
+  padding-left: 35px;
+  font-size: 22px;
+}
