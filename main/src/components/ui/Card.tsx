@@ -148,10 +148,6 @@ function Card(props: CardProps) {
                 Send
               </button>
             </div>
-
-            <button className={cardcss.sendbutton} type="submit">
-              Send
-            </button>
           </form>
         )}
         <script
