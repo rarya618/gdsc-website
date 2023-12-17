@@ -26,12 +26,11 @@ function Card(props: CardProps) {
   useEffect(() => {
     if (messageInputRef.current) {
       messageInputRef.current.focus();
-      messageInputRef.current.setSelectionRange(0, 0);
-
-      // Delay setting the cursor position
-      setTimeout(() => {
-        messageInputRef.current?.setSelectionRange(0, 0);
-      }, 0);
+      // Remove the attempts to set selection range for a hidden input field
+      // messageInputRef.current.setSelectionRange(0, 0);
+      // setTimeout(() => {
+      //   messageInputRef.current?.setSelectionRange(0, 0);
+      // }, 0);
     }
   }, []);
 
