@@ -133,13 +133,13 @@ function Card(props: CardProps) {
               <label className={cardcss.messagelabel} htmlFor="message">
                 Message*
               </label>
+
               <input
                 ref={messageInputRef}
                 className={cardcss.messageinput}
-                type="hidden"
+                type="text"
                 id="message"
                 name="access_key"
-                value="61068c42-210a-4ec2-be62-61086d21f66e"
                 onChange={(e) => setMessage(e.target.value)}
                 onFocus={handleFocus}
               />
