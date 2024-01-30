@@ -33,8 +33,6 @@ export const CallToAction = styled.a`
 
 const menuItems = [
   { text: "Study Groups", link: "/study-groups" },
-  // {text: "Events"},
-  { text: "About", link: "/about" }, // New menu item for About page
   { text: "Contact", link: "/contact" }, // New menu item for About page
 ];
 

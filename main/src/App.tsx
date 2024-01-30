@@ -7,16 +7,28 @@ import "./App.css";
 import Landing from "./pages/landing/Landing";
 import StudyGroups from "./pages/StudyGroups/Main";
 import About from "./pages/landing/About";
-import Contact from "./pages/landing/Contact";
+import Contact from "./pages/Contact/Contact";
 import Footer from "./Footer";
 import Burger from "./components/burger";
 import Menu from "./components/menu";
 
 import { blueHex, whiteHex } from "./colors";
-import { Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Terms from "./components/TermsView";
 import ToC from "./resources/pages/ToC";
 import PrivacyPolicy from "./resources/pages/PrivacyPolicy";
+
+//randomString function
+export function randomString(length: number) {
+  var result = "";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
 
 export const standardSpacing =
   "padding: 10px 14px; margin: 6px 12px; border-radius: 3px;";
@@ -33,7 +45,7 @@ const Header = styled.header`
   background: white;
 `;
 
-//Menu styles, migrated to components folder
+// Menu styles, migrated to components folder
 
 // const Menu = styled.div`
 // 	display: flex;
@@ -112,7 +124,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header>
+      <Header style={{ zIndex: 100 }}>
         <Link to="/">
           <Logo src={logo} />
         </Link>

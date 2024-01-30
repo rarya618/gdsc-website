@@ -5,7 +5,7 @@
 }
 
 .card {
-  bottom: 580px;
+  bottom: 540px;
   position: relative;
 }
 
@@ -23,7 +23,7 @@
   font-weight: 700;
   position: relative;
   bottom: 360px;
-  left: 680px;
+  left: 610px;
 }
 
 .socials {
@@ -56,7 +56,7 @@
   margin: 20px auto; /* Center horizontally */
   position: relative;
   bottom: 120px;
-  left: 490px;
+  left: 410px;
 }
 
 .instagramcircle {
@@ -67,7 +67,7 @@
   margin: 20px auto; /* Center horizontally */
   position: relative;
   bottom: 110px;
-  right: 140px;
+  right: 170px;
 }
 
 .instagram {
@@ -78,7 +78,7 @@
   margin-right: 20px;
   position: relative;
   bottom: 145px;
-  left: -3px;
+  left: -13px;
 }
 
 .facebook {
@@ -89,7 +89,7 @@
   margin-right: 20px;
   position: relative;
   bottom: 130px;
-  left: 2px;
+  left: -15px;
 }
 
 .fabrands {
@@ -104,7 +104,7 @@
   margin-right: 20px;
   position: relative;
   bottom: 150px;
-  left: 38px;
+  left: 10px;
 }
 
 .linkedincircle {
@@ -115,7 +115,7 @@
   margin: 20px auto; /* Center horizontally */
   position: relative;
   bottom: 110px;
-  right: 480px;
+  right: 450px;
 }
 
 .discordcircle {
@@ -126,7 +126,7 @@
   margin: 20px auto; /* Center horizontally */
   position: relative;
   bottom: 110px;
-  right: 260px;
+  right: 265px;
 }
 
 .discord {
@@ -137,7 +137,7 @@
   margin-right: 20px;
   position: relative;
   bottom: 145px;
-  left: 12px;
+  left: -13px;
 }
 
 .emaillogo {
@@ -182,6 +182,7 @@
   color: #4285f5;
   position: relative;
   bottom: 550px;
+  z-index: 0;
 }
 
 .foraccess {
@@ -225,7 +226,12 @@
 
 .blankbackground {
   background-color: white;
-  height: 800px;
+  height: 100px;
   position: relative;
   z-index: -2;
+}
+
+.newsletter {
+  position: relative;
+  top: 500px;
 }

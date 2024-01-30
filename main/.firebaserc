@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "gdsc-usyd"
-  }
+    "default": "gdsc-usyd",
+    "dev": "gdsc-contact-page"
+  },
+  "targets": {},
+  "etags": {}
 }
